@@ -28,22 +28,28 @@ nav.scrolled{background:rgba(249,246,240,0.96);backdrop-filter:blur(12px);border
 .nav-logo{font-family:var(--font-serif);font-size:1.3rem;font-weight:600;letter-spacing:0.05em;color:white;transition:color 0.4s;}
 nav.scrolled .nav-logo{color:var(--dark);}
 .nav-links{display:flex;align-items:center;gap:2.5rem;}
-.nav-links a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.3s;}
+.nav-links a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.3s;cursor:pointer;}
 nav.scrolled .nav-links a{color:var(--warm-gray);}
 .nav-links a:hover{color:var(--gold);}
 .nav-cta{background:var(--gold);color:white !important;padding:0.6rem 1.5rem;font-size:0.75rem !important;letter-spacing:0.1em;}
 .nav-cta:hover{background:#B8943E !important;}
+.lang-switcher{display:flex;gap:0.5rem;align-items:center;}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);font-size:0.7rem;padding:0.3rem 0.6rem;cursor:pointer;letter-spacing:0.1em;transition:all 0.2s;font-family:var(--font-sans);}
+.lang-btn.active,.lang-btn:hover{background:var(--gold);border-color:var(--gold);color:white;}
+nav.scrolled .lang-btn{border-color:var(--border);color:var(--warm-gray);}
+nav.scrolled .lang-btn.active,nav.scrolled .lang-btn:hover{background:var(--gold);color:white;}
 
 /* HERO */
 .hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780591270/nueva-construccion-chalet-el-canton_24741_xl_s6dodr.png');background-size:cover;background-position:center;transform:scale(1.05);transition:transform 8s ease;}
-.hero-bg.loaded{transform:scale(1);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,12,8,0.65) 0%,rgba(15,12,8,0.35) 50%,rgba(15,12,8,0.7) 100%);}
+.hero-slides{position:absolute;inset:0;}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;transform:scale(1.05);animation:none;}
+.hero-slide.active{opacity:1;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,12,8,0.6) 0%,rgba(15,12,8,0.3) 50%,rgba(15,12,8,0.65) 100%);}
 .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px;}
 .hero-tag{display:inline-block;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:0.4rem 1.2rem;margin-bottom:2rem;animation:fadeUp 1s ease both;}
 .hero-title{font-family:var(--font-serif);font-size:clamp(3rem,7vw,5.5rem);font-weight:300;color:white;line-height:1.1;margin-bottom:1.5rem;animation:fadeUp 1s ease 0.2s both;}
 .hero-title em{font-style:italic;color:var(--gold-light);}
-.hero-subtitle{font-size:1rem;color:rgba(255,255,255,0.75);letter-spacing:0.05em;margin-bottom:3rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;animation:fadeUp 1s ease 0.4s both;}
+.hero-subtitle{font-size:1rem;color:rgba(255,255,255,0.75);letter-spacing:0.03em;margin-bottom:3rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;animation:fadeUp 1s ease 0.4s both;}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease 0.6s both;}
 .btn-primary{background:var(--gold);color:white;padding:1rem 2.5rem;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;}
 .btn-primary:hover{background:#B8943E;transform:translateY(-2px);}
@@ -51,9 +57,11 @@ nav.scrolled .nav-links a{color:var(--warm-gray);}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;animation:fadeUp 1s ease 1s both;}
 .hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollLine 2s ease infinite;}
-@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+.hero-dots{position:absolute;bottom:5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.5rem;z-index:3;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;border:none;}
+.hero-dot.active{background:var(--gold);transform:scale(1.3);}
 
-/* STATS BAR */
+/* STATS */
 .stats-bar{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
 .stat{text-align:center;}
 .stat-num{font-family:var(--font-serif);font-size:2.5rem;font-weight:300;color:var(--gold);line-height:1;}
@@ -71,7 +79,7 @@ section{padding:7rem 3rem;}
 .about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
 .about-img{position:relative;}
 .about-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
-.about-img-accent{position:absolute;bottom:-2rem;right:-2rem;width:60%;aspect-ratio:4/3;object-fit:cover;border:6px solid white;}
+.about-img-accent{position:absolute;bottom:-2rem;right:-2rem;width:55%;aspect-ratio:4/3;object-fit:cover;border:6px solid white;box-shadow:0 8px 32px rgba(0,0,0,0.15);}
 
 /* SPECS */
 .specs{background:var(--warm-white);}
@@ -87,61 +95,68 @@ section{padding:7rem 3rem;}
 .gallery{background:var(--dark);padding:5rem 0;}
 .gallery-header{padding:0 3rem 3rem;max-width:1200px;margin:0 auto;}
 .gallery-header .section-title{color:white;}
-.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 300px;gap:4px;max-width:1200px;margin:0 auto;padding:0 3rem;}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:4px;max-width:1200px;margin:0 auto;padding:0 3rem;}
 .gallery-item{overflow:hidden;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;display:block;}
 .gallery-item:hover img{transform:scale(1.05);}
 .gallery-item:first-child{grid-row:span 2;}
 
 /* LOCATION */
 .location{background:white;}
 .location-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-.location-map{position:relative;}
-.location-map img{width:100%;border-radius:2px;}
+.location-map img{width:100%;}
 .location-points{display:flex;flex-direction:column;gap:1.2rem;margin-top:2.5rem;}
-.location-point{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--border);}
-.location-point-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;}
-.location-point-text{font-size:0.85rem;color:var(--dark);}
+.location-point{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--border);}
+.location-point-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:5px;}
+.location-point-text{font-size:0.85rem;color:var(--dark);font-weight:500;}
 .location-point-dist{font-size:0.75rem;color:var(--warm-gray);margin-top:0.2rem;}
 
 /* FLOORPLAN */
 .floorplan{background:var(--warm-white);}
 .floorplan-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-.floorplan img{width:100%;border:1px solid var(--border);background:white;padding:2rem;}
-.floorplan-specs{display:flex;flex-direction:column;gap:0;}
+.floorplan img{width:100%;border:1px solid var(--border);background:white;padding:1.5rem;}
 .fp-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;}
 .fp-row:last-child{border-bottom:none;}
 .fp-label{color:var(--warm-gray);}
 .fp-value{font-weight:500;color:var(--dark);}
 
+/* WHY */
+.why{background:var(--dark);color:white;}
+.why-inner{max-width:1200px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:4rem;}
+.why-item{border-top:1px solid rgba(201,168,76,0.3);padding-top:2rem;}
+.why-icon{font-size:2rem;margin-bottom:1rem;}
+.why-title{font-family:var(--font-serif);font-size:1.4rem;color:white;margin-bottom:0.75rem;}
+.why-body{font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+
 /* CONTACT */
 .contact{background:var(--charcoal);color:white;text-align:center;}
 .contact-inner{max-width:600px;margin:0 auto;}
 .contact .section-tag{color:var(--gold);}
-.contact .section-title{color:white;margin-bottom:1rem;}
+.contact .section-title{color:white;}
 .contact-sub{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;margin-bottom:3rem;}
 .contact-form{display:flex;flex-direction:column;gap:1rem;text-align:left;}
 .contact-form input,
 .contact-form select,
 .contact-form textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:white;padding:1rem 1.2rem;font-family:var(--font-sans);font-size:0.9rem;outline:none;transition:border 0.3s;width:100%;}
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{color:rgba(255,255,255,0.35);}
-.contact-form input:focus,
-.contact-form textarea:focus{border-color:var(--gold);}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,0.35);}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold);}
 .contact-form textarea{height:120px;resize:none;}
 .contact-form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.contact-form select option{background:#2D2D2D;color:white;}
 .btn-submit{background:var(--gold);color:white;border:none;padding:1.1rem;font-family:var(--font-sans);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;width:100%;margin-top:0.5rem;}
 .btn-submit:hover{background:#B8943E;}
 .contact-or{text-align:center;color:rgba(255,255,255,0.3);font-size:0.8rem;letter-spacing:0.1em;margin:1.5rem 0;}
-.contact-whatsapp{display:flex;align-items:center;justify-content:center;gap:0.75rem;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);color:#25D366;padding:1rem;font-size:0.85rem;text-decoration:none;transition:all 0.3s;}
+.contact-whatsapp{display:flex;align-items:center;justify-content:center;gap:0.75rem;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);color:#25D366;padding:1.1rem;font-size:0.9rem;text-decoration:none;transition:all 0.3s;}
 .contact-whatsapp:hover{background:rgba(37,211,102,0.2);}
 
 /* FOOTER */
 footer{background:#111;color:rgba(255,255,255,0.4);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.75rem;letter-spacing:0.05em;}
-footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(255,255,255,0.7);}
+.footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(255,255,255,0.7);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
 .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
@@ -150,12 +165,12 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
   nav{padding:1rem 1.5rem;}
   nav.scrolled{padding:0.75rem 1.5rem;}
   .nav-links{display:none;}
-  section{padding:5rem 1.5rem;}
+  section{padding:4rem 1.5rem;}
   .stats-bar{padding:2rem 1.5rem;gap:2rem;}
-  .about-inner,.specs-header,.location-inner,.floorplan-inner{grid-template-columns:1fr;gap:3rem;}
+  .about-inner,.specs-header,.location-inner,.floorplan-inner,.why-grid{grid-template-columns:1fr;gap:3rem;}
   .about-img-accent{display:none;}
   .specs-grid{grid-template-columns:repeat(2,1fr);}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;padding:0 1.5rem;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px;padding:0 1.5rem;}
   .gallery-item:first-child{grid-row:span 1;}
   .contact-form-row{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
@@ -167,61 +182,68 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
 <nav id="nav">
   <div class="nav-logo">RC · Cañada de la Leña</div>
   <div class="nav-links">
-    <a href="#about">The Project</a>
-    <a href="#specs">Features</a>
-    <a href="#location">Location</a>
-    <a href="#contact" class="nav-cta">Enquire Now</a>
+    <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" data-i18n="nav_project">The Project</a>
+    <a onclick="document.getElementById('specs').scrollIntoView({behavior:'smooth'})" data-i18n="nav_features">Features</a>
+    <a onclick="document.getElementById('location').scrollIntoView({behavior:'smooth'})" data-i18n="nav_location">Location</a>
+    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="nav-cta" data-i18n="nav_enquire">Enquire Now</a>
+  </div>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('nl')">NL</button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg">
-  <div class="hero-slide active" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780591244/nueva-construccion-chalet-el-canton_24739_xl_cakcx5.png')"></div>
-  <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704299/n-chaplow-6-scaled_duqrge.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/a264a67fcf732d4c74cdd641979d9f31_q8ucio.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/bigstock-Marbella-Spain-June-th-298703593_moibjq.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/4668ebf1ca78049636058fe84431acc9_bb0lu2.jpg')"></div>
-</div>
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780591244/nueva-construccion-chalet-el-canton_24739_xl_cakcx5.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704299/n-chaplow-6-scaled_duqrge.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/a264a67fcf732d4c74cdd641979d9f31_q8ucio.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/bigstock-Marbella-Spain-June-th-298703593_moibjq.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/4668ebf1ca78049636058fe84431acc9_bb0lu2.jpg')"></div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-tag">New Development · Alicante, Spain</div>
-    <h1 class="hero-title">Your <em>Spanish Villa</em><br/>Awaits</h1>
-    <p class="hero-subtitle">Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Alicante.</p>
+    <div class="hero-tag" data-i18n="hero_tag">New Development · Alicante, Spain</div>
+    <h1 class="hero-title" data-i18n="hero_title">Your <em>Spanish Villa</em><br/>Awaits</h1>
+    <p class="hero-subtitle" data-i18n="hero_sub">Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Alicante.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Request Information</a>
-      <a href="#about" class="btn-outline">Discover the Project</a>
+      <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-primary" data-i18n="hero_cta1">Request Information</a>
+      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" class="btn-outline" data-i18n="hero_cta2">Discover the Project</a>
     </div>
   </div>
+  <div class="hero-dots" id="heroDots"></div>
   <div class="hero-scroll">
-    <span>Scroll</span>
+    <span data-i18n="scroll">Scroll</span>
     <div class="hero-scroll-line"></div>
   </div>
 </section>
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">5.000</div><div class="stat-label">m² plot per villa</div></div>
-  <div class="stat"><div class="stat-num">180</div><div class="stat-label">m² built area</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">bedrooms</div></div>
-  <div class="stat"><div class="stat-num">45'</div><div class="stat-label">from Alicante Airport</div></div>
+  <div class="stat"><div class="stat-num">5.000</div><div class="stat-label" data-i18n="stat1">m² plot per villa</div></div>
+  <div class="stat"><div class="stat-num">180</div><div class="stat-label" data-i18n="stat2">m² built area</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="stat3">bedrooms</div></div>
+  <div class="stat"><div class="stat-num">45'</div><div class="stat-label" data-i18n="stat4">from Alicante Airport</div></div>
 </div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-inner">
     <div class="reveal">
-      <div class="section-tag">The Project</div>
-      <h2 class="section-title">Residencial<br/><em>Cañada de la Leña</em></h2>
-      <p class="section-body">A private development of detached villas in Hondón de los Frailes, one of the most authentic rural areas of Alicante province. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.</p>
-      <br/>
-      <p class="section-body">Built to the highest standards with modern architecture, high-quality finishes and all the space you need to truly live — not just exist.</p>
-      <br/>
-      <a href="#contact" class="btn-primary" style="margin-top:1rem;display:inline-block;">Get the Full Brochure</a>
+      <div class="section-tag" data-i18n="about_tag">The Project</div>
+      <h2 class="section-title" data-i18n="about_title">Residencial<br/><em>Cañada de la Leña</em></h2>
+      <p class="section-body" data-i18n="about_p1">A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Alicante province. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.</p>
+      <br/><br/>
+      <p class="section-body" data-i18n="about_p2">We are the exclusive sales agent for this development. Our role is to guide you through every step of the purchase process — from your first enquiry to the day you receive your keys.</p>
+      <br/><br/>
+      <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-primary" style="display:inline-block;" data-i18n="about_cta">Request the Full Brochure</a>
     </div>
     <div class="about-img reveal">
-      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591262/nueva-construccion-chalet-el-canton_24747_xl_y254xp.png" alt="Villa exterior"/>
-      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591244/nueva-construccion-chalet-el-canton_24739_xl_cakcx5.png" class="about-img-accent" alt="Villa garage"/>
+      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591270/nueva-construccion-chalet-el-canton_24741_xl_s6dodr.png" alt="Villa exterior"/>
+      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591269/nueva-construccion-chalet-el-canton_24759_xl_cyszmh.png" class="about-img-accent" alt="Pool"/>
     </div>
   </div>
 </section>
@@ -231,22 +253,22 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
   <div class="specs-inner">
     <div class="specs-header">
       <div class="reveal">
-        <div class="section-tag">What's Included</div>
-        <h2 class="section-title">Every villa,<br/><em>fully equipped</em></h2>
+        <div class="section-tag" data-i18n="specs_tag">What's Included</div>
+        <h2 class="section-title" data-i18n="specs_title">Every villa,<br/><em>fully equipped</em></h2>
       </div>
       <div class="reveal">
-        <p class="section-body">From private pool to double garage, every detail has been considered so you can enjoy your Spanish life from day one.</p>
+        <p class="section-body" data-i18n="specs_sub">From private pool to double garage, every detail has been considered so you can enjoy your Spanish life from day one.</p>
       </div>
     </div>
     <div class="specs-grid reveal">
-      <div class="spec-item"><div class="spec-icon">🏠</div><div class="spec-value">180 m²</div><div class="spec-label">Built Area</div></div>
-      <div class="spec-item"><div class="spec-icon">🛏</div><div class="spec-value">3</div><div class="spec-label">Bedrooms</div></div>
-      <div class="spec-item"><div class="spec-icon">🚿</div><div class="spec-value">2</div><div class="spec-label">Bathrooms</div></div>
-      <div class="spec-item"><div class="spec-icon">🏊</div><div class="spec-value">32 m²</div><div class="spec-label">Private Pool</div></div>
-      <div class="spec-item"><div class="spec-icon">🚗</div><div class="spec-value">44 m²</div><div class="spec-label">Double Garage</div></div>
-      <div class="spec-item"><div class="spec-icon">☀️</div><div class="spec-value">17 m²</div><div class="spec-label">Covered Terrace</div></div>
-      <div class="spec-item"><div class="spec-icon">🌿</div><div class="spec-value">5.000 m²</div><div class="spec-label">Plot Size</div></div>
-      <div class="spec-item"><div class="spec-icon">✨</div><div class="spec-value">New</div><div class="spec-label">Build Quality</div></div>
+      <div class="spec-item"><div class="spec-icon">🏠</div><div class="spec-value">180 m²</div><div class="spec-label" data-i18n="spec_built">Built Area</div></div>
+      <div class="spec-item"><div class="spec-icon">🛏</div><div class="spec-value">3</div><div class="spec-label" data-i18n="spec_beds">Bedrooms</div></div>
+      <div class="spec-item"><div class="spec-icon">🚿</div><div class="spec-value">2</div><div class="spec-label" data-i18n="spec_baths">Bathrooms</div></div>
+      <div class="spec-item"><div class="spec-icon">🏊</div><div class="spec-value">32 m²</div><div class="spec-label" data-i18n="spec_pool">Private Pool</div></div>
+      <div class="spec-item"><div class="spec-icon">🚗</div><div class="spec-value">44 m²</div><div class="spec-label" data-i18n="spec_garage">Double Garage</div></div>
+      <div class="spec-item"><div class="spec-icon">☀️</div><div class="spec-value">17 m²</div><div class="spec-label" data-i18n="spec_terrace">Covered Terrace</div></div>
+      <div class="spec-item"><div class="spec-icon">🌿</div><div class="spec-value">5.000 m²</div><div class="spec-label" data-i18n="spec_plot">Plot Size</div></div>
+      <div class="spec-item"><div class="spec-icon">✨</div><div class="spec-value" data-i18n="spec_new_val">New</div><div class="spec-label" data-i18n="spec_new">Build Quality</div></div>
     </div>
   </div>
 </section>
@@ -254,15 +276,15 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="gallery-header reveal">
-    <div class="section-tag" style="color:var(--gold)">Similar Completed Homes</div>
-    <h2 class="section-title">This is how<br/><em>your villa will look</em></h2>
+    <div class="section-tag" style="color:var(--gold)" data-i18n="gallery_tag">Similar Completed Homes</div>
+    <h2 class="section-title" data-i18n="gallery_title">This is how<br/><em>your villa will look</em></h2>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591270/nueva-construccion-chalet-el-canton_24741_xl_s6dodr.png" alt="Pool and mountain views"/></div>
-    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591268/nueva-construccion-chalet-el-canton_24742_xl_z0lkbt.png" alt="Villa exterior"/></div>
-    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591267/nueva-construccion-chalet-el-canton_24744_xl_m35fic.png" alt="Interior"/></div>
-    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591262/nueva-construccion-chalet-el-canton_24747_xl_y254xp.png" alt="Bathroom"/></div>
-    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/4668ebf1ca78049636058fe84431acc9_bb0lu2.jpg" alt="Garage"/></div>
+    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591269/nueva-construccion-chalet-el-canton_24760_xl_xsqzua.png" alt="Pool"/></div>
+    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591270/nueva-construccion-chalet-el-canton_24741_xl_s6dodr.png" alt="Exterior"/></div>
+    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591263/nueva-construccion-chalet-el-canton_24753_xl_bihxyu.png" alt="Bathroom"/></div>
+    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591265/nueva-construccion-chalet-el-canton_24745_xl_kn8jyx.png" alt="Bedroom"/></div>
+    <div class="gallery-item"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591262/nueva-construccion-chalet-el-canton_24747_xl_y254xp.png" alt="Garage"/></div>
   </div>
 </section>
 
@@ -270,30 +292,18 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
 <section class="location" id="location">
   <div class="location-inner">
     <div class="reveal">
-      <div class="section-tag">Location</div>
-      <h2 class="section-title">Hondón de<br/><em>los Frailes</em></h2>
-      <p class="section-body">A hidden gem in the Vinalopó Valley — surrounded by almond trees, mountain ranges and over 300 days of sunshine per year. Close enough to the coast, far enough from the crowds.</p>
+      <div class="section-tag" data-i18n="loc_tag">Location</div>
+      <h2 class="section-title" data-i18n="loc_title">Cañada<br/><em>de la Leña</em></h2>
+      <p class="section-body" data-i18n="loc_body">A hidden gem in the Vinalopó Valley — surrounded by almond trees, mountain ranges and over 300 days of sunshine per year. Close enough to the coast, far enough from the crowds.</p>
       <div class="location-points">
-        <div class="location-point">
-          <div class="location-point-dot"></div>
-          <div><div class="location-point-text">Alicante Airport (El Altet)</div><div class="location-point-dist">45 minutes by car</div></div>
-        </div>
-        <div class="location-point">
-          <div class="location-point-dot"></div>
-          <div><div class="location-point-text">Alicante City & Beaches</div><div class="location-point-dist">50 minutes</div></div>
-        </div>
-        <div class="location-point">
-          <div class="location-point-dot"></div>
-          <div><div class="location-point-text">Murcia & Corvera Airport</div><div class="location-point-dist">55 minutes</div></div>
-        </div>
-        <div class="location-point">
-          <div class="location-point-dot"></div>
-          <div><div class="location-point-text">Local shops & amenities</div><div class="location-point-dist">5 minutes from the development</div></div>
-        </div>
+        <div class="location-point"><div class="location-point-dot"></div><div><div class="location-point-text" data-i18n="loc_p1">Alicante Airport (El Altet)</div><div class="location-point-dist" data-i18n="loc_d1">45 minutes by car</div></div></div>
+        <div class="location-point"><div class="location-point-dot"></div><div><div class="location-point-text" data-i18n="loc_p2">Alicante City & Beaches</div><div class="location-point-dist" data-i18n="loc_d2">50 minutes</div></div></div>
+        <div class="location-point"><div class="location-point-dot"></div><div><div class="location-point-text" data-i18n="loc_p3">Murcia & Corvera Airport</div><div class="location-point-dist" data-i18n="loc_d3">55 minutes</div></div></div>
+        <div class="location-point"><div class="location-point-dot"></div><div><div class="location-point-text" data-i18n="loc_p4">Local shops & amenities</div><div class="location-point-dist" data-i18n="loc_d4">5 minutes from the development</div></div></div>
       </div>
     </div>
     <div class="reveal">
-      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591263/nueva-construccion-chalet-el-canton_24753_xl_bihxyu.png" alt="Location map" style="width:100%;"/>
+      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780704298/4668ebf1ca78049636058fe84431acc9_bb0lu2.jpg" alt="Location map"/>
     </div>
   </div>
 </section>
@@ -302,23 +312,50 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
 <section class="floorplan" id="floorplan">
   <div class="floorplan-inner">
     <div class="reveal">
-      <div class="section-tag">Floor Plan</div>
-      <h2 class="section-title">Thoughtfully<br/><em>designed spaces</em></h2>
-      <p class="section-body" style="margin-bottom:2rem;">Open-plan living with generous bedrooms, en-suite bathrooms and a seamless connection between indoor and outdoor spaces.</p>
-      <div class="floorplan-specs">
-        <div class="fp-row"><span class="fp-label">Living / Dining / Kitchen</span><span class="fp-value">42 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Bedroom 1</span><span class="fp-value">21 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Bedroom 2</span><span class="fp-value">15 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Bedroom 3</span><span class="fp-value">12 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Bathroom 1 + Bathroom 2</span><span class="fp-value">7.9 m² each</span></div>
-        <div class="fp-row"><span class="fp-label">Covered Terrace</span><span class="fp-value">17 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Double Garage</span><span class="fp-value">44 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Private Pool</span><span class="fp-value">32 m²</span></div>
-        <div class="fp-row"><span class="fp-label">Total Plot</span><span class="fp-value">5.000 m²</span></div>
+      <div class="section-tag" data-i18n="fp_tag">Floor Plan</div>
+      <h2 class="section-title" data-i18n="fp_title">Thoughtfully<br/><em>designed spaces</em></h2>
+      <p class="section-body" style="margin-bottom:2rem;" data-i18n="fp_body">Open-plan living with generous bedrooms and a seamless connection between indoor and outdoor spaces.</p>
+      <div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_living">Living / Dining / Kitchen</span><span class="fp-value">42 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed1">Bedroom 1</span><span class="fp-value">21 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed2">Bedroom 2</span><span class="fp-value">15 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed3">Bedroom 3</span><span class="fp-value">12 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_baths">2 Bathrooms</span><span class="fp-value">7.9 m² each</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_terrace">Covered Terrace</span><span class="fp-value">17 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_garage">Double Garage</span><span class="fp-value">44 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_pool">Private Pool</span><span class="fp-value">32 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_plot">Total Plot</span><span class="fp-value">5.000 m²</span></div>
       </div>
     </div>
     <div class="reveal">
-      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591244/nueva-construccion-chalet-el-canton_24739_xl_cakcx5.png" alt="Floor plan"/>
+      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591268/nueva-construccion-chalet-el-canton_24742_xl_z0lkbt.png" alt="Floor plan"/>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="reveal">
+      <div class="section-tag" data-i18n="why_tag">Why Choose Us</div>
+      <h2 class="section-title" style="color:white;" data-i18n="why_title">We make buying<br/><em>simple</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">🤝</div>
+        <div class="why-title" data-i18n="why1_title">Exclusive Agent</div>
+        <div class="why-body" data-i18n="why1_body">We are the exclusive sales agent for this development. You deal directly with us — no middlemen, no confusion.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">🌍</div>
+        <div class="why-title" data-i18n="why2_title">We Speak Your Language</div>
+        <div class="why-body" data-i18n="why2_body">We work with international buyers every day. We understand your concerns and guide you through the Spanish buying process step by step.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">🔑</div>
+        <div class="why-title" data-i18n="why3_title">End-to-End Support</div>
+        <div class="why-body" data-i18n="why3_body">From your first question to the day you collect your keys, we are with you. Legal guidance, NIE assistance, mortgage referrals — we've got it covered.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -326,18 +363,18 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner reveal">
-    <div class="section-tag">Get In Touch</div>
-    <h2 class="section-title">Interested?<br/><em>Let's talk</em></h2>
-    <p class="contact-sub">Leave your details and we'll get back to you within 24 hours with full pricing, availability and everything you need to know.</p>
+    <div class="section-tag" data-i18n="contact_tag">Get In Touch</div>
+    <h2 class="section-title" data-i18n="contact_title">Interested?<br/><em>Let's talk</em></h2>
+    <p class="contact-sub" data-i18n="contact_sub">Leave your details and we'll get back to you within 24 hours with full pricing, availability and everything you need to know.</p>
     <div class="contact-form">
       <div class="contact-form-row">
-        <input type="text" placeholder="Your name"/>
-        <input type="email" placeholder="Email address"/>
+        <input type="text" data-i18n-placeholder="form_name" placeholder="Your name"/>
+        <input type="email" data-i18n-placeholder="form_email" placeholder="Email address"/>
       </div>
       <div class="contact-form-row">
-        <input type="tel" placeholder="Phone / WhatsApp"/>
-        <select style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);padding:1rem 1.2rem;font-family:var(--font-sans);font-size:0.9rem;outline:none;width:100%;">
-          <option value="">Country of residence</option>
+        <input type="tel" data-i18n-placeholder="form_phone" placeholder="Phone / WhatsApp"/>
+        <select>
+          <option value="" data-i18n="form_country">Country of residence</option>
           <option>United Kingdom</option>
           <option>Germany</option>
           <option>Netherlands</option>
@@ -346,41 +383,230 @@ footer .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(25
           <option>Other</option>
         </select>
       </div>
-      <textarea placeholder="Any questions or comments? (optional)"></textarea>
-      <button class="btn-submit" onclick="alert('Thank you! We will be in touch shortly.')">Send Enquiry →</button>
+      <textarea data-i18n-placeholder="form_msg" placeholder="Any questions? (optional)"></textarea>
+      <button class="btn-submit" onclick="alert(document.documentElement.lang==='es'?'¡Gracias! Te contactaremos pronto.':document.documentElement.lang==='de'?'Danke! Wir melden uns bald.':document.documentElement.lang==='nl'?'Bedankt! We nemen snel contact op.':'Thank you! We will be in touch shortly.')" data-i18n="form_send">Send Enquiry →</button>
     </div>
-    <div class="contact-or">— or contact us directly —</div>
-    <a href="https://wa.me/34600000000" class="contact-whatsapp">
+    <div class="contact-or">— <span data-i18n="contact_or">or contact us directly</span> —</div>
+    <a href="https://wa.me/34711231346" class="contact-whatsapp" target="_blank">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Chat on WhatsApp
+      <span data-i18n="whatsapp">Chat on WhatsApp · +34 711 231 346</span>
     </a>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">RC · Residencial Cañada de la Leña</div>
-  <div>Hondón de los Frailes, Alicante, Spain</div>
+  <div>Cañada de la Leña, Alicante, Spain</div>
   <div>© 2026 Rural Vista Properties</div>
 </footer>
 
 <script>
-// Nav scroll effect
+// ── TRANSLATIONS ──────────────────────────────────────────────
+const T = {
+  en: {
+    nav_project:'The Project', nav_features:'Features', nav_location:'Location', nav_enquire:'Enquire Now',
+    hero_tag:'New Development · Alicante, Spain',
+    hero_title:'Your <em>Spanish Villa</em><br/>Awaits',
+    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Alicante.',
+    hero_cta1:'Request Information', hero_cta2:'Discover the Project', scroll:'Scroll',
+    stat1:'m² plot per villa', stat2:'m² built area', stat3:'bedrooms', stat4:'from Alicante Airport',
+    about_tag:'The Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
+    about_p1:'A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Alicante province. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.',
+    about_p2:'We are the exclusive sales agent for this development. Our role is to guide you through every step of the purchase process — from your first enquiry to the day you receive your keys.',
+    about_cta:'Request the Full Brochure',
+    specs_tag:"What's Included", specs_title:'Every villa,<br/><em>fully equipped</em>',
+    specs_sub:'From private pool to double garage, every detail has been considered so you can enjoy your Spanish life from day one.',
+    spec_built:'Built Area', spec_beds:'Bedrooms', spec_baths:'Bathrooms', spec_pool:'Private Pool',
+    spec_garage:'Double Garage', spec_terrace:'Covered Terrace', spec_plot:'Plot Size', spec_new:'Build Quality', spec_new_val:'New',
+    gallery_tag:'Similar Completed Homes', gallery_title:'This is how<br/><em>your villa will look</em>',
+    loc_tag:'Location', loc_title:'Cañada<br/><em>de la Leña</em>',
+    loc_body:'A hidden gem in the Vinalopó Valley — surrounded by almond trees, mountain ranges and over 300 days of sunshine per year. Close enough to the coast, far enough from the crowds.',
+    loc_p1:'Alicante Airport (El Altet)', loc_d1:'45 minutes by car',
+    loc_p2:'Alicante City & Beaches', loc_d2:'50 minutes',
+    loc_p3:'Murcia & Corvera Airport', loc_d3:'55 minutes',
+    loc_p4:'Local shops & amenities', loc_d4:'5 minutes from the development',
+    fp_tag:'Floor Plan', fp_title:'Thoughtfully<br/><em>designed spaces</em>',
+    fp_body:'Open-plan living with generous bedrooms and a seamless connection between indoor and outdoor spaces.',
+    fp_living:'Living / Dining / Kitchen', fp_bed1:'Bedroom 1', fp_bed2:'Bedroom 2', fp_bed3:'Bedroom 3',
+    fp_baths:'2 Bathrooms', fp_terrace:'Covered Terrace', fp_garage:'Double Garage', fp_pool:'Private Pool', fp_plot:'Total Plot',
+    why_tag:'Why Choose Us', why_title:'We make buying<br/><em>simple</em>',
+    why1_title:'Exclusive Agent', why1_body:'We are the exclusive sales agent for this development. You deal directly with us — no middlemen, no confusion.',
+    why2_title:'We Speak Your Language', why2_body:'We work with international buyers every day. We understand your concerns and guide you through the Spanish buying process step by step.',
+    why3_title:'End-to-End Support', why3_body:'From your first question to the day you collect your keys, we are with you. Legal guidance, NIE assistance, mortgage referrals — we\'ve got it covered.',
+    contact_tag:'Get In Touch', contact_title:'Interested?<br/><em>Let\'s talk</em>',
+    contact_sub:"Leave your details and we'll get back to you within 24 hours with full pricing, availability and everything you need to know.",
+    contact_or:'or contact us directly', form_name:'Your name', form_email:'Email address',
+    form_phone:'Phone / WhatsApp', form_country:'Country of residence', form_msg:'Any questions? (optional)', form_send:'Send Enquiry →',
+    whatsapp:'Chat on WhatsApp · +34 711 231 346',
+  },
+  es: {
+    nav_project:'El Proyecto', nav_features:'Características', nav_location:'Ubicación', nav_enquire:'Contactar',
+    hero_tag:'Nueva Promoción · Alicante, España',
+    hero_title:'Tu <em>Villa en España</em><br/>te espera',
+    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Alicante.',
+    hero_cta1:'Solicitar Información', hero_cta2:'Conocer el Proyecto', scroll:'Bajar',
+    stat1:'m² de parcela por villa', stat2:'m² construidos', stat3:'dormitorios', stat4:'del aeropuerto de Alicante',
+    about_tag:'El Proyecto', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
+    about_p1:'Una promoción privada de chalets independientes en Cañada de la Leña, una de las zonas rurales más auténticas de la provincia de Alicante. Cada vivienda se asienta sobre una parcela de 5.000 m², con total privacidad y vistas sin obstrucciones a la montaña y a los almendros.',
+    about_p2:'Somos el agente comercial exclusivo de esta promoción. Nuestro papel es acompañarte en cada paso del proceso de compra, desde el primer contacto hasta la entrega de llaves.',
+    about_cta:'Solicitar el Dossier Completo',
+    specs_tag:'Qué incluye', specs_title:'Cada villa,<br/><em>equipada al completo</em>',
+    specs_sub:'Desde la piscina privada hasta el garaje doble, cada detalle está pensado para que puedas disfrutar de tu vida española desde el primer día.',
+    spec_built:'Superficie Construida', spec_beds:'Dormitorios', spec_baths:'Baños', spec_pool:'Piscina Privada',
+    spec_garage:'Garaje Doble', spec_terrace:'Terraza Cubierta', spec_plot:'Parcela', spec_new:'Calidad', spec_new_val:'Nueva',
+    gallery_tag:'Viviendas ya entregadas', gallery_title:'Así será<br/><em>tu villa</em>',
+    loc_tag:'Ubicación', loc_title:'Cañada<br/><em>de la Leña</em>',
+    loc_body:'Un rincón privilegiado en el Valle del Vinalopó — rodeado de almendros, sierras y más de 300 días de sol al año. Cerca de la costa, lejos del ruido.',
+    loc_p1:'Aeropuerto de Alicante (El Altet)', loc_d1:'45 minutos en coche',
+    loc_p2:'Ciudad de Alicante y playas', loc_d2:'50 minutos',
+    loc_p3:'Murcia y aeropuerto de Corvera', loc_d3:'55 minutos',
+    loc_p4:'Comercios y servicios locales', loc_d4:'A 5 minutos de la promoción',
+    fp_tag:'Plano', fp_title:'Espacios<br/><em>bien distribuidos</em>',
+    fp_body:'Salón comedor abierto, dormitorios amplios y una conexión perfecta entre interior y exterior.',
+    fp_living:'Salón / Comedor / Cocina', fp_bed1:'Dormitorio 1', fp_bed2:'Dormitorio 2', fp_bed3:'Dormitorio 3',
+    fp_baths:'2 Baños', fp_terrace:'Terraza Cubierta', fp_garage:'Garaje Doble', fp_pool:'Piscina Privada', fp_plot:'Parcela Total',
+    why_tag:'Por qué elegirnos', why_title:'Compramos<br/><em>contigo</em>',
+    why1_title:'Agente Exclusivo', why1_body:'Somos el agente comercial exclusivo de esta promoción. Tratas directamente con nosotros, sin intermediarios.',
+    why2_title:'Hablamos tu idioma', why2_body:'Trabajamos cada día con compradores internacionales. Entendemos tus dudas y te guiamos paso a paso en el proceso de compra en España.',
+    why3_title:'Acompañamiento total', why3_body:'Desde tu primera pregunta hasta que recibes las llaves, estamos contigo. Asesoría legal, NIE, hipotecas — lo gestionamos todo.',
+    contact_tag:'Contacto', contact_title:'¿Interesado?<br/><em>Hablamos</em>',
+    contact_sub:'Déjanos tus datos y te contactamos en menos de 24 horas con toda la información sobre precios y disponibilidad.',
+    contact_or:'o contáctanos directamente', form_name:'Tu nombre', form_email:'Correo electrónico',
+    form_phone:'Teléfono / WhatsApp', form_country:'País de residencia', form_msg:'¿Alguna pregunta? (opcional)', form_send:'Enviar consulta →',
+    whatsapp:'WhatsApp · +34 711 231 346',
+  },
+  de: {
+    nav_project:'Das Projekt', nav_features:'Ausstattung', nav_location:'Lage', nav_enquire:'Anfragen',
+    hero_tag:'Neubau · Alicante, Spanien',
+    hero_title:'Ihre <em>spanische Villa</em><br/>wartet auf Sie',
+    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Alicante.',
+    hero_cta1:'Informationen anfordern', hero_cta2:'Projekt entdecken', scroll:'Scrollen',
+    stat1:'m² Grundstück pro Villa', stat2:'m² Wohnfläche', stat3:'Schlafzimmer', stat4:'vom Flughafen Alicante',
+    about_tag:'Das Projekt', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
+    about_p1:'Eine private Anlage freistehender Villen in Cañada de la Leña, einer der authentischsten ländlichen Regionen der Provinz Alicante. Jede Villa liegt auf einem großzügigen 5.000 m² Grundstück mit völliger Privatsphäre und unverbautem Blick auf die Berge und Mandelgärten.',
+    about_p2:'Wir sind der exklusive Vertriebspartner dieser Anlage. Unsere Aufgabe ist es, Sie durch jeden Schritt des Kaufprozesses zu begleiten — von Ihrer ersten Anfrage bis zur Schlüsselübergabe.',
+    about_cta:'Vollständige Broschüre anfordern',
+    specs_tag:'Inklusive', specs_title:'Jede Villa,<br/><em>komplett ausgestattet</em>',
+    specs_sub:'Vom privaten Pool bis zur Doppelgarage — jedes Detail wurde durchdacht, damit Sie Ihr spanisches Leben sofort genießen können.',
+    spec_built:'Wohnfläche', spec_beds:'Schlafzimmer', spec_baths:'Badezimmer', spec_pool:'Privater Pool',
+    spec_garage:'Doppelgarage', spec_terrace:'Überdachte Terrasse', spec_plot:'Grundstücksgröße', spec_new:'Qualität', spec_new_val:'Neubau',
+    gallery_tag:'Bereits fertiggestellte Häuser', gallery_title:'So wird<br/><em>Ihre Villa aussehen</em>',
+    loc_tag:'Lage', loc_title:'Cañada<br/><em>de la Leña</em>',
+    loc_body:'Ein verborgenes Juwel im Vinalopó-Tal — umgeben von Mandelbäumen, Bergketten und über 300 Sonnentagen pro Jahr. Nah genug zur Küste, weit genug vom Trubel.',
+    loc_p1:'Flughafen Alicante (El Altet)', loc_d1:'45 Minuten mit dem Auto',
+    loc_p2:'Alicante Stadt & Strände', loc_d2:'50 Minuten',
+    loc_p3:'Murcia & Flughafen Corvera', loc_d3:'55 Minuten',
+    loc_p4:'Lokale Geschäfte & Einrichtungen', loc_d4:'5 Minuten vom Projekt',
+    fp_tag:'Grundriss', fp_title:'Durchdacht<br/><em>gestaltete Räume</em>',
+    fp_body:'Offener Wohn-Essbereich mit großzügigen Schlafzimmern und nahtlosem Übergang zwischen drinnen und draußen.',
+    fp_living:'Wohnen / Essen / Küche', fp_bed1:'Schlafzimmer 1', fp_bed2:'Schlafzimmer 2', fp_bed3:'Schlafzimmer 3',
+    fp_baths:'2 Badezimmer', fp_terrace:'Überdachte Terrasse', fp_garage:'Doppelgarage', fp_pool:'Privater Pool', fp_plot:'Gesamtgrundstück',
+    why_tag:'Warum wir', why_title:'Wir machen den Kauf<br/><em>einfach</em>',
+    why1_title:'Exklusiver Vertrieb', why1_body:'Wir sind der exklusive Vertriebspartner dieser Anlage. Sie arbeiten direkt mit uns — keine Zwischenhändler, keine Verwirrung.',
+    why2_title:'Wir sprechen Ihre Sprache', why2_body:'Wir arbeiten täglich mit internationalen Käufern. Wir verstehen Ihre Bedenken und begleiten Sie Schritt für Schritt durch den spanischen Kaufprozess.',
+    why3_title:'Rundum-Betreuung', why3_body:'Von Ihrer ersten Frage bis zur Schlüsselübergabe sind wir für Sie da. Rechtliche Beratung, NIE-Hilfe, Hypothekenvermittlung — wir kümmern uns darum.',
+    contact_tag:'Kontakt', contact_title:'Interessiert?<br/><em>Sprechen wir</em>',
+    contact_sub:'Hinterlassen Sie Ihre Daten und wir melden uns innerhalb von 24 Stunden mit allen Informationen zu Preisen und Verfügbarkeit.',
+    contact_or:'oder kontaktieren Sie uns direkt', form_name:'Ihr Name', form_email:'E-Mail-Adresse',
+    form_phone:'Telefon / WhatsApp', form_country:'Wohnsitzland', form_msg:'Fragen? (optional)', form_send:'Anfrage senden →',
+    whatsapp:'WhatsApp · +34 711 231 346',
+  },
+  nl: {
+    nav_project:'Het Project', nav_features:'Kenmerken', nav_location:'Locatie', nav_enquire:'Informatie aanvragen',
+    hero_tag:'Nieuwbouw · Alicante, Spanje',
+    hero_title:'Uw <em>Spaanse Villa</em><br/>wacht op u',
+    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Alicante.',
+    hero_cta1:'Informatie aanvragen', hero_cta2:'Ontdek het project', scroll:'Scrollen',
+    stat1:'m² perceel per villa', stat2:'m² woonoppervlak', stat3:'slaapkamers', stat4:'van luchthaven Alicante',
+    about_tag:'Het Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
+    about_p1:'Een privé-ontwikkeling van vrijstaande villa\'s in Cañada de la Leña, een van de meest authentieke landelijke gebieden van de provincie Alicante. Elke villa staat op een royaal perceel van 5.000 m², met volledige privacy en onbelemmerd uitzicht op de bergen en amandelboomgaarden.',
+    about_p2:'Wij zijn de exclusieve verkoopagent voor deze ontwikkeling. Onze rol is u te begeleiden bij elke stap van het aankoopproces — van uw eerste vraag tot de sleuteloverdracht.',
+    about_cta:'Volledige brochure aanvragen',
+    specs_tag:'Wat is inbegrepen', specs_title:'Elke villa,<br/><em>volledig uitgerust</em>',
+    specs_sub:'Van privézwembad tot dubbele garage — elk detail is doordacht zodat u vanaf dag één kunt genieten van uw Spaanse leven.',
+    spec_built:'Woonoppervlak', spec_beds:'Slaapkamers', spec_baths:'Badkamers', spec_pool:'Privézwembad',
+    spec_garage:'Dubbele garage', spec_terrace:'Overdekt terras', spec_plot:'Perceelgrootte', spec_new:'Kwaliteit', spec_new_val:'Nieuwbouw',
+    gallery_tag:'Al opgeleverde woningen', gallery_title:'Zo ziet<br/><em>uw villa eruit</em>',
+    loc_tag:'Locatie', loc_title:'Cañada<br/><em>de la Leña</em>',
+    loc_body:'Een verborgen parel in de Vinalopó-vallei — omgeven door amandelbomen, bergketens en meer dan 300 zonnige dagen per jaar. Dicht genoeg bij de kust, ver genoeg van de drukte.',
+    loc_p1:'Luchthaven Alicante (El Altet)', loc_d1:'45 minuten rijden',
+    loc_p2:'Stad Alicante & stranden', loc_d2:'50 minuten',
+    loc_p3:'Murcia & luchthaven Corvera', loc_d3:'55 minuten',
+    loc_p4:'Lokale winkels & voorzieningen', loc_d4:'5 minuten van het project',
+    fp_tag:'Plattegrond', fp_title:'Doordacht<br/><em>ontworpen ruimtes</em>',
+    fp_body:'Open woon-eetkamer met ruime slaapkamers en een naadloze verbinding tussen binnen en buiten.',
+    fp_living:'Woon- / Eetkamer / Keuken', fp_bed1:'Slaapkamer 1', fp_bed2:'Slaapkamer 2', fp_bed3:'Slaapkamer 3',
+    fp_baths:'2 Badkamers', fp_terrace:'Overdekt Terras', fp_garage:'Dubbele Garage', fp_pool:'Privézwembad', fp_plot:'Totaal Perceel',
+    why_tag:'Waarom wij', why_title:'Wij maken kopen<br/><em>eenvoudig</em>',
+    why1_title:'Exclusieve agent', why1_body:'Wij zijn de exclusieve verkoopagent voor dit project. U werkt rechtstreeks met ons — geen tussenpersonen, geen verwarring.',
+    why2_title:'Wij spreken uw taal', why2_body:'We werken dagelijks met internationale kopers. We begrijpen uw zorgen en begeleiden u stap voor stap door het Spaanse aankoopproces.',
+    why3_title:'Volledige begeleiding', why3_body:'Van uw eerste vraag tot de sleuteloverdracht staan wij voor u klaar. Juridisch advies, NIE-hulp, hypotheekverwijzingen — wij regelen het.',
+    contact_tag:'Contact', contact_title:'Geïnteresseerd?<br/><em>Laten we praten</em>',
+    contact_sub:'Laat uw gegevens achter en we nemen binnen 24 uur contact met u op met alle informatie over prijzen en beschikbaarheid.',
+    contact_or:'of neem direct contact op', form_name:'Uw naam', form_email:'E-mailadres',
+    form_phone:'Telefoon / WhatsApp', form_country:'Land van verblijf', form_msg:'Vragen? (optioneel)', form_send:'Verstuur aanvraag →',
+    whatsapp:'WhatsApp · +34 711 231 346',
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
+}
+
+// ── NAV SCROLL ─────────────────────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Hero image load animation
-const heroBg = document.getElementById('heroBg');
-heroBg.style.backgroundImage = "url('https://res.cloudinary.com/diuttehdc/image/upload/v1780591244/nueva-construccion-chalet-el-canton_24739_xl_cakcx5.png')";
-setTimeout(() => heroBg.classList.add('loaded'), 100);
+// ── HERO SLIDESHOW ─────────────────────────────────────────────
+const slides = document.querySelectorAll('.hero-slide');
+const dotsContainer = document.getElementById('heroDots');
+let currentSlide = 0;
 
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.15 });
-reveals.forEach(r => observer.observe(r));
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+});
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+}
+
+setInterval(() => {
+  goToSlide((currentSlide + 1) % slides.length);
+}, 5000);
+
+// ── REVEAL ON SCROLL ───────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+
+// Init English
+setLang('en');
 </script>
 </body>
 </html>
