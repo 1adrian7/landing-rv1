@@ -30,15 +30,15 @@ html{scroll-behavior:smooth;}
 body{font-family:var(--font-sans);background:var(--cream);color:var(--earth);overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s ease;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.85rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:all 0.4s ease;overflow:visible;}
 nav.scrolled{background:rgba(253,250,244,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.75rem 2rem;box-shadow:0 2px 20px rgba(61,43,31,0.08);}
 .nav-logo{font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:white;transition:color 0.4s;letter-spacing:0.02em;}
 nav.scrolled .nav-logo{color:var(--earth);}
-.nav-links{display:flex;align-items:center;gap:1.2rem;}
+.nav-links{display:flex;align-items:center;gap:1.2rem;flex-shrink:0;}
 .nav-links a{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.88);text-decoration:none;transition:color 0.3s;cursor:pointer;font-weight:400;padding-bottom:2px;border-bottom:2px solid transparent;}
 nav.scrolled .nav-links a{color:var(--warm-gray);}
 .nav-links a:hover,.nav-links a.active-section{color:var(--terracota) !important;border-bottom-color:var(--terracota);}
-.nav-cta{background:var(--terracota) !important;color:white !important;padding:0.5rem 1rem;border-radius:var(--radius-sm);border-bottom:none !important;font-weight:700 !important;white-space:nowrap;font-size:0.72rem !important;}
+.nav-cta{background:var(--terracota) !important;color:white !important;padding:0.55rem 1.1rem;border-radius:var(--radius-sm);border-bottom:none !important;font-weight:700 !important;white-space:nowrap;font-size:0.75rem !important;flex-shrink:0;}
 .nav-cta:hover{background:var(--terracota-light) !important;transform:translateY(-1px);}
 .lang-switcher{display:flex;gap:0.4rem;align-items:center;}
 .lang-btn{background:rgba(255,255,255,0.15);border:2px solid transparent;padding:3px;cursor:pointer;transition:all 0.2s;border-radius:var(--radius-sm);display:flex;align-items:center;opacity:0.7;}
@@ -216,9 +216,9 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-tag" data-i18n="hero_tag">New Development · Alicante, Spain</div>
+    <div class="hero-tag" data-i18n="hero_tag">New Development · Murcia, Spain</div>
     <h1 class="hero-title" data-i18n="hero_title">Your <em>Spanish Villa</em><br/>Awaits</h1>
-    <p class="hero-subtitle" data-i18n="hero_sub">Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Alicante.</p>
+    <p class="hero-subtitle" data-i18n="hero_sub">Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Murcia.</p>
     <div class="hero-actions">
       <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-primary" data-i18n="hero_cta1">Request Information</a>
       <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" class="btn-outline" data-i18n="hero_cta2">Discover the Project</a>
@@ -233,7 +233,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
   <div class="stat"><div class="stat-num">5.000</div><div class="stat-label" data-i18n="stat1">m² plot per villa</div></div>
   <div class="stat"><div class="stat-num">180</div><div class="stat-label" data-i18n="stat2">m² built area</div></div>
   <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="stat3">bedrooms</div></div>
-  <div class="stat"><div class="stat-num">45'</div><div class="stat-label" data-i18n="stat4">from Alicante Airport</div></div>
+  <div class="stat"><div class="stat-num">45'</div><div class="stat-label" data-i18n="stat4">from Alicante Airport (45 min) / Murcia Airport (40 min)</div></div>
 </div>
 
 <!-- ABOUT -->
@@ -242,7 +242,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
     <div class="reveal">
       <div class="section-tag" data-i18n="about_tag">The Project</div>
       <h2 class="section-title" data-i18n="about_title">Residencial<br/><em>Cañada de la Leña</em></h2>
-      <p class="section-body" data-i18n="about_p1">A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Alicante province. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.</p>
+      <p class="section-body" data-i18n="about_p1">A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Murcia. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.</p>
       <br/><br/>
       <p class="section-body" data-i18n="about_p2">We are the exclusive sales agent for this development. Our role is to guide you through every step of the purchase process — from your first enquiry to the day you receive your keys.</p>
       <br/><br/>
@@ -403,7 +403,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
 
 <footer>
   <div class="footer-logo">RC · Residencial Cañada de la Leña</div>
-  <div>Cañada de la Leña, Alicante, Spain</div>
+  <div>Cañada de la Leña, Murcia, Spain</div>
   <div>© 2026 Rural Vista Properties</div>
 </footer>
 
@@ -412,13 +412,13 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
 const T = {
   en: {
     nav_project:'The Project', nav_features:'Features', nav_location:'Location', nav_enquire:'Enquire Now',
-    hero_tag:'New Development · Alicante, Spain',
+    hero_tag:'New Development · Murcia, Spain',
     hero_title:'Your <em>Spanish Villa</em><br/>Awaits',
-    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Alicante.',
+    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Murcia.',
     hero_cta1:'Request Information', hero_cta2:'Discover the Project', scroll:'Scroll',
-    stat1:'m² plot per villa', stat2:'m² built area', stat3:'bedrooms', stat4:'from Alicante Airport',
+    stat1:'m² plot per villa', stat2:'m² built area', stat3:'bedrooms', stat4:'from Alicante Airport (45 min) / Murcia Airport (40 min)',
     about_tag:'The Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Alicante province. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.',
+    about_p1:'A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Murcia. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.',
     about_p2:'We are the exclusive sales agent for this development. Our role is to guide you through every step of the purchase process — from your first enquiry to the day you receive your keys.',
     about_cta:'Request the Full Brochure',
     specs_tag:"What's Included", specs_title:'Every villa,<br/><em>fully equipped</em>',
@@ -448,13 +448,13 @@ const T = {
   },
   es: {
     nav_project:'El Proyecto', nav_features:'Características', nav_location:'Ubicación', nav_enquire:'Contactar',
-    hero_tag:'Nueva Promoción · Alicante, España',
+    hero_tag:'Nueva Promoción · Murcia, España',
     hero_title:'Tu <em>Villa en España</em><br/>te espera',
-    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Alicante.',
+    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Murcia.',
     hero_cta1:'Solicitar Información', hero_cta2:'Conocer el Proyecto', scroll:'Bajar',
-    stat1:'m² de parcela por villa', stat2:'m² construidos', stat3:'dormitorios', stat4:'del aeropuerto de Alicante',
+    stat1:'m² de parcela por villa', stat2:'m² construidos', stat3:'dormitorios', stat4:'aeropuertos de Alicante/Murcia',
     about_tag:'El Proyecto', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'Una promoción privada de chalets independientes en Cañada de la Leña, una de las zonas rurales más auténticas de la provincia de Alicante. Cada vivienda se asienta sobre una parcela de 5.000 m², con total privacidad y vistas sin obstrucciones a la montaña y a los almendros.',
+    about_p1:'Una promoción privada de chalets independientes en Cañada de la Leña, una de las zonas rurales más auténticas de Murcia. Cada vivienda se asienta sobre una parcela de 5.000 m², con total privacidad y vistas sin obstrucciones a la montaña y a los almendros.',
     about_p2:'Somos el agente comercial exclusivo de esta promoción. Nuestro papel es acompañarte en cada paso del proceso de compra, desde el primer contacto hasta la entrega de llaves.',
     about_cta:'Solicitar el Dossier Completo',
     specs_tag:'Qué incluye', specs_title:'Cada villa,<br/><em>equipada al completo</em>',
@@ -484,13 +484,13 @@ const T = {
   },
   de: {
     nav_project:'Das Projekt', nav_features:'Ausstattung', nav_location:'Lage', nav_enquire:'Anfragen',
-    hero_tag:'Neubau · Alicante, Spanien',
+    hero_tag:'Neubau · Murcia, Spanien',
     hero_title:'Ihre <em>spanische Villa</em><br/>wartet auf Sie',
-    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Alicante.',
+    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Murcia.',
     hero_cta1:'Informationen anfordern', hero_cta2:'Projekt entdecken', scroll:'Scrollen',
-    stat1:'m² Grundstück pro Villa', stat2:'m² Wohnfläche', stat3:'Schlafzimmer', stat4:'vom Flughafen Alicante',
+    stat1:'m² Grundstück pro Villa', stat2:'m² Wohnfläche', stat3:'Schlafzimmer', stat4:'von den Flughäfen Alicante/Murcia',
     about_tag:'Das Projekt', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'Eine private Anlage freistehender Villen in Cañada de la Leña, einer der authentischsten ländlichen Regionen der Provinz Alicante. Jede Villa liegt auf einem großzügigen 5.000 m² Grundstück mit völliger Privatsphäre und unverbautem Blick auf die Berge und Mandelgärten.',
+    about_p1:'Eine private Anlage freistehender Villen in Cañada de la Leña, einer der authentischsten ländlichen Regionen Murcias. Jede Villa liegt auf einem großzügigen 5.000 m² Grundstück mit völliger Privatsphäre und unverbautem Blick auf die Berge und Mandelgärten.',
     about_p2:'Wir sind der exklusive Vertriebspartner dieser Anlage. Unsere Aufgabe ist es, Sie durch jeden Schritt des Kaufprozesses zu begleiten — von Ihrer ersten Anfrage bis zur Schlüsselübergabe.',
     about_cta:'Vollständige Broschüre anfordern',
     specs_tag:'Inklusive', specs_title:'Jede Villa,<br/><em>komplett ausgestattet</em>',
@@ -520,13 +520,13 @@ const T = {
   },
   nl: {
     nav_project:'Het Project', nav_features:'Kenmerken', nav_location:'Locatie', nav_enquire:'Informatie aanvragen',
-    hero_tag:'Nieuwbouw · Alicante, Spanje',
+    hero_tag:'Nieuwbouw · Murcia, Spanje',
     hero_title:'Uw <em>Spaanse Villa</em><br/>wacht op u',
-    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Alicante.',
+    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Murcia.',
     hero_cta1:'Informatie aanvragen', hero_cta2:'Ontdek het project', scroll:'Scrollen',
-    stat1:'m² perceel per villa', stat2:'m² woonoppervlak', stat3:'slaapkamers', stat4:'van luchthaven Alicante',
+    stat1:'m² perceel per villa', stat2:'m² woonoppervlak', stat3:'slaapkamers', stat4:'van luchthavens Alicante/Murcia',
     about_tag:'Het Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'Een privé-ontwikkeling van vrijstaande villa\'s in Cañada de la Leña, een van de meest authentieke landelijke gebieden van de provincie Alicante. Elke villa staat op een royaal perceel van 5.000 m², met volledige privacy en onbelemmerd uitzicht op de bergen en amandelboomgaarden.',
+    about_p1:'Een privé-ontwikkeling van vrijstaande villa\'s in Cañada de la Leña, een van de meest authentieke landelijke gebieden van Murcia. Elke villa staat op een royaal perceel van 5.000 m², met volledige privacy en onbelemmerd uitzicht op de bergen en amandelboomgaarden.',
     about_p2:'Wij zijn de exclusieve verkoopagent voor deze ontwikkeling. Onze rol is u te begeleiden bij elke stap van het aankoopproces — van uw eerste vraag tot de sleuteloverdracht.',
     about_cta:'Volledige brochure aanvragen',
     specs_tag:'Wat is inbegrepen', specs_title:'Elke villa,<br/><em>volledig uitgerust</em>',
