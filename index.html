@@ -567,6 +567,10 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
 
 <script>
 
+// SCROLL TO TOP ON LOAD
+window.scrollTo(0, 0);
+if (history.scrollRestoration) history.scrollRestoration = 'manual';
+
 // LOADER
 setTimeout(() => {
   document.getElementById('loader').classList.add('hidden');
