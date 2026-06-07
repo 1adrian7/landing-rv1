@@ -381,24 +381,26 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
         <div class="fp-row"><span class="fp-label" data-i18n="fp_plot">Total Plot</span><span class="fp-value">5.000 m²</span></div>
       </div>
     </div>
-    <div class="reveal" style="display:flex;flex-direction:column;gap:2rem;">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:2rem;position:sticky;top:7rem;">
       <!-- Photo carousel -->
       <div style="position:relative;border-radius:var(--radius);overflow:hidden;">
         <div id="specCarTrack" style="display:flex;transition:transform 0.45s ease;">
-          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591260/nueva-construccion-chalet-el-canton_24756_xl_mxfnqd.png" style="min-width:100%;height:280px;object-fit:cover;display:block;" alt="Villa"/>
-          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591262/nueva-construccion-chalet-el-canton_24755_xl_wdindt.png" style="min-width:100%;height:280px;object-fit:cover;display:block;" alt="Villa"/>
-          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591263/nueva-construccion-chalet-el-canton_24748_xl_t68891.png" style="min-width:100%;height:280px;object-fit:cover;display:block;" alt="Villa"/>
-          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591265/nueva-construccion-chalet-el-canton_24745_xl_kn8jyx.png" style="min-width:100%;height:280px;object-fit:cover;display:block;" alt="Villa"/>
-          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591264/nueva-construccion-chalet-el-canton_24758_xl_dp1hnv.png" style="min-width:100%;height:280px;object-fit:cover;display:block;" alt="Villa"/>
+          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png" style="min-width:100%;height:400px;object-fit:cover;display:block;" alt="Villa"/>
+          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591260/nueva-construccion-chalet-el-canton_24756_xl_mxfnqd.png" style="min-width:100%;height:400px;object-fit:cover;display:block;" alt="Villa"/>
+          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591262/nueva-construccion-chalet-el-canton_24755_xl_wdindt.png" style="min-width:100%;height:400px;object-fit:cover;display:block;" alt="Villa"/>
+          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591263/nueva-construccion-chalet-el-canton_24748_xl_t68891.png" style="min-width:100%;height:400px;object-fit:cover;display:block;" alt="Villa"/>
+          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591265/nueva-construccion-chalet-el-canton_24745_xl_kn8jyx.png" style="min-width:100%;height:400px;object-fit:cover;display:block;" alt="Villa"/>
+          <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591264/nueva-construccion-chalet-el-canton_24758_xl_dp1hnv.png" style="min-width:100%;height:400px;object-fit:cover;display:block;" alt="Villa"/>
         </div>
-        <button onclick="specCarMove(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(253,250,244,0.92);border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#3D2B1F;box-shadow:0 2px 8px rgba(0,0,0,0.18);">‹</button>
-        <button onclick="specCarMove(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(253,250,244,0.92);border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#3D2B1F;box-shadow:0 2px 8px rgba(0,0,0,0.18);">›</button>
+        <button onclick="specCarMove(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(253,250,244,0.92);border:none;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#3D2B1F;box-shadow:0 2px 8px rgba(0,0,0,0.18);">‹</button>
+        <button onclick="specCarMove(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(253,250,244,0.92);border:none;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#3D2B1F;box-shadow:0 2px 8px rgba(0,0,0,0.18);">›</button>
         <div id="specCarDots" style="position:absolute;bottom:0.75rem;left:50%;transform:translateX(-50%);display:flex;gap:6px;">
           <span class="sc-dot active" onclick="specCarGo(0)"></span>
           <span class="sc-dot" onclick="specCarGo(1)"></span>
           <span class="sc-dot" onclick="specCarGo(2)"></span>
           <span class="sc-dot" onclick="specCarGo(3)"></span>
           <span class="sc-dot" onclick="specCarGo(4)"></span>
+          <span class="sc-dot" onclick="specCarGo(5)"></span>
         </div>
       </div>
       <!-- Floor plan — separated -->
@@ -840,7 +842,7 @@ document.querySelectorAll('.map-container').forEach(r => observer.observe(r));
 
 // ── SPEC PHOTO CAROUSEL ────────────────────────────────────────
 let specCarPos = 0;
-const specCarTotal = 5;
+const specCarTotal = 6;
 function specCarMove(dir) {
   specCarPos = (specCarPos + dir + specCarTotal) % specCarTotal;
   specCarRender();
