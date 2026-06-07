@@ -566,6 +566,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
         <div class="zona-pill" data-zona="Macisvenda (Término de Abanilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Macisvenda</div>
         <div class="zona-pill" data-zona="Cañada del Trigo (Término de Jumilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Cañada del Trigo</div>
         <div class="zona-pill" data-zona="Torre del Rico (Término de Jumilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Torre del Rico</div>
+        <div class="zona-pill" data-zona="Hondón de las Nieves (Alicante)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Hondón de las Nieves</div>
       </div>
     </div>
 
@@ -607,6 +608,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
         <option value="Macisvenda (Término de Abanilla)">Macisvenda</option>
         <option value="Cañada del Trigo (Término de Jumilla)">Cañada del Trigo</option>
         <option value="Torre del Rico (Término de Jumilla)">Torre del Rico</option>
+        <option value="Hondón de las Nieves (Alicante)">Hondón de las Nieves</option>
         <option value="No tengo preferencia">No preference / Sin preferencia</option>
       </select>
       <button class="btn-submit" onclick="submitForm()" data-i18n="form_send">Send Enquiry →</button>
@@ -936,72 +938,92 @@ const ZONAS_DATA = [
   {
     key: 'El Cantón (Término de Abanilla)',
     name: 'El Cantón',
-    sub: 'Término de Abanilla',
     lat: 38.3015, lng: -0.9825,
-    tag: 'Término de Abanilla · ~64 habitantes',
-    desc: 'El Cantón es una pequeña aldea enclavada al noreste de Abanilla, al pie de la Sierra del Cantón (927 m). Rodeada de almendros, olivos y viñedos, su entorno natural es uno de los más espectaculares del municipio. Desde aquí parten rutas de senderismo hacia la cumbre de la sierra y el valle de La Boquera. El ambiente es tranquilo y los vecinos conservan la tradición vinícola de la zona. Se pueden escuchar conversaciones en valenciano, herencia de los primeros pobladores llegados desde el Vinalopó.',
-    amenities: ['🍷 Bodegas locales', '🥾 Rutas de senderismo', '🏔️ Sierra del Cantón', '🌿 Campo abierto', '🚗 Acceso por RM-A11'],
-    photos: [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
-    ]
+    sub: { es: 'Término de Abanilla', en: 'Municipality of Abanilla', de: 'Gemeinde Abanilla', nl: 'Gemeente Abanilla' },
+    tag: { es: 'Término de Abanilla · ~64 habitantes', en: 'Municipality of Abanilla · ~64 inhabitants', de: 'Gemeinde Abanilla · ~64 Einwohner', nl: 'Gemeente Abanilla · ~64 inwoners' },
+    desc: {
+      es: 'El Cantón es una pequeña aldea enclavada al noreste de Abanilla, al pie de la Sierra del Cantón (927 m). Rodeada de almendros, olivos y viñedos, su entorno natural es uno de los más espectaculares del municipio. Desde aquí parten rutas de senderismo hacia la cumbre de la sierra y el valle de La Boquera. El ambiente es tranquilo y los vecinos conservan la tradición vinícola de la zona.',
+      en: 'El Cantón is a small hamlet in the northeast of Abanilla, nestled at the foot of the Sierra del Cantón (927 m). Surrounded by almond trees, olive groves and vineyards, its natural setting is one of the most spectacular in the municipality. Hiking routes to the summit and the valley of La Boquera start from here. The atmosphere is peaceful and the locals keep the winemaking tradition alive.',
+      de: 'El Cantón ist ein kleines Dorf im Nordosten von Abanilla, eingebettet am Fuß der Sierra del Cantón (927 m). Umgeben von Mandelbäumen, Olivenhainen und Weinbergen ist die natürliche Umgebung eine der spektakulärsten der Gemeinde. Von hier aus starten Wanderwege zum Gipfel und ins Tal von La Boquera. Die Atmosphäre ist ruhig und die Einheimischen pflegen die Weinbautradition.',
+      nl: 'El Cantón is een klein gehucht in het noordoosten van Abanilla, aan de voet van de Sierra del Cantón (927 m). Omgeven door amandelbomen, olijfgaarden en wijngaarden is de natuurlijke omgeving een van de mooiste van de gemeente. Wandelroutes naar de top en het dal van La Boquera beginnen hier. De sfeer is rustig en de locals bewaren de wijnbouwtraditie.',
+    },
+    amenities: { es: ['🍷 Bodegas locales', '🥾 Rutas de senderismo', '🏔️ Sierra del Cantón', '🌿 Entorno natural', '🚗 Acceso por RM-A11'], en: ['🍷 Local wineries', '🥾 Hiking routes', '🏔️ Sierra del Cantón', '🌿 Natural surroundings', '🚗 Access via RM-A11'], de: ['🍷 Lokale Weingüter', '🥾 Wanderwege', '🏔️ Sierra del Cantón', '🌿 Naturumgebung', '🚗 Zufahrt über RM-A11'], nl: ['🍷 Lokale wijngaarden', '🥾 Wandelroutes', '🏔️ Sierra del Cantón', '🌿 Natuurlijke omgeving', '🚗 Toegang via RM-A11'] },
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg']
   },
   {
     key: 'Cañada de la Leña (Término de Abanilla)',
     name: 'Cañada de la Leña',
-    sub: 'Término de Abanilla · Proyecto principal',
     lat: 38.3171, lng: -1.0553,
-    tag: 'Término de Abanilla · ~88 habitantes',
-    desc: 'Cañada de la Leña —conocida localmente como "Los Martínez"— es una pedanía situada entre las sierras de Barinas, Espada y Quibas, en el límite con la provincia de Alicante. A 510 metros de altitud, disfruta de un clima suave y más de 300 días de sol al año. El entorno combina cultivos de almendros, olivos y viñedos con un paisaje de sierra de gran belleza. Es el emplazamiento del Residencial Cañada de la Leña, nuestro proyecto principal de chalets de nueva construcción.',
-    amenities: ['🏠 Residencial Nueva Construcción', '⛰️ Vistas a la sierra', '🌞 +300 días de sol', '🛣️ Carretera A-9 directa', '🍷 Zona vinícola', '🌳 Almendros y olivos'],
-    photos: [
-      'https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png',
-      'https://res.cloudinary.com/diuttehdc/image/upload/v1780746976/production-kyero-property-images.s3-f52d3338-f64b-4111-b3e3-aefaac6bdab1_bryqoa.jpg',
-      'https://res.cloudinary.com/diuttehdc/image/upload/v1780757365/Captura_de_pantalla_2026-06-06_164838_on5t4p.png',
-    ]
+    sub: { es: 'Término de Abanilla · Proyecto principal', en: 'Municipality of Abanilla · Main project', de: 'Gemeinde Abanilla · Hauptprojekt', nl: 'Gemeente Abanilla · Hoofdproject' },
+    tag: { es: 'Término de Abanilla · ~88 habitantes', en: 'Municipality of Abanilla · ~88 inhabitants', de: 'Gemeinde Abanilla · ~88 Einwohner', nl: 'Gemeente Abanilla · ~88 inwoners' },
+    desc: {
+      es: 'Cañada de la Leña —conocida localmente como "Los Martínez"— es una pedanía situada entre las sierras de Barinas, Espada y Quibas, en el límite con la provincia de Alicante. A 510 metros de altitud, disfruta de un clima suave y más de 300 días de sol al año. El entorno combina cultivos de almendros, olivos y viñedos con un paisaje de sierra de gran belleza. Es el emplazamiento del Residencial Cañada de la Leña, nuestro proyecto principal de chalets de nueva construcción.',
+      en: 'Cañada de la Leña — known locally as "Los Martínez" — is a hamlet situated between the mountain ranges of Barinas, Espada and Quibas, on the border with the province of Alicante. At 510 metres altitude, it enjoys a mild climate and over 300 days of sunshine per year. The surroundings combine almond, olive and vineyard cultivation with stunning mountain scenery. This is the location of Residencial Cañada de la Leña, our main new-build villa project.',
+      de: 'Cañada de la Leña — lokal als "Los Martínez" bekannt — ist ein Weiler zwischen den Gebirgszügen Barinas, Espada und Quibas, an der Grenze zur Provinz Alicante. Auf 510 Metern Höhe genießt es ein mildes Klima und über 300 Sonnentage pro Jahr. Die Umgebung verbindet Mandel-, Oliven- und Weinbau mit beeindruckender Berglandschaft. Hier befindet sich Residencial Cañada de la Leña, unser Hauptprojekt für neue Villen.',
+      nl: 'Cañada de la Leña — lokaal bekend als "Los Martínez" — is een gehucht tussen de bergketens Barinas, Espada en Quibas, op de grens met de provincie Alicante. Op 510 meter hoogte geniet het van een mild klimaat en meer dan 300 zonnige dagen per jaar. De omgeving combineert amandel-, olijf- en wijnbouw met prachtige berglandschappen. Dit is de locatie van Residencial Cañada de la Leña, ons belangrijkste nieuwbouwproject.',
+    },
+    amenities: { es: ['🏠 Residencial Nueva Construcción', '⛰️ Vistas a la sierra', '🌞 +300 días de sol', '🛣️ Carretera A-9 directa', '🍷 Zona vinícola', '🌳 Almendros y olivos'], en: ['🏠 New-Build Development', '⛰️ Mountain views', '🌞 +300 sunny days', '🛣️ Direct A-9 road', '🍷 Wine growing area', '🌳 Almond and olive groves'], de: ['🏠 Neubausiedlung', '⛰️ Bergblick', '🌞 +300 Sonnentage', '🛣️ Direkte A-9 Straße', '🍷 Weinanbaugebiet', '🌳 Mandel- und Olivenhaine'], nl: ['🏠 Nieuwbouwproject', '⛰️ Bergzicht', '🌞 +300 zonnige dagen', '🛣️ Directe A-9 weg', '🍷 Wijnbouwgebied', '🌳 Amandel- en olijfgaarden'] },
+    photos: ['https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png','https://res.cloudinary.com/diuttehdc/image/upload/v1780746976/production-kyero-property-images.s3-f52d3338-f64b-4111-b3e3-aefaac6bdab1_bryqoa.jpg','https://res.cloudinary.com/diuttehdc/image/upload/v1780757365/Captura_de_pantalla_2026-06-06_164838_on5t4p.png']
   },
   {
     key: 'Macisvenda (Término de Abanilla)',
     name: 'Macisvenda',
-    sub: 'Término de Abanilla',
     lat: 38.2641, lng: -1.0192,
-    tag: 'Término de Abanilla · ~550 habitantes',
-    desc: 'Macisvenda es una de las pedanías más grandes de Abanilla, situada a 8 km del centro urbano y a solo 5 km de la provincia de Alicante. Conocida como la "Palestina Murciana" por su paisaje de palmeras datileras, ramblas y terreno árido que recuerda a Oriente Medio. El río Chícamo nace en sus alrededores, creando un entorno de gran valor natural. El pueblo combina partes llanas y zonas en pendiente, con casas construidas en pequeñas elevaciones. Cuenta con bar, iglesia parroquial y campo de deportes.',
-    amenities: ['🌴 Palmeras datileras', '💧 Río Chícamo', '⛪ Iglesia San Juan Bautista', '🍷 Producción vinícola', '🏃 Pabellón deportivo', '🚗 A 45 min de Alicante'],
-    photos: [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rio_Chicamo_Abanilla.jpg/800px-Rio_Chicamo_Abanilla.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
-    ]
+    sub: { es: 'Término de Abanilla', en: 'Municipality of Abanilla', de: 'Gemeinde Abanilla', nl: 'Gemeente Abanilla' },
+    tag: { es: 'Término de Abanilla · ~550 habitantes', en: 'Municipality of Abanilla · ~550 inhabitants', de: 'Gemeinde Abanilla · ~550 Einwohner', nl: 'Gemeente Abanilla · ~550 inwoners' },
+    desc: {
+      es: 'Macisvenda es una de las pedanías más grandes de Abanilla, situada a 8 km del centro urbano y a solo 5 km de la provincia de Alicante. Conocida como la "Palestina Murciana" por su paisaje de palmeras datileras, ramblas y terreno árido. El río Chícamo nace en sus alrededores, creando un entorno de gran valor natural. El pueblo combina partes llanas y zonas en pendiente, con casas en pequeñas elevaciones del terreno.',
+      en: 'Macisvenda is one of the largest hamlets in Abanilla, located 8 km from the town centre and just 5 km from the province of Alicante. Known as the "Murcian Palestine" for its landscape of date palms, ravines and arid terrain. The Chícamo river rises nearby, creating an area of great natural value. The village combines flat areas and hillside zones, with houses built on small rises.',
+      de: 'Macisvenda ist einer der größten Weiler in Abanilla, 8 km vom Stadtzentrum und nur 5 km von der Provinz Alicante entfernt. Bekannt als das "Murcianische Palästina" wegen seiner Landschaft aus Dattelpalmen, Schluchten und kargem Terrain. Der Fluss Chícamo entspringt in der Nähe und schafft ein Gebiet von großem Naturwert. Das Dorf verbindet flache Bereiche mit Hanglagen.',
+      nl: 'Macisvenda is een van de grootste gehuchten in Abanilla, op 8 km van het stadscentrum en slechts 5 km van de provincie Alicante. Bekend als het "Murciaaanse Palestina" vanwege zijn landschap van dadelpalmen, ravijnen en droog terrein. De rivier Chícamo ontspringt in de buurt en creëert een gebied van grote natuurwaarde.',
+    },
+    amenities: { es: ['🌴 Palmeras datileras', '💧 Río Chícamo', '⛪ Iglesia San Juan Bautista', '🍷 Producción vinícola', '🏃 Pabellón deportivo', '🚗 A 45 min de Alicante'], en: ['🌴 Date palms', '💧 Chícamo river', '⛪ San Juan Bautista church', '🍷 Wine production', '🏃 Sports centre', '🚗 45 min from Alicante'], de: ['🌴 Dattelpalmen', '💧 Fluss Chícamo', '⛪ Kirche San Juan Bautista', '🍷 Weinproduktion', '🏃 Sportzentrum', '🚗 45 Min. von Alicante'], nl: ['🌴 Dadelpalmen', '💧 Rivier Chícamo', '⛪ Kerk San Juan Bautista', '🍷 Wijnproductie', '🏃 Sportcentrum', '🚗 45 min van Alicante'] },
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rio_Chicamo_Abanilla.jpg/800px-Rio_Chicamo_Abanilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg']
   },
   {
     key: 'Cañada del Trigo (Término de Jumilla)',
     name: 'Cañada del Trigo',
-    sub: 'Término de Jumilla',
     lat: 38.3484, lng: -1.0905,
-    tag: 'Término de Jumilla · ~86 habitantes',
-    desc: 'Cañada del Trigo es una tranquila aldea situada en el extremo oriental del Parque Regional El Carche, a 569 metros de altitud. Pertenece al término de Jumilla y limita con la provincia de Alicante. Su entorno de pinos, viñedos y monte mediterráneo ofrece una calidad de vida excepcional. A 4,5 km de Cañada de la Leña, comparte el mismo constructor de confianza y el mismo estilo de vida rural auténtico. El paisaje del Carche, con sus rutas de senderismo y la calma absoluta, la convierte en una opción ideal para quienes buscan privacidad total.',
-    amenities: ['🌲 Parque Regional El Carche', '🍇 Viñedos de Jumilla', '🥾 Senderismo GR-7', '🏔️ 569 m de altitud', '🤫 Máxima privacidad', '🚗 A 50 min de Alicante'],
-    photos: [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
-    ]
+    sub: { es: 'Término de Jumilla', en: 'Municipality of Jumilla', de: 'Gemeinde Jumilla', nl: 'Gemeente Jumilla' },
+    tag: { es: 'Término de Jumilla · ~86 habitantes', en: 'Municipality of Jumilla · ~86 inhabitants', de: 'Gemeinde Jumilla · ~86 Einwohner', nl: 'Gemeente Jumilla · ~86 inwoners' },
+    desc: {
+      es: 'Cañada del Trigo es una tranquila aldea situada en el extremo oriental del Parque Regional El Carche, a 569 metros de altitud. Su entorno de pinos, viñedos y monte mediterráneo ofrece una calidad de vida excepcional. A 4,5 km de Cañada de la Leña, comparte el mismo constructor de confianza. El paisaje del Carche, con sus rutas de senderismo y la calma absoluta, la convierte en una opción ideal para quienes buscan privacidad total.',
+      en: 'Cañada del Trigo is a peaceful hamlet on the eastern edge of the El Carche Regional Park, at 569 metres altitude. Its surroundings of pine forests, vineyards and Mediterranean scrubland offer an exceptional quality of life. Just 4.5 km from Cañada de la Leña, it shares the same trusted builder. The El Carche landscape, with its hiking trails and absolute tranquillity, makes it ideal for those seeking complete privacy.',
+      de: 'Cañada del Trigo ist ein ruhiges Dorf am östlichen Rand des Regionalparks El Carche auf 569 Metern Höhe. Kiefernwälder, Weinberge und mediterrane Macchia bieten eine außergewöhnliche Lebensqualität. Nur 4,5 km von Cañada de la Leña entfernt, teilt es denselben vertrauenswürdigen Bauträger. Die Landschaft des El Carche mit Wanderwegen und absoluter Ruhe macht es ideal für totale Privatsphäre.',
+      nl: 'Cañada del Trigo is een rustig gehucht aan de oostelijke rand van het Regionaal Park El Carche, op 569 meter hoogte. Dennenbossen, wijngaarden en mediterrane struikgewas bieden een uitzonderlijke levenskwaliteit. Op slechts 4,5 km van Cañada de la Leña, met dezelfde betrouwbare aannemer. Het landschap van El Carche met wandelroutes en absolute rust maakt het ideaal voor wie totale privacy zoekt.',
+    },
+    amenities: { es: ['🌲 Parque Regional El Carche', '🍇 Viñedos de Jumilla', '🥾 Senderismo GR-7', '🏔️ 569 m de altitud', '🤫 Máxima privacidad', '🚗 A 50 min de Alicante'], en: ['🌲 El Carche Regional Park', '🍇 Jumilla vineyards', '🥾 GR-7 hiking trail', '🏔️ 569 m altitude', '🤫 Maximum privacy', '🚗 50 min from Alicante'], de: ['🌲 Regionalpark El Carche', '🍇 Jumilla-Weinberge', '🥾 Wanderweg GR-7', '🏔️ 569 m Höhe', '🤫 Maximale Privatsphäre', '🚗 50 Min. von Alicante'], nl: ['🌲 Regionaal Park El Carche', '🍇 Jumilla-wijngaarden', '🥾 GR-7 wandelpad', '🏔️ 569 m hoogte', '🤫 Maximale privacy', '🚗 50 min van Alicante'] },
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
   },
   {
     key: 'Torre del Rico (Término de Jumilla)',
     name: 'Torre del Rico',
-    sub: 'Término de Jumilla',
     lat: 38.3645, lng: -1.1125,
-    tag: 'Término de Jumilla · ~71 habitantes',
-    desc: 'Torre del Rico es una pequeña aldea a 591 metros de altitud, situada en el flanco oriental de la Sierra El Carche. Con apenas 71 habitantes, ofrece la soledad y la naturaleza más auténtica de la comarca. El sendero GR-7 pasa por el pueblo, conectándolo con las rutas de largo recorrido del Mediterráneo. El paisaje de pinos, monte bajo y viñedos es de extraordinaria belleza. A 7 km de Cañada de la Leña, comparte la misma calidad de construcción y el mismo promotor de confianza. Un entorno ideal para quien quiere desconectar completamente.',
-    amenities: ['🏕️ Sendero GR-7', '🌲 Sierra El Carche', '🍷 DO Jumilla', '🦅 Fauna silvestre', '591 m altitud', '🚗 A 55 min de Alicante'],
-    photos: [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
-    ]
+    sub: { es: 'Término de Jumilla', en: 'Municipality of Jumilla', de: 'Gemeinde Jumilla', nl: 'Gemeente Jumilla' },
+    tag: { es: 'Término de Jumilla · ~71 habitantes', en: 'Municipality of Jumilla · ~71 inhabitants', de: 'Gemeinde Jumilla · ~71 Einwohner', nl: 'Gemeente Jumilla · ~71 inwoners' },
+    desc: {
+      es: 'Torre del Rico es una pequeña aldea a 591 metros de altitud, en el flanco oriental de la Sierra El Carche. Con apenas 71 habitantes, ofrece la soledad y la naturaleza más auténtica de la comarca. El sendero GR-7 pasa por el pueblo, conectándolo con las rutas de largo recorrido del Mediterráneo. Un entorno ideal para quien quiere desconectar completamente.',
+      en: 'Torre del Rico is a small hamlet at 591 metres altitude on the eastern flank of the El Carche mountain range. With barely 71 inhabitants, it offers the most authentic solitude and nature in the area. The GR-7 long-distance trail passes through the village, connecting it to the Mediterranean routes. An ideal setting for those who want to disconnect completely.',
+      de: 'Torre del Rico ist ein kleines Dorf auf 591 Metern Höhe am östlichen Hang des El Carche-Gebirges. Mit kaum 71 Einwohnern bietet es die authentischste Einsamkeit und Natur der Gegend. Der Fernwanderweg GR-7 führt durch das Dorf und verbindet es mit den Mittelmeerrouten. Ideal für alle, die vollständig abschalten möchten.',
+      nl: 'Torre del Rico is een klein gehucht op 591 meter hoogte aan de oostelijke flank van het El Carche-gebergte. Met nauwelijks 71 inwoners biedt het de meest authentieke eenzaamheid en natuur van de streek. Het langeafstandspad GR-7 loopt door het dorp en verbindt het met de Mediterrane routes. Ideaal voor wie volledig wil loskoppelen.',
+    },
+    amenities: { es: ['🏕️ Sendero GR-7', '🌲 Sierra El Carche', '🍷 DO Jumilla', '🦅 Fauna silvestre', '🏔️ 591 m altitud', '🚗 A 55 min de Alicante'], en: ['🏕️ GR-7 trail', '🌲 El Carche mountains', '🍷 DO Jumilla wines', '🦅 Wildlife', '🏔️ 591 m altitude', '🚗 55 min from Alicante'], de: ['🏕️ Wanderweg GR-7', '🌲 El Carche Berge', '🍷 DO Jumilla Weine', '🦅 Wildtiere', '🏔️ 591 m Höhe', '🚗 55 Min. von Alicante'], nl: ['🏕️ GR-7 pad', '🌲 El Carche bergen', '🍷 DO Jumilla wijnen', '🦅 Wilde dieren', '🏔️ 591 m hoogte', '🚗 55 min van Alicante'] },
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
+  },
+  {
+    key: 'Hondón de las Nieves (Alicante)',
+    name: 'Hondón de las Nieves',
+    lat: 38.3084, lng: -0.8520,
+    sub: { es: 'Provincia de Alicante', en: 'Province of Alicante', de: 'Provinz Alicante', nl: 'Provincie Alicante' },
+    tag: { es: 'Alicante · ~2.800 habitantes', en: 'Alicante · ~2,800 inhabitants', de: 'Alicante · ~2.800 Einwohner', nl: 'Alicante · ~2.800 inwoners' },
+    desc: {
+      es: 'Hondón de las Nieves es un municipio del interior de Alicante situado en el Vinalopó Medio, a 493 metros de altitud. Su paisaje está dominado por viñedos, almendros y la imponente Sierra de Crevillent. El pueblo ofrece servicios completos — supermercado, farmacia, restaurantes y colegio — lo que lo convierte en una base ideal para vivir con comodidad en el entorno rural. A menos de 40 km de las playas de Alicante y a pocos minutos de las zonas de interés de la comarca.',
+      en: 'Hondón de las Nieves is an inland municipality in Alicante, located in the Vinalopó Medio area at 493 metres altitude. Its landscape is dominated by vineyards, almond trees and the impressive Sierra de Crevillent. The town offers full services — supermarket, pharmacy, restaurants and school — making it an ideal base for comfortable rural living. Less than 40 km from the beaches of Alicante and minutes from the main areas of interest in the region.',
+      de: 'Hondón de las Nieves ist eine Gemeinde im Landesinneren von Alicante, im Vinalopó Medio auf 493 Metern Höhe. Die Landschaft wird von Weinbergen, Mandelbäumen und der imposanten Sierra de Crevillent geprägt. Der Ort bietet vollständige Infrastruktur — Supermarkt, Apotheke, Restaurants und Schule — und ist damit eine ideale Basis für komfortables Landleben. Weniger als 40 km von den Stränden Alicantes entfernt.',
+      nl: 'Hondón de las Nieves is een gemeente in het binnenland van Alicante, gelegen in het Vinalopó Medio op 493 meter hoogte. Het landschap wordt gedomineerd door wijngaarden, amandelbomen en de imposante Sierra de Crevillent. Het dorp biedt volledige voorzieningen — supermarkt, apotheek, restaurants en school — waardoor het een ideale basis is voor comfortabel buitenleven. Minder dan 40 km van de stranden van Alicante.',
+    },
+    amenities: { es: ['🛒 Supermercado y servicios', '🍷 Viñedos del Vinalopó', '🏖️ A 40 km de las playas', '⛪ Casco urbano consolidado', '🏔️ Sierra de Crevillent', '🚗 A 35 min de Alicante'], en: ['🛒 Supermarket & services', '🍷 Vinalopó vineyards', '🏖️ 40 km from the beaches', '⛪ Established town centre', '🏔️ Sierra de Crevillent', '🚗 35 min from Alicante'], de: ['🛒 Supermarkt & Dienstleistungen', '🍷 Vinalopó-Weinberge', '🏖️ 40 km von den Stränden', '⛪ Gewachsenes Ortszentrum', '🏔️ Sierra de Crevillent', '🚗 35 Min. von Alicante'], nl: ['🛒 Supermarkt & diensten', '🍷 Vinalopó-wijngaarden', '🏖️ 40 km van de stranden', '⛪ Gevestigd stadscentrum', '🏔️ Sierra de Crevillent', '🚗 35 min van Alicante'] },
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg']
   },
 ];
 
@@ -1022,8 +1044,8 @@ function makeIcon(active) {
 function initZonaMap() {
   if (zonaMap) return;
   zonaMap = L.map('zonas-leaflet-map', {
-    center: [38.322, -1.055],
-    zoom: 11,
+    center: [38.315, -0.980],
+    zoom: 10,
     zoomControl: true,
     scrollWheelZoom: false,
   });
@@ -1067,24 +1089,27 @@ function openZonaPanel(key) {
   if (!z) return;
   setActiveZona(key);
 
+  const lang = document.documentElement.lang || 'en';
+  const l = ['en','es','de','nl'].includes(lang) ? lang : 'en';
+
   const photoHtml = z.photos.map((url, i) =>
     `<img src="${url}" alt="${z.name}" class="${i===0?'photo-wide':''}" onerror="this.style.display='none'">`
   ).join('');
 
-  const amenHtml = z.amenities.map(a => `<span class="zona-amenity">${a}</span>`).join('');
+  const amenities = z.amenities[l] || z.amenities.en;
+  const amenHtml = amenities.map(a => `<span class="zona-amenity">${a}</span>`).join('');
 
-  const lang = document.documentElement.lang || 'en';
-  const ctaLabel = lang==='es' ? `Quiero más info sobre ${z.name} →` :
-                   lang==='de' ? `Mehr über ${z.name} erfahren →` :
-                   lang==='nl' ? `Meer info over ${z.name} →` :
+  const ctaLabel = l==='es' ? `Quiero más info sobre ${z.name} →` :
+                   l==='de' ? `Mehr über ${z.name} erfahren →` :
+                   l==='nl' ? `Meer info over ${z.name} →` :
                    `Ask about ${z.name} →`;
 
   document.getElementById('zona-panel-body').innerHTML = `
-    <div class="zona-panel-tag">${z.tag}</div>
+    <div class="zona-panel-tag">${z.tag[l] || z.tag.en}</div>
     <h2 class="zona-panel-title">${z.name}</h2>
-    <p class="zona-panel-sub">${z.sub}</p>
+    <p class="zona-panel-sub">${z.sub[l] || z.sub.en}</p>
     <div class="zona-panel-photos">${photoHtml}</div>
-    <p class="zona-panel-desc">${z.desc}</p>
+    <p class="zona-panel-desc">${z.desc[l] || z.desc.en}</p>
     <div class="zona-panel-amenities">${amenHtml}</div>
     <button class="zona-panel-cta" onclick="selectFromPanel('${key}')">${ctaLabel}</button>
   `;
