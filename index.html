@@ -347,33 +347,66 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
   </div>
 </section>
 
-<!-- SPECS -->
-<section class="specs" id="specs">
-  <div class="specs-inner">
-    <div class="specs-header">
-      <div class="reveal">
-        <div class="section-tag" data-i18n="specs_tag">What's Included</div>
-        <h2 class="section-title" data-i18n="specs_title">Every villa,<br/><em>fully equipped</em></h2>
-      </div>
-      <div class="reveal">
-        <p class="section-body" data-i18n="specs_sub">From private pool to double garage, every detail has been considered so you can enjoy your Spanish life from day one.</p>
-      </div>
+<!-- GALLERY CAROUSEL -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header reveal">
+    <div class="section-tag" style="color:var(--sun)" data-i18n="gallery_tag">Our Completed Villas</div>
+    <h2 class="section-title" data-i18n="gallery_title">A selection of our<br/><em>finished homes</em></h2>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780746976/production-kyero-property-images.s3-f52d3338-f64b-4111-b3e3-aefaac6bdab1_bryqoa.jpg" alt="Aerial view"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591269/nueva-construccion-chalet-el-canton_24760_xl_xsqzua.png" alt="Pool and mountain"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591269/nueva-construccion-chalet-el-canton_24759_xl_cyszmh.png" alt="Pool"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591270/nueva-construccion-chalet-el-canton_24741_xl_s6dodr.png" alt="Exterior"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591268/nueva-construccion-chalet-el-canton_24742_xl_z0lkbt.png" alt="Living room"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591265/nueva-construccion-chalet-el-canton_24745_xl_kn8jyx.png" alt="Bedroom"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591267/nueva-construccion-chalet-el-canton_24744_xl_m35fic.png" alt="Bathroom"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591266/nueva-construccion-chalet-el-canton_24757_xl_qnzyjm.png" alt="Exterior side"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591264/nueva-construccion-chalet-el-canton_24758_xl_dp1hnv.png" alt="Terrace"/></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780591263/nueva-construccion-chalet-el-canton_24750_xl_miid6t.png" alt="Room"/></div>
     </div>
-    <div class="specs-grid reveal">
-      <div class="spec-item"><div class="spec-icon">🏠</div><div class="spec-value">180 m²</div><div class="spec-label" data-i18n="spec_built">Built Area</div></div>
-      <div class="spec-item"><div class="spec-icon">🛏</div><div class="spec-value">3</div><div class="spec-label" data-i18n="spec_beds">Bedrooms</div></div>
-      <div class="spec-item"><div class="spec-icon">🚿</div><div class="spec-value">2</div><div class="spec-label" data-i18n="spec_baths">Bathrooms</div></div>
-      <div class="spec-item"><div class="spec-icon">🏊</div><div class="spec-value">32 m²</div><div class="spec-label" data-i18n="spec_pool">Private Pool</div></div>
-      <div class="spec-item"><div class="spec-icon">🚗</div><div class="spec-value">44 m²</div><div class="spec-label" data-i18n="spec_garage">Double Garage</div></div>
-      <div class="spec-item"><div class="spec-icon">☀️</div><div class="spec-value">17 m²</div><div class="spec-label" data-i18n="spec_terrace">Covered Terrace</div></div>
-      <div class="spec-item"><div class="spec-icon">🌿</div><div class="spec-value">5.000 m²</div><div class="spec-label" data-i18n="spec_plot">Plot Size</div></div>
-      <div class="spec-item"><div class="spec-icon">✨</div><div class="spec-value" data-i18n="spec_new_val">New</div><div class="spec-label" data-i18n="spec_new">Build Quality</div></div>
-    </div>
+    <button class="carousel-btn carousel-prev" id="carPrev">‹</button>
+    <button class="carousel-btn carousel-next" id="carNext">›</button>
   </div>
 </section>
 
-<!-- GALLERY CAROUSEL -->
-<section class="gallery" id="gallery">
+<!-- SPECS + FLOORPLAN UNIFIED -->
+<section class="floorplan" id="specs">
+  <div class="floorplan-inner" style="align-items:start;">
+    <div class="reveal">
+      <div class="section-tag" data-i18n="specs_tag">What's Included</div>
+      <h2 class="section-title" data-i18n="specs_title">Every villa,<br/><em>fully equipped</em></h2>
+      <p class="section-body" style="margin-bottom:2rem;" data-i18n="specs_sub">Each villa comes with everything included: private pool, double garage, covered terrace and a generous plot — all finished to a high standard and ready to move in.</p>
+      <div class="specs-grid reveal" style="grid-template-columns:repeat(2,1fr);margin-bottom:2.5rem;">
+        <div class="spec-item"><div class="spec-icon">🏠</div><div class="spec-value">180 m²</div><div class="spec-label" data-i18n="spec_built">Built Area</div></div>
+        <div class="spec-item"><div class="spec-icon">🛏</div><div class="spec-value">3</div><div class="spec-label" data-i18n="spec_beds">Bedrooms</div></div>
+        <div class="spec-item"><div class="spec-icon">🚿</div><div class="spec-value">2</div><div class="spec-label" data-i18n="spec_baths">Bathrooms</div></div>
+        <div class="spec-item"><div class="spec-icon">🏊</div><div class="spec-value">32 m²</div><div class="spec-label" data-i18n="spec_pool">Private Pool</div></div>
+        <div class="spec-item"><div class="spec-icon">🚗</div><div class="spec-value">44 m²</div><div class="spec-label" data-i18n="spec_garage">Double Garage</div></div>
+        <div class="spec-item"><div class="spec-icon">☀️</div><div class="spec-value">17 m²</div><div class="spec-label" data-i18n="spec_terrace">Covered Terrace</div></div>
+        <div class="spec-item"><div class="spec-icon">🌿</div><div class="spec-value">5.000 m²</div><div class="spec-label" data-i18n="spec_plot">Plot Size</div></div>
+        <div class="spec-item"><div class="spec-icon">✨</div><div class="spec-value" data-i18n="spec_new_val">New</div><div class="spec-label" data-i18n="spec_new">Build Quality</div></div>
+      </div>
+      <div class="section-tag" style="margin-bottom:0.75rem;" data-i18n="fp_tag">Floor Plan</div>
+      <p class="section-body" style="margin-bottom:1.5rem;" data-i18n="fp_body">Open-plan living with generous bedrooms and a seamless connection between indoor and outdoor spaces.</p>
+      <div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_living">Living / Dining / Kitchen</span><span class="fp-value">42 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed1">Bedroom 1</span><span class="fp-value">21 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed2">Bedroom 2</span><span class="fp-value">15 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed3">Bedroom 3</span><span class="fp-value">12 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_baths">2 Bathrooms</span><span class="fp-value">7.9 m² each</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_terrace">Covered Terrace</span><span class="fp-value">17 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_garage">Double Garage</span><span class="fp-value">44 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_pool">Private Pool</span><span class="fp-value">32 m²</span></div>
+        <div class="fp-row"><span class="fp-label" data-i18n="fp_plot">Total Plot</span><span class="fp-value">5.000 m²</span></div>
+      </div>
+    </div>
+    <div class="reveal" style="position:sticky;top:7rem;">
+      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780795049/Captura_de_pantalla_2026-06-07_031639_fgsnvu.png" alt="Floor plan"/>
+    </div>
+  </div>
+</section>
   <div class="gallery-header reveal">
     <div class="section-tag" style="color:var(--sun)" data-i18n="gallery_tag">Our Completed Villas</div>
     <h2 class="section-title" data-i18n="gallery_title">A selection of our<br/><em>finished homes</em></h2>
@@ -412,31 +445,6 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
     </div>
     <div class="reveal">
       <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780756475/4668ebf1ca78049636058fe84431acc9-ba96740f-e195-4a24-b847-8b7a16a2d657_icg4we.jpg" alt="Location map"/>
-    </div>
-  </div>
-</section>
-
-<!-- FLOORPLAN -->
-<section class="floorplan" id="floorplan">
-  <div class="floorplan-inner">
-    <div class="reveal">
-      <div class="section-tag" data-i18n="fp_tag">Floor Plan</div>
-      <h2 class="section-title" data-i18n="fp_title">Thoughtfully<br/><em>designed spaces</em></h2>
-      <p class="section-body" style="margin-bottom:2rem;" data-i18n="fp_body">Open-plan living with generous bedrooms and a seamless connection between indoor and outdoor spaces.</p>
-      <div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_living">Living / Dining / Kitchen</span><span class="fp-value">42 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed1">Bedroom 1</span><span class="fp-value">21 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed2">Bedroom 2</span><span class="fp-value">15 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_bed3">Bedroom 3</span><span class="fp-value">12 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_baths">2 Bathrooms</span><span class="fp-value">7.9 m² each</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_terrace">Covered Terrace</span><span class="fp-value">17 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_garage">Double Garage</span><span class="fp-value">44 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_pool">Private Pool</span><span class="fp-value">32 m²</span></div>
-        <div class="fp-row"><span class="fp-label" data-i18n="fp_plot">Total Plot</span><span class="fp-value">5.000 m²</span></div>
-      </div>
-    </div>
-    <div class="reveal">
-      <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780795049/Captura_de_pantalla_2026-06-07_031639_fgsnvu.png" alt="Floor plan"/>
     </div>
   </div>
 </section>
