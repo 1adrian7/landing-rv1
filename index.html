@@ -819,11 +819,11 @@ document.querySelectorAll('.map-container').forEach(r => observer.observe(r));
 
 // ── ZONA MAP (Leaflet) ─────────────────────────────────────────
 const ZONAS_DATA = [
-  { key: 'El Cantón (Término de Abanilla)',        name: 'El Cantón',         sub: 'Término de Abanilla', lat: 38.248, lng: -1.033 },
-  { key: 'Cañada de la Leña (Término de Abanilla)',name: 'Cañada de la Leña', sub: 'Término de Abanilla · Proyecto principal', lat: 38.222, lng: -1.055 },
-  { key: 'Macisvenda (Término de Abanilla)',        name: 'Macisvenda',        sub: 'Término de Abanilla', lat: 38.198, lng: -1.025 },
-  { key: 'Cañada del Trigo (Término de Jumilla)',   name: 'Cañada del Trigo',  sub: 'Término de Jumilla',  lat: 38.280, lng: -1.005 },
-  { key: 'Torre del Rico (Término de Jumilla)',     name: 'Torre del Rico',    sub: 'Término de Jumilla',  lat: 38.255, lng: -0.995 },
+  { key: 'El Cantón (Término de Abanilla)',        name: 'El Cantón',         sub: 'Término de Abanilla', lat: 38.3015, lng: -0.9825 },
+  { key: 'Cañada de la Leña (Término de Abanilla)',name: 'Cañada de la Leña', sub: 'Término de Abanilla · Proyecto principal', lat: 38.3171, lng: -1.0553 },
+  { key: 'Macisvenda (Término de Abanilla)',        name: 'Macisvenda',        sub: 'Término de Abanilla', lat: 38.2641, lng: -1.0192 },
+  { key: 'Cañada del Trigo (Término de Jumilla)',   name: 'Cañada del Trigo',  sub: 'Término de Jumilla',  lat: 38.3484, lng: -1.0905 },
+  { key: 'Torre del Rico (Término de Jumilla)',     name: 'Torre del Rico',    sub: 'Término de Jumilla',  lat: 38.3645, lng: -1.1125 },
 ];
 
 let zonaMap = null;
@@ -853,8 +853,8 @@ function makeIcon(active) {
 function initZonaMap() {
   if (zonaMap) return;
   zonaMap = L.map('zonas-leaflet-map', {
-    center: [38.235, -1.03],
-    zoom: 12,
+    center: [38.322, -1.055],
+    zoom: 11,
     zoomControl: true,
     scrollWheelZoom: false,
   });
