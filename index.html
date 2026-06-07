@@ -131,12 +131,17 @@ section{padding:7rem 3rem;}
 .map-pin.visible{opacity:1;transform:translateY(0);}
 .map-pin.visible:nth-child(2){transition-delay:0.6s;}
 .map-pin.visible:nth-child(3){transition-delay:1.4s;}
-.map-pin-dot{width:12px;height:12px;background:var(--terracota);border-radius:50%;border:2px solid white;box-shadow:0 0 0 3px rgba(193,98,47,0.3);animation:pulse 2s ease infinite;}
-.map-pin-line{width:2px;height:30px;background:var(--terracota);opacity:0.8;}
-.map-pin-label{background:var(--earth);color:white;font-size:0.72rem;font-weight:700;padding:0.35rem 0.7rem;border-radius:var(--radius-sm);white-space:nowrap;text-align:center;letter-spacing:0.03em;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.map-pin-label{background:var(--earth);color:white;font-size:0.72rem;font-weight:700;padding:0.35rem 0.7rem;border-radius:var(--radius-sm);white-space:nowrap;text-align:center;letter-spacing:0.03em;box-shadow:0 2px 8px rgba(0,0,0,0.25);margin-bottom:4px;}
 .map-pin-right .map-pin-label{background:var(--terracota);}
+.map-pin-line{width:2px;height:20px;background:var(--terracota);opacity:0.8;}
+.map-pin-dot{width:12px;height:12px;background:var(--terracota);border-radius:50%;border:2px solid white;box-shadow:0 0 0 3px rgba(193,98,47,0.3);animation:pulse 2s ease infinite;}
 @keyframes pinAppear{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(193,98,47,0.3);}50%{box-shadow:0 0 0 6px rgba(193,98,47,0.1);}}
+@media(max-width:768px){
+  .map-pin-label{font-size:0.58rem;padding:0.25rem 0.5rem;}
+  .map-pin-line{height:14px;}
+  .map-pin-dot{width:9px;height:9px;}
+}
 
 /* LOCATION */
 .location{background:var(--white);}
@@ -394,18 +399,26 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
       <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-primary" style="display:inline-block;" data-i18n="about_cta">Request the Full Brochure</a>
     </div>
     <div class="about-img reveal">
-      <div class="map-container" style="overflow:hidden;border-radius:var(--radius);">
-        <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780789418/Captura_de_pantalla_2026-06-07_012727-cd66d9bc-c773-4347-a71b-2afcb9ada4e7_dzyrls.jpg" alt="Zone map" style="width:100%;border-radius:var(--radius);display:block;"/>
-        <div class="map-pin" style="left:22%;top:38%;">
-          <div class="map-pin-dot"></div>
-          <div class="map-pin-line"></div>
-          <div class="map-pin-label">Cañada de la Leña</div>
-        </div>
-        <div class="map-pin map-pin-right" style="left:54%;top:30%;">
-          <div class="map-pin-dot"></div>
-          <div class="map-pin-line"></div>
-          <div class="map-pin-label">Residencial<br/>Cañada de la Leña</div>
-        </div>
+      <div style="position:relative;width:100%;border-radius:var(--radius);overflow:hidden;">
+        <img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780789418/Captura_de_pantalla_2026-06-07_012727-cd66d9bc-c773-4347-a71b-2afcb9ada4e7_dzyrls.jpg" alt="Zone map" style="width:100%;display:block;"/>
+        <!-- SVG overlay: scales 1:1 with the image -->
+        <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"
+          font-family="Lato, sans-serif">
+
+          <!-- Pin: Cañada de la Leña (village, left side) -->
+          <line x1="220" y1="310" x2="220" y2="340" stroke="#C1622F" stroke-width="2.5"/>
+          <circle cx="220" cy="345" r="7" fill="#C1622F" stroke="white" stroke-width="2"/>
+          <rect x="130" y="278" width="180" height="28" rx="5" fill="#3D2B1F"/>
+          <text x="220" y="297" text-anchor="middle" font-size="14" font-weight="700" fill="white">Cañada de la Leña</text>
+
+          <!-- Pin: Residencial (yellow area, right) -->
+          <line x1="590" y1="230" x2="590" y2="260" stroke="#C1622F" stroke-width="2.5"/>
+          <circle cx="590" cy="265" r="7" fill="#C1622F" stroke="white" stroke-width="2"/>
+          <rect x="490" y="195" width="200" height="32" rx="5" fill="#C1622F"/>
+          <text x="590" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="white">Residencial</text>
+          <text x="590" y="224" text-anchor="middle" font-size="13" font-weight="700" fill="white">Cañada de la Leña</text>
+        </svg>
       </div>
     </div>
   </div>
