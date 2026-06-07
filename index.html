@@ -1057,14 +1057,18 @@ function initZonaMap() {
 
   ZONAS_DATA.forEach(z => {
     const isActive = z.key === activeZonaKey;
+    const getLang = () => {
+      const l = document.documentElement.lang || 'en';
+      return ['en','es','de','nl'].includes(l) ? l : 'en';
+    };
+    const getVerMas = (l) => l==='es' ? 'Ver más →' : l==='de' ? 'Mehr sehen →' : l==='nl' ? 'Meer zien →' : 'See more →';
     const marker = L.marker([z.lat, z.lng], { icon: makeIcon(isActive) })
-      .addTo(zonaMap)
-      .bindPopup(`<strong style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#3D2B1F;">${z.name}</strong><br/><span style="font-size:0.75rem;color:#9C8878;">${z.sub}</span><br/><span style="font-size:0.72rem;color:#C1622F;font-weight:700;cursor:pointer;" onclick="openZonaPanel('${z.key}')">Ver más →</span>`, {
-        className: 'zona-popup',
-        maxWidth: 200,
-      });
+      .addTo(zonaMap);
 
-    marker.on('mouseover', function() { this.openPopup(); });
+    marker.on('mouseover', function() {
+      const l = getLang();
+      this.bindPopup(`<strong style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#3D2B1F;">${z.name}</strong><br/><span style="font-size:0.75rem;color:#9C8878;">${z.sub[l]||z.sub.en}</span><br/><span style="font-size:0.72rem;color:#C1622F;font-weight:700;cursor:pointer;" onclick="openZonaPanel('${z.key}')">${getVerMas(l)}</span>`, { className:'zona-popup', maxWidth:200 }).openPopup();
+    });
     marker.on('click', function() {
       setActiveZona(z.key);
       openZonaPanel(z.key);
