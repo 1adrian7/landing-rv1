@@ -189,6 +189,28 @@ section{padding:7rem 3rem;}
 .contact-whatsapp{display:flex;align-items:center;justify-content:center;gap:0.75rem;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.25);color:#4ade80;padding:1rem;font-size:0.88rem;text-decoration:none;transition:all 0.3s;border-radius:var(--radius-sm);}
 .contact-whatsapp:hover{background:rgba(37,211,102,0.18);}
 
+/* ZONAS */
+.zonas{background:var(--white);}
+.zonas-inner{max-width:1200px;margin:0 auto;}
+.zonas-header{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;margin-bottom:4rem;}
+.zonas-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:4rem;}
+.zona-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;}
+.zona-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;display:block;}
+.zona-photo:hover img{transform:scale(1.04);}
+.zonas-map-wrap{background:var(--sand);border-radius:var(--radius);padding:2.5rem;}
+.zonas-map-title{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--terracota);font-weight:700;margin-bottom:1.5rem;text-align:center;}
+.zonas-map-svg-wrap{position:relative;width:100%;max-width:720px;margin:0 auto;}
+.zonas-map-svg-wrap svg{width:100%;height:auto;display:block;}
+.zona-region{cursor:pointer;transition:opacity 0.2s;}
+.zona-region:hover .zona-shape,.zona-region.active .zona-shape{opacity:1 !important;}
+.zonas-map-legend{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;justify-content:center;}
+.zona-pill{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;border-radius:20px;border:1.5px solid var(--border);font-size:0.75rem;font-weight:700;color:var(--earth-mid);cursor:pointer;transition:all 0.2s;background:white;letter-spacing:0.03em;}
+.zona-pill:hover,.zona-pill.active{background:var(--terracota);border-color:var(--terracota);color:white;}
+.zona-pill-dot{width:7px;height:7px;border-radius:50%;background:var(--terracota);flex-shrink:0;}
+.zona-pill.active .zona-pill-dot,.zona-pill:hover .zona-pill-dot{background:white;}
+.zonas-cta{text-align:center;margin-top:3rem;}
+.zonas-cta p{font-size:0.9rem;color:var(--warm-gray);margin-bottom:1.5rem;line-height:1.7;font-weight:300;}
+
 /* FOOTER */
 footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.75rem;letter-spacing:0.05em;}
 .footer-logo{font-family:var(--font-serif);font-size:1.1rem;color:rgba(242,234,211,0.75);font-weight:600;}
@@ -212,6 +234,8 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
   .carousel-slide{flex:0 0 calc(100% - 0px);}
   .carousel-slide img{height:220px;}
   .carousel-wrap{padding:0 1rem;}
+  .zonas-header{grid-template-columns:1fr;gap:2rem;}
+  .zonas-gallery{grid-template-columns:repeat(2,1fr);}
   .contact-form-row{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
 }
@@ -423,6 +447,109 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
   </div>
 </section>
 
+<!-- ZONAS -->
+<section class="zonas" id="zonas">
+  <div class="zonas-inner">
+    <div class="zonas-header reveal">
+      <div>
+        <div class="section-tag" data-i18n="zonas_tag">Also in the Area</div>
+        <h2 class="section-title" data-i18n="zonas_title">More homes<br/><em>in the region</em></h2>
+      </div>
+      <div>
+        <p class="section-body" data-i18n="zonas_body">We work with a trusted local builder who develops similar villas across several rural areas in the Abanilla and Jumilla municipalities. Some are already finished and available; others can be built to order on available plots. Tell us which area interests you and we will show you what is available.</p>
+      </div>
+    </div>
+
+    <div class="zonas-gallery reveal">
+      <div class="zona-photo"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png" alt="Villa terminada"/></div>
+      <div class="zona-photo"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780746976/production-kyero-property-images.s3-f52d3338-f64b-4111-b3e3-aefaac6bdab1_bryqoa.jpg" alt="Villa terminada"/></div>
+      <div class="zona-photo"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780757365/Captura_de_pantalla_2026-06-06_164838_on5t4p.png" alt="Villa terminada"/></div>
+      <div class="zona-photo"><img src="https://res.cloudinary.com/diuttehdc/image/upload/v1780853217/86698525_2_1765036499_vyt0dc.png" alt="Villa terminada"/></div>
+    </div>
+
+    <div class="zonas-map-wrap reveal">
+      <div class="zonas-map-title" data-i18n="zonas_map_title">Select an area to find out more</div>
+      <div class="zonas-map-svg-wrap">
+        <!-- Schematic map of the 5 zones: proportional bubbles with connecting lines -->
+        <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" font-family="Lato, sans-serif">
+          <defs>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(61,43,31,0.18)"/>
+            </filter>
+          </defs>
+          <!-- Background subtle terrain feel -->
+          <rect width="720" height="380" fill="#F2EAD3" rx="12"/>
+          <!-- Thin connector lines between zones -->
+          <line x1="200" y1="130" x2="310" y2="185" stroke="#C1622F" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.35"/>
+          <line x1="310" y1="185" x2="200" y2="240" stroke="#C1622F" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.35"/>
+          <line x1="310" y1="185" x2="480" y2="145" stroke="#C1622F" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.35"/>
+          <line x1="480" y1="145" x2="570" y2="240" stroke="#C1622F" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.35"/>
+
+          <!-- Zone: El Cantón -->
+          <g class="zona-clickable" data-zona="El Cantón (Término de Abanilla)" onclick="selectZona(this)" style="cursor:pointer;">
+            <circle cx="200" cy="130" r="52" fill="#E8DFC4" stroke="white" stroke-width="3" filter="url(#shadow)" class="zona-circle" style="transition:fill 0.2s;"/>
+            <circle cx="200" cy="130" r="10" fill="#C1622F" opacity="0.8"/>
+            <text x="200" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#3D2B1F">El Cantón</text>
+            <text x="200" y="211" text-anchor="middle" font-size="9" fill="#9C8878">Abanilla</text>
+          </g>
+
+          <!-- Zone: Cañada de la Leña (highlighted - current project) -->
+          <g class="zona-clickable" data-zona="Cañada de la Leña (Término de Abanilla)" onclick="selectZona(this)" style="cursor:pointer;">
+            <circle cx="310" cy="185" r="62" fill="#C1622F" stroke="white" stroke-width="3" filter="url(#shadow)" class="zona-circle" style="transition:fill 0.2s;"/>
+            <circle cx="310" cy="185" r="12" fill="white" opacity="0.9"/>
+            <text x="310" y="259" text-anchor="middle" font-size="11" font-weight="700" fill="#3D2B1F">Cañada de la Leña</text>
+            <text x="310" y="272" text-anchor="middle" font-size="9" fill="#9C8878">Abanilla · Proyecto principal</text>
+          </g>
+
+          <!-- Zone: Macisvenda -->
+          <g class="zona-clickable" data-zona="Macisvenda (Término de Abanilla)" onclick="selectZona(this)" style="cursor:pointer;">
+            <circle cx="200" cy="240" r="48" fill="#E8DFC4" stroke="white" stroke-width="3" filter="url(#shadow)" class="zona-circle" style="transition:fill 0.2s;"/>
+            <circle cx="200" cy="240" r="9" fill="#C1622F" opacity="0.8"/>
+            <text x="200" y="303" text-anchor="middle" font-size="11" font-weight="700" fill="#3D2B1F">Macisvenda</text>
+            <text x="200" y="316" text-anchor="middle" font-size="9" fill="#9C8878">Abanilla</text>
+          </g>
+
+          <!-- Zone: Cañada del Trigo -->
+          <g class="zona-clickable" data-zona="Cañada del Trigo (Término de Jumilla)" onclick="selectZona(this)" style="cursor:pointer;">
+            <circle cx="480" cy="145" r="50" fill="#E8DFC4" stroke="white" stroke-width="3" filter="url(#shadow)" class="zona-circle" style="transition:fill 0.2s;"/>
+            <circle cx="480" cy="145" r="9" fill="#C1622F" opacity="0.8"/>
+            <text x="480" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#3D2B1F">Cañada del Trigo</text>
+            <text x="480" y="223" text-anchor="middle" font-size="9" fill="#9C8878">Jumilla</text>
+          </g>
+
+          <!-- Zone: Torre del Rico -->
+          <g class="zona-clickable" data-zona="Torre del Rico (Término de Jumilla)" onclick="selectZona(this)" style="cursor:pointer;">
+            <circle cx="570" cy="240" r="50" fill="#E8DFC4" stroke="white" stroke-width="3" filter="url(#shadow)" class="zona-circle" style="transition:fill 0.2s;"/>
+            <circle cx="570" cy="240" r="9" fill="#C1622F" opacity="0.8"/>
+            <text x="570" y="305" text-anchor="middle" font-size="11" font-weight="700" fill="#3D2B1F">Torre del Rico</text>
+            <text x="570" y="318" text-anchor="middle" font-size="9" fill="#9C8878">Jumilla</text>
+          </g>
+
+          <!-- Compass -->
+          <g transform="translate(670,40)">
+            <circle cx="0" cy="0" r="18" fill="white" opacity="0.7"/>
+            <text x="0" y="-6" text-anchor="middle" font-size="9" font-weight="700" fill="#C1622F">N</text>
+            <line x1="0" y1="-14" x2="0" y2="14" stroke="#C1622F" stroke-width="1.5"/>
+            <line x1="-14" y1="0" x2="14" y2="0" stroke="#9C8878" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+      <div class="zonas-map-legend">
+        <div class="zona-pill" data-zona="El Cantón (Término de Abanilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>El Cantón</div>
+        <div class="zona-pill active" data-zona="Cañada de la Leña (Término de Abanilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Cañada de la Leña</div>
+        <div class="zona-pill" data-zona="Macisvenda (Término de Abanilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Macisvenda</div>
+        <div class="zona-pill" data-zona="Cañada del Trigo (Término de Jumilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Cañada del Trigo</div>
+        <div class="zona-pill" data-zona="Torre del Rico (Término de Jumilla)" onclick="selectZonaPill(this)"><span class="zona-pill-dot"></span>Torre del Rico</div>
+      </div>
+    </div>
+
+    <div class="zonas-cta reveal">
+      <p data-i18n="zonas_cta_text">Click on a zone above to pre-select it, then send us your details and we will get back to you with what is available in that area.</p>
+      <a href="#contact" class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="zonas_cta_btn">Ask About This Area →</a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner reveal">
@@ -447,6 +574,15 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
         </select>
       </div>
       <textarea data-i18n-placeholder="form_msg" placeholder="Any questions? (optional)"></textarea>
+      <select id="form-zona" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:white;padding:0.9rem 1.1rem;font-family:var(--font-sans);font-size:0.9rem;outline:none;width:100%;border-radius:var(--radius-sm);transition:border 0.3s;">
+        <option value="" data-i18n="form_zona_placeholder">Area of interest (optional)</option>
+        <option value="Cañada de la Leña (Término de Abanilla)">Cañada de la Leña</option>
+        <option value="El Cantón (Término de Abanilla)">El Cantón</option>
+        <option value="Macisvenda (Término de Abanilla)">Macisvenda</option>
+        <option value="Cañada del Trigo (Término de Jumilla)">Cañada del Trigo</option>
+        <option value="Torre del Rico (Término de Jumilla)">Torre del Rico</option>
+        <option value="No tengo preferencia">No preference / Sin preferencia</option>
+      </select>
       <button class="btn-submit" onclick="alert(document.documentElement.lang==='es'?'¡Gracias! Te contactaremos pronto.':document.documentElement.lang==='de'?'Danke! Wir melden uns bald.':document.documentElement.lang==='nl'?'Bedankt! We nemen snel contact op.':'Thank you! We will be in touch shortly.')" data-i18n="form_send">Send Enquiry →</button>
     </div>
     <div class="contact-or">— <span data-i18n="contact_or">or contact us directly</span> —</div>
@@ -502,6 +638,12 @@ const T = {
     why1_title:'Local Expertise', why1_body:'We specialise in rural properties in the Alicante and Murcia regions. We know the area, the developers and the process — so you get reliable advice from people who are on the ground.',
     why2_title:'We Speak Your Language', why2_body:'We work with international buyers every day. We understand your concerns and guide you through the Spanish buying process step by step.',
     why3_title:'End-to-End Support', why3_body:'From your first question to the day you collect your keys, we are with you. Legal guidance, NIE assistance, mortgage referrals — we\'ve got it covered.',
+    zonas_tag:'Also in the Area', zonas_title:'More homes<br/><em>in the region</em>',
+    zonas_body:'We work with a trusted local builder who develops similar villas across several rural areas in the Abanilla and Jumilla municipalities. Some are already finished and available; others can be built to order on available plots. Tell us which area interests you and we will show you what is available.',
+    zonas_map_title:'Select an area to find out more',
+    zonas_cta_text:'Click on a zone above to pre-select it, then send us your details and we will get back to you with what is available in that area.',
+    zonas_cta_btn:'Ask About This Area →',
+    form_zona_placeholder:'Area of interest (optional)',
     contact_tag:'Get In Touch', contact_title:'Interested?<br/><em>Let\'s talk</em>',
     contact_sub:"Leave your details and we'll get back to you within 24 hours with full pricing, availability and everything you need to know.",
     contact_or:'or contact us directly', form_name:'Your name', form_email:'Email address',
@@ -538,6 +680,12 @@ const T = {
     why1_title:'Conocemos la zona', why1_body:'Estamos especializados en inmuebles rurales en Alicante y Murcia. Conocemos la zona, los promotores y el proceso de compra — para que recibas un asesoramiento fiable de personas que trabajan sobre el terreno.',
     why2_title:'Hablamos tu idioma', why2_body:'Trabajamos cada día con compradores internacionales. Entendemos tus dudas y te guiamos paso a paso en el proceso de compra en España.',
     why3_title:'Acompañamiento total', why3_body:'Desde tu primera pregunta hasta que recibes las llaves, estamos contigo. Asesoría legal, NIE, hipotecas — lo gestionamos todo.',
+    zonas_tag:'También en la zona', zonas_title:'Más viviendas<br/><em>en la comarca</em>',
+    zonas_body:'Trabajamos con un constructor de confianza que levanta chalets similares en varias zonas rurales de los términos de Abanilla y Jumilla. Algunos ya están terminados y disponibles; otros pueden construirse a medida en parcelas disponibles. Dinos qué zona te interesa y te mostramos lo que hay disponible.',
+    zonas_map_title:'Selecciona una zona para saber más',
+    zonas_cta_text:'Haz clic en una zona para preseleccionarla, déjanos tus datos y te contactamos con lo que hay disponible en esa área.',
+    zonas_cta_btn:'Preguntar por esta zona →',
+    form_zona_placeholder:'Zona de interés (opcional)',
     contact_tag:'Contacto', contact_title:'¿Interesado?<br/><em>Hablamos</em>',
     contact_sub:'Déjanos tus datos y te contactamos en menos de 24 horas con toda la información sobre precios y disponibilidad.',
     contact_or:'o contáctanos directamente', form_name:'Tu nombre', form_email:'Correo electrónico',
@@ -574,6 +722,12 @@ const T = {
     why1_title:'Lokale Expertise', why1_body:'Wir sind spezialisiert auf ländliche Immobilien in Alicante und Murcia. Wir kennen die Region, die Bauträger und den Kaufprozess — damit Sie verlässliche Beratung von Menschen erhalten, die vor Ort tätig sind.',
     why2_title:'Wir sprechen Ihre Sprache', why2_body:'Wir arbeiten täglich mit internationalen Käufern. Wir verstehen Ihre Bedenken und begleiten Sie Schritt für Schritt durch den spanischen Kaufprozess.',
     why3_title:'Rundum-Betreuung', why3_body:'Von Ihrer ersten Frage bis zur Schlüsselübergabe sind wir für Sie da. Rechtliche Beratung, NIE-Hilfe, Hypothekenvermittlung — wir kümmern uns darum.',
+    zonas_tag:'Auch in der Umgebung', zonas_title:'Weitere Häuser<br/><em>in der Region</em>',
+    zonas_body:'Wir arbeiten mit einem lokalen Bauträger zusammen, der ähnliche Villen in mehreren ländlichen Gebieten der Gemeinden Abanilla und Jumilla entwickelt. Einige sind bereits fertiggestellt und verfügbar; andere können auf verfügbaren Grundstücken nach Maß gebaut werden. Teilen Sie uns mit, welche Region Sie interessiert, und wir zeigen Ihnen, was verfügbar ist.',
+    zonas_map_title:'Wählen Sie eine Region für mehr Informationen',
+    zonas_cta_text:'Klicken Sie auf eine Zone, um sie vorzuauswählen, hinterlassen Sie uns Ihre Daten und wir melden uns mit dem, was in dieser Region verfügbar ist.',
+    zonas_cta_btn:'Nach dieser Region fragen →',
+    form_zona_placeholder:'Interessegebiet (optional)',
     contact_tag:'Kontakt', contact_title:'Interessiert?<br/><em>Sprechen wir</em>',
     contact_sub:'Hinterlassen Sie Ihre Daten und wir melden uns innerhalb von 24 Stunden mit allen Informationen zu Preisen und Verfügbarkeit.',
     contact_or:'oder kontaktieren Sie uns direkt', form_name:'Ihr Name', form_email:'E-Mail-Adresse',
@@ -610,6 +764,12 @@ const T = {
     why1_title:'Lokale kennis', why1_body:'Wij zijn gespecialiseerd in landelijk vastgoed in Alicante en Murcia. We kennen de regio, de projectontwikkelaars en het aankoopproces — zodat u betrouwbaar advies krijgt van mensen die ter plaatse actief zijn.',
     why2_title:'Wij spreken uw taal', why2_body:'We werken dagelijks met internationale kopers. We begrijpen uw zorgen en begeleiden u stap voor stap door het Spaanse aankoopproces.',
     why3_title:'Volledige begeleiding', why3_body:'Van uw eerste vraag tot de sleuteloverdracht staan wij voor u klaar. Juridisch advies, NIE-hulp, hypotheekverwijzingen — wij regelen het.',
+    zonas_tag:'Ook in de omgeving', zonas_title:'Meer woningen<br/><em>in de regio</em>',
+    zonas_body:'Wij werken samen met een betrouwbare lokale aannemer die vergelijkbare villa\'s ontwikkelt in verschillende landelijke gebieden van de gemeenten Abanilla en Jumilla. Sommige zijn al gereed en beschikbaar; andere kunnen op maat worden gebouwd op beschikbare percelen. Laat ons weten welk gebied u interesseert en wij laten u zien wat er beschikbaar is.',
+    zonas_map_title:'Selecteer een gebied voor meer informatie',
+    zonas_cta_text:'Klik op een zone om deze voor te selecteren, laat uw gegevens achter en wij nemen contact op met wat er in dat gebied beschikbaar is.',
+    zonas_cta_btn:'Informeer naar dit gebied →',
+    form_zona_placeholder:'Interessegebied (optioneel)',
     contact_tag:'Contact', contact_title:'Geïnteresseerd?<br/><em>Laten we praten</em>',
     contact_sub:'Laat uw gegevens achter en we nemen binnen 24 uur contact met u op met alle informatie over prijzen en beschikbaarheid.',
     contact_or:'of neem direct contact op', form_name:'Uw naam', form_email:'E-mailadres',
@@ -717,6 +877,70 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 document.querySelectorAll('.map-container').forEach(r => observer.observe(r));
+
+
+// ── ZONA MAP ───────────────────────────────────────────────────
+function selectZona(svgGroup) {
+  // Deactivate all SVG circles
+  document.querySelectorAll('.zona-clickable .zona-circle').forEach(c => {
+    c.setAttribute('fill', '#E8DFC4');
+  });
+  // Activate clicked circle
+  const circle = svgGroup.querySelector('.zona-circle');
+  if (circle) circle.setAttribute('fill', '#C1622F');
+
+  const zona = svgGroup.getAttribute('data-zona');
+  syncZona(zona);
+}
+
+function selectZonaPill(pill) {
+  // Deactivate all pills
+  document.querySelectorAll('.zona-pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+
+  const zona = pill.getAttribute('data-zona');
+
+  // Sync SVG circles
+  document.querySelectorAll('.zona-clickable .zona-circle').forEach(c => {
+    c.setAttribute('fill', '#E8DFC4');
+  });
+  document.querySelectorAll('.zona-clickable').forEach(g => {
+    if (g.getAttribute('data-zona') === zona) {
+      const circle = g.querySelector('.zona-circle');
+      if (circle) circle.setAttribute('fill', '#C1622F');
+    }
+  });
+
+  syncZona(zona);
+}
+
+function syncZona(zona) {
+  // Sync pills
+  document.querySelectorAll('.zona-pill').forEach(p => {
+    p.classList.toggle('active', p.getAttribute('data-zona') === zona);
+  });
+
+  // Set form select
+  const select = document.getElementById('form-zona');
+  if (select) {
+    for (let opt of select.options) {
+      if (opt.value === zona) { select.value = zona; break; }
+    }
+  }
+
+  // Scroll to contact smoothly
+  setTimeout(() => {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }, 300);
+}
+
+// Init: mark Cañada de la Leña circle as active by default
+document.querySelectorAll('.zona-clickable').forEach(g => {
+  if (g.getAttribute('data-zona') === 'Cañada de la Leña (Término de Abanilla)') {
+    const circle = g.querySelector('.zona-circle');
+    if (circle) circle.setAttribute('fill', '#C1622F');
+  }
+});
 
 // Init English
 setLang('en');
