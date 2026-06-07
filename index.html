@@ -162,6 +162,11 @@ section{padding:7rem 3rem;}
 .fp-label{color:var(--warm-gray);font-weight:300;}
 .fp-value{font-weight:700;color:var(--earth);}
 
+/* SVG ICONS */
+.icon-svg{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-bottom:0.75rem;opacity:0.75;}
+.zona-amenity .icon-svg{width:14px;height:14px;margin-bottom:0;opacity:0.6;flex-shrink:0;}
+.lifestyle{font-weight:700;color:var(--earth);}
+
 /* WHY */
 .why{background:var(--earth-mid);}
 .why-inner{max-width:1200px;margin:0 auto;}
@@ -435,14 +440,14 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
       <h2 class="section-title" data-i18n="specs_title">Every villa,<br/><em>fully equipped</em></h2>
       <p class="section-body" style="margin-bottom:2rem;" data-i18n="specs_sub">Each villa comes with everything included: private pool, double garage, covered terrace and a generous plot — all finished to a high standard and ready to move in.</p>
       <div class="specs-grid reveal" style="grid-template-columns:repeat(2,1fr);margin-bottom:2.5rem;">
-        <div class="spec-item"><div class="spec-icon">🏠</div><div class="spec-value">180 m²</div><div class="spec-label" data-i18n="spec_built">Built Area</div></div>
-        <div class="spec-item"><div class="spec-icon">🛏</div><div class="spec-value">3</div><div class="spec-label" data-i18n="spec_beds">Bedrooms</div></div>
-        <div class="spec-item"><div class="spec-icon">🚿</div><div class="spec-value">2</div><div class="spec-label" data-i18n="spec_baths">Bathrooms</div></div>
-        <div class="spec-item"><div class="spec-icon">🏊</div><div class="spec-value">32 m²</div><div class="spec-label" data-i18n="spec_pool">Private Pool</div></div>
-        <div class="spec-item"><div class="spec-icon">🚗</div><div class="spec-value">44 m²</div><div class="spec-label" data-i18n="spec_garage">Double Garage</div></div>
-        <div class="spec-item"><div class="spec-icon">☀️</div><div class="spec-value">17 m²</div><div class="spec-label" data-i18n="spec_terrace">Covered Terrace</div></div>
-        <div class="spec-item"><div class="spec-icon">🌿</div><div class="spec-value">5.000 m²</div><div class="spec-label" data-i18n="spec_plot">Plot Size</div></div>
-        <div class="spec-item"><div class="spec-icon">✨</div><div class="spec-value" data-i18n="spec_new_val">New</div><div class="spec-label" data-i18n="spec_new">Build Quality</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="spec-value">180 m²</div><div class="spec-label" data-i18n="spec_built">Built Area</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div><div class="spec-value">3</div><div class="spec-label" data-i18n="spec_beds">Bedrooms</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 6c0-1.1.9-2 2-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/></svg></div><div class="spec-value">2</div><div class="spec-label" data-i18n="spec_baths">Bathrooms</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M4 20V10a2 2 0 012-2h12a2 2 0 012 2v10M8 20v-6h8v6"/></svg></div><div class="spec-value">32 m²</div><div class="spec-label" data-i18n="spec_pool">Private Pool</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8zM5.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg></div><div class="spec-value">44 m²</div><div class="spec-label" data-i18n="spec_garage">Double Garage</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div><div class="spec-value">17 m²</div><div class="spec-label" data-i18n="spec_terrace">Covered Terrace</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 10v5M12 10v5M16 10v5"/></svg></div><div class="spec-value">5.000 m²</div><div class="spec-label" data-i18n="spec_plot">Plot Size</div></div>
+        <div class="spec-item"><div class="icon-svg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></div><div class="spec-value" data-i18n="spec_new_val">New</div><div class="spec-label" data-i18n="spec_new">Build Quality</div></div>
       </div>
       <div class="section-tag" style="margin-bottom:0.75rem;" data-i18n="fp_tag">Floor Plan</div>
       <p class="section-body" style="margin-bottom:1.5rem;" data-i18n="fp_body">Open-plan living with generous bedrooms and a seamless connection between indoor and outdoor spaces.</p>
@@ -517,17 +522,17 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
     </div>
     <div class="why-grid">
       <div class="why-item reveal">
-        <div class="why-icon">⚖️</div>
+        <div class="why-icon"><svg style="width:32px;height:32px;color:var(--sand);opacity:0.8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="why-title" data-i18n="why1_title">Legal Team on Your Side</div>
         <div class="why-body" data-i18n="why1_body">We work with a specialist legal team with extensive experience in rural property transactions in Spain. They handle contracts, notary management and property registration — giving you full peace of mind at every stage.</div>
       </div>
       <div class="why-item reveal">
-        <div class="why-icon">🌍</div>
+        <div class="why-icon"><svg style="width:32px;height:32px;color:var(--sand);opacity:0.8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
         <div class="why-title" data-i18n="why2_title">Specialists in Foreign Buyers</div>
         <div class="why-body" data-i18n="why2_body">Our legal team works exclusively with international buyers purchasing property in Spain. They understand the specific challenges foreign buyers face and guide you through the entire process with clarity and confidence.</div>
       </div>
       <div class="why-item reveal">
-        <div class="why-icon">🔑</div>
+        <div class="why-icon"><svg style="width:32px;height:32px;color:var(--sand);opacity:0.8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="why-title" data-i18n="why3_title">End-to-End Support</div>
         <div class="why-body" data-i18n="why3_body">From your first enquiry to the day you collect your keys, we are with you every step of the way. Legal guidance, notary coordination and construction follow-up — all handled for you.</div>
       </div>
@@ -651,20 +656,20 @@ const T = {
     nav_project:'The Project', nav_features:'Features', nav_location:'Location', nav_enquire:'Enquire Now',
     hero_tag:'New Development · Murcia, Spain',
     hero_title:'Your <em>Spanish Villa</em><br/>Awaits',
-    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Murcia.',
+    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Murcia. <strong>Over 300 days of sunshine per year.</strong>',
     hero_cta1:'Request Information', hero_cta2:'Discover the Project', scroll:'Scroll',
     stat1:'m² plot per villa', stat2:'m² built area', stat3:'bedrooms', stat4:'from Alicante Airport (45 min) / Murcia Airport (40 min)',
     about_tag:'The Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Murcia. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves.',
+    about_p1:'A private development of detached villas in Cañada de la Leña, one of the most authentic rural areas of Murcia. Each villa sits on a generous 5,000 m² plot, offering complete privacy and uninterrupted views of the surrounding mountains and almond groves. <strong>Cost of living in rural Murcia is significantly lower than northern Europe</strong>, while quality of life remains exceptionally high.',
     about_p2:'We are a specialist rural property agency with extensive experience in the Alicante and Murcia regions. Our role is to guide you through every step of the purchase process — from your first enquiry to the day you receive your keys.',
     about_cta:'Request the Full Brochure',
     specs_tag:"What's Included", specs_title:'Every villa,<br/><em>fully equipped</em>',
     specs_sub:'Each villa comes with everything included: private pool, double garage, covered terrace and a generous plot — all finished to a high standard and ready to move in.',
     spec_built:'Built Area', spec_beds:'Bedrooms', spec_baths:'Bathrooms', spec_pool:'Private Pool',
-    spec_garage:'Double Garage', spec_terrace:'Covered Terrace', spec_plot:'Plot Size', spec_new:'Build Quality', spec_new_val:'New',
+    spec_garage:'Double Garage', spec_terrace:'Covered Terrace', spec_plot:'Plot Size', spec_new:'Build Quality', spec_new_val:'New Build',
     gallery_tag:'Our Completed Villas', gallery_title:'A selection of our<br/><em>finished homes</em>',
     loc_tag:'Location', loc_title:'Cañada<br/><em>de la Leña</em>',
-    loc_body:'A hidden gem in the Vinalopó Valley — surrounded by almond trees, mountain ranges and over 300 days of sunshine per year. Close enough to the coast, far enough from the crowds.',
+    loc_body:'A hidden gem in the Vinalopó Valley — surrounded by almond trees, mountain ranges and <strong>over 300 days of sunshine per year</strong>. <strong>40–50 minutes from the beaches of Alicante</strong>, yet far from the tourist crowds. <strong>Healthcare, schools and local services</strong> are all within easy reach.',
     loc_p1:'Alicante Airport (El Altet)', loc_d1:'45 minutes by car',
     loc_p2:'Alicante City & Beaches', loc_d2:'50 minutes',
     loc_p3:'Murcia & Corvera Airport', loc_d3:'55 minutes',
@@ -693,20 +698,20 @@ const T = {
     nav_project:'El Proyecto', nav_features:'Características', nav_location:'Ubicación', nav_enquire:'Contactar',
     hero_tag:'Nueva Promoción · Murcia, España',
     hero_title:'Tu <em>Villa en España</em><br/>te espera',
-    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Murcia.',
+    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Murcia. <strong>Más de 300 días de sol al año.</strong>',
     hero_cta1:'Solicitar Información', hero_cta2:'Conocer el Proyecto', scroll:'Bajar',
     stat1:'m² de parcela por villa', stat2:'m² construidos', stat3:'dormitorios', stat4:'aeropuertos de Alicante/Murcia',
     about_tag:'El Proyecto', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'Una promoción privada de chalets independientes en Cañada de la Leña, una de las zonas rurales más auténticas de Murcia. Cada vivienda se asienta sobre una parcela de 5.000 m², con total privacidad y vistas sin obstrucciones a la montaña y a los almendros.',
+    about_p1:'Una promoción privada de chalets independientes en Cañada de la Leña, una de las zonas rurales más auténticas de Murcia. Cada vivienda se asienta sobre una parcela de 5.000 m², con total privacidad y vistas sin obstrucciones a la montaña y a los almendros. <strong>El coste de vida en la Murcia rural es notablemente inferior al del norte de Europa</strong>, con una calidad de vida excepcionalmente alta.',
     about_p2:'Somos una agencia especializada en inmuebles rurales con amplia experiencia en las provincias de Alicante y Murcia. Nuestro papel es acompañarte en cada paso del proceso de compra, desde el primer contacto hasta la entrega de llaves.',
     about_cta:'Solicitar el Dossier Completo',
     specs_tag:'Qué incluye', specs_title:'Cada villa,<br/><em>equipada al completo</em>',
     specs_sub:'Cada villa incluye todo: piscina privada, garaje doble, terraza cubierta y una gran parcela — todo terminado con altos estándares de calidad y listo para entrar a vivir.',
     spec_built:'Superficie Construida', spec_beds:'Dormitorios', spec_baths:'Baños', spec_pool:'Piscina Privada',
-    spec_garage:'Garaje Doble', spec_terrace:'Terraza Cubierta', spec_plot:'Parcela', spec_new:'Calidad', spec_new_val:'Nueva',
+    spec_garage:'Garaje Doble', spec_terrace:'Terraza Cubierta', spec_plot:'Parcela', spec_new:'Calidad', spec_new_val:'Nueva construcción',
     gallery_tag:'Nuestras Villas Terminadas', gallery_title:'Algunas de nuestras<br/><em>villas terminadas</em>',
     loc_tag:'Ubicación', loc_title:'Cañada<br/><em>de la Leña</em>',
-    loc_body:'Un rincón privilegiado en el Valle del Vinalopó — rodeado de almendros, sierras y más de 300 días de sol al año. Cerca de la costa, lejos del ruido.',
+    loc_body:'Un rincón privilegiado en el Valle del Vinalopó — rodeado de almendros, sierras y <strong>más de 300 días de sol al año</strong>. <strong>A 40–50 minutos de las playas de Alicante</strong>, lejos del turismo masivo. <strong>Sanidad, colegios y servicios</strong> a pocos minutos.',
     loc_p1:'Aeropuerto de Alicante (El Altet)', loc_d1:'45 minutos en coche',
     loc_p2:'Ciudad de Alicante y playas', loc_d2:'50 minutos',
     loc_p3:'Murcia y aeropuerto de Corvera', loc_d3:'55 minutos',
@@ -735,11 +740,11 @@ const T = {
     nav_project:'Das Projekt', nav_features:'Ausstattung', nav_location:'Lage', nav_enquire:'Anfragen',
     hero_tag:'Neubau · Murcia, Spanien',
     hero_title:'Ihre <em>spanische Villa</em><br/>wartet auf Sie',
-    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Murcia.',
+    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Murcia. <strong>Über 300 Sonnentage pro Jahr.</strong>',
     hero_cta1:'Informationen anfordern', hero_cta2:'Projekt entdecken', scroll:'Scrollen',
     stat1:'m² Grundstück pro Villa', stat2:'m² Wohnfläche', stat3:'Schlafzimmer', stat4:'von den Flughäfen Alicante/Murcia',
     about_tag:'Das Projekt', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'Eine private Anlage freistehender Villen in Cañada de la Leña, einer der authentischsten ländlichen Regionen Murcias. Jede Villa liegt auf einem großzügigen 5.000 m² Grundstück mit völliger Privatsphäre und unverbautem Blick auf die Berge und Mandelgärten.',
+    about_p1:'Eine private Anlage freistehender Villen in Cañada de la Leña, einer der authentischsten ländlichen Regionen Murcias. Jede Villa liegt auf einem großzügigen 5.000 m² Grundstück mit völliger Privatsphäre und unverbautem Blick auf die Berge und Mandelgärten. <strong>Die Lebenshaltungskosten im ländlichen Murcia sind deutlich niedriger als in Nordeuropa</strong> — bei außergewöhnlich hoher Lebensqualität.',
     about_p2:'Wir sind eine auf ländliche Immobilien spezialisierte Agentur mit umfangreicher Erfahrung in den Regionen Alicante und Murcia. Unsere Aufgabe ist es, Sie durch jeden Schritt des Kaufprozesses zu begleiten — von Ihrer ersten Anfrage bis zur Schlüsselübergabe.',
     about_cta:'Vollständige Broschüre anfordern',
     specs_tag:'Inklusive', specs_title:'Jede Villa,<br/><em>komplett ausgestattet</em>',
@@ -748,7 +753,7 @@ const T = {
     spec_garage:'Doppelgarage', spec_terrace:'Überdachte Terrasse', spec_plot:'Grundstücksgröße', spec_new:'Qualität', spec_new_val:'Neubau',
     gallery_tag:'Unsere fertigen Villen', gallery_title:'Einige unserer<br/><em>fertiggestellten Villen</em>',
     loc_tag:'Lage', loc_title:'Cañada<br/><em>de la Leña</em>',
-    loc_body:'Ein verborgenes Juwel im Vinalopó-Tal — umgeben von Mandelbäumen, Bergketten und über 300 Sonnentagen pro Jahr. Nah genug zur Küste, weit genug vom Trubel.',
+    loc_body:'Ein verborgenes Juwel im Vinalopó-Tal — umgeben von Mandelbäumen, Bergketten und <strong>über 300 Sonnentagen pro Jahr</strong>. <strong>40–50 Minuten von den Stränden Alicantes</strong>, weit weg vom Massentourismus. <strong>Gesundheitsversorgung, Schulen und lokale Dienste</strong> in unmittelbarer Nähe.',
     loc_p1:'Flughafen Alicante (El Altet)', loc_d1:'45 Minuten mit dem Auto',
     loc_p2:'Alicante Stadt & Strände', loc_d2:'50 Minuten',
     loc_p3:'Murcia & Flughafen Corvera', loc_d3:'55 Minuten',
@@ -777,11 +782,11 @@ const T = {
     nav_project:'Het Project', nav_features:'Kenmerken', nav_location:'Locatie', nav_enquire:'Informatie aanvragen',
     hero_tag:'Nieuwbouw · Murcia, Spanje',
     hero_title:'Uw <em>Spaanse Villa</em><br/>wacht op u',
-    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Murcia.',
+    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Murcia. <strong>Meer dan 300 zonnige dagen per jaar.</strong>',
     hero_cta1:'Informatie aanvragen', hero_cta2:'Ontdek het project', scroll:'Scrollen',
     stat1:'m² perceel per villa', stat2:'m² woonoppervlak', stat3:'slaapkamers', stat4:'van luchthavens Alicante/Murcia',
     about_tag:'Het Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
-    about_p1:'Een privé-ontwikkeling van vrijstaande villa\'s in Cañada de la Leña, een van de meest authentieke landelijke gebieden van Murcia. Elke villa staat op een royaal perceel van 5.000 m², met volledige privacy en onbelemmerd uitzicht op de bergen en amandelboomgaarden.',
+    about_p1:'Een privé-ontwikkeling van vrijstaande villa\'s in Cañada de la Leña, een van de meest authentieke landelijke gebieden van Murcia. Elke villa staat op een royaal perceel van 5.000 m², met volledige privacy en onbelemmerd uitzicht op de bergen en amandelboomgaarden. <strong>De kosten van levensonderhoud in ruraal Murcia zijn aanzienlijk lager dan in Noord-Europa</strong>, terwijl de levenskwaliteit uitzonderlijk hoog blijft.',
     about_p2:'Wij zijn een gespecialiseerd makelaarskantoor in landelijk vastgoed met uitgebreide ervaring in de regio\'s Alicante en Murcia. Onze rol is u te begeleiden bij elke stap van het aankoopproces — van uw eerste vraag tot de sleuteloverdracht.',
     about_cta:'Volledige brochure aanvragen',
     specs_tag:'Wat is inbegrepen', specs_title:'Elke villa,<br/><em>volledig uitgerust</em>',
@@ -790,7 +795,7 @@ const T = {
     spec_garage:'Dubbele garage', spec_terrace:'Overdekt terras', spec_plot:'Perceelgrootte', spec_new:'Kwaliteit', spec_new_val:'Nieuwbouw',
     gallery_tag:'Onze opgeleverde villa\'s', gallery_title:'Enkele van onze<br/><em>opgeleverde villa\'s</em>',
     loc_tag:'Locatie', loc_title:'Cañada<br/><em>de la Leña</em>',
-    loc_body:'Een verborgen parel in de Vinalopó-vallei — omgeven door amandelbomen, bergketens en meer dan 300 zonnige dagen per jaar. Dicht genoeg bij de kust, ver genoeg van de drukte.',
+    loc_body:'Een verborgen parel in de Vinalopó-vallei — omgeven door amandelbomen, bergketens en <strong>meer dan 300 zonnige dagen per jaar</strong>. <strong>40–50 minuten van de stranden van Alicante</strong>, ver van het massatoerisme. <strong>Gezondheidszorg, scholen en lokale diensten</strong> zijn vlakbij.',
     loc_p1:'Luchthaven Alicante (El Altet)', loc_d1:'45 minuten rijden',
     loc_p2:'Stad Alicante & stranden', loc_d2:'50 minuten',
     loc_p3:'Murcia & luchthaven Corvera', loc_d3:'55 minuten',
@@ -947,7 +952,7 @@ const ZONAS_DATA = [
       de: 'El Cantón ist ein kleines Dorf im Nordosten von Abanilla, eingebettet am Fuß der Sierra del Cantón (927 m). Umgeben von Mandelbäumen, Olivenhainen und Weinbergen ist die natürliche Umgebung eine der spektakulärsten der Gemeinde. Von hier aus starten Wanderwege zum Gipfel und ins Tal von La Boquera. Die Atmosphäre ist ruhig und die Einheimischen pflegen die Weinbautradition.',
       nl: 'El Cantón is een klein gehucht in het noordoosten van Abanilla, aan de voet van de Sierra del Cantón (927 m). Omgeven door amandelbomen, olijfgaarden en wijngaarden is de natuurlijke omgeving een van de mooiste van de gemeente. Wandelroutes naar de top en het dal van La Boquera beginnen hier. De sfeer is rustig en de locals bewaren de wijnbouwtraditie.',
     },
-    amenities: { es: ['🍷 Bodegas locales', '🥾 Rutas de senderismo', '🏔️ Sierra del Cantón', '🌿 Entorno natural', '🚗 Acceso por RM-A11'], en: ['🍷 Local wineries', '🥾 Hiking routes', '🏔️ Sierra del Cantón', '🌿 Natural surroundings', '🚗 Access via RM-A11'], de: ['🍷 Lokale Weingüter', '🥾 Wanderwege', '🏔️ Sierra del Cantón', '🌿 Naturumgebung', '🚗 Zufahrt über RM-A11'], nl: ['🍷 Lokale wijngaarden', '🥾 Wandelroutes', '🏔️ Sierra del Cantón', '🌿 Natuurlijke omgeving', '🚗 Toegang via RM-A11'] },
+    amenities: { es: ['Bodegas locales', 'Rutas de senderismo', 'Sierra del Cantón (927 m)', 'Entorno natural', 'Acceso por RM-A11'], en: ['Local wineries', 'Hiking routes', 'Sierra del Cantón (927 m)', 'Natural surroundings', 'Access via RM-A11'], de: ['Lokale Weingüter', 'Wanderwege', 'Sierra del Cantón (927 m)', 'Naturumgebung', 'Zufahrt über RM-A11'], nl: ['Lokale wijngaarden', 'Wandelroutes', 'Sierra del Cantón (927 m)', 'Natuurlijke omgeving', 'Toegang via RM-A11'] },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg']
   },
   {
@@ -957,12 +962,12 @@ const ZONAS_DATA = [
     sub: { es: 'Término de Abanilla · Proyecto principal', en: 'Municipality of Abanilla · Main project', de: 'Gemeinde Abanilla · Hauptprojekt', nl: 'Gemeente Abanilla · Hoofdproject' },
     tag: { es: 'Término de Abanilla · ~88 habitantes', en: 'Municipality of Abanilla · ~88 inhabitants', de: 'Gemeinde Abanilla · ~88 Einwohner', nl: 'Gemeente Abanilla · ~88 inwoners' },
     desc: {
-      es: 'Cañada de la Leña —conocida localmente como "Los Martínez"— es una pedanía situada entre las sierras de Barinas, Espada y Quibas, en el límite con la provincia de Alicante. A 510 metros de altitud, disfruta de un clima suave y más de 300 días de sol al año. El entorno combina cultivos de almendros, olivos y viñedos con un paisaje de sierra de gran belleza. Es el emplazamiento del Residencial Cañada de la Leña, nuestro proyecto principal de chalets de nueva construcción.',
-      en: 'Cañada de la Leña — known locally as "Los Martínez" — is a hamlet situated between the mountain ranges of Barinas, Espada and Quibas, on the border with the province of Alicante. At 510 metres altitude, it enjoys a mild climate and over 300 days of sunshine per year. The surroundings combine almond, olive and vineyard cultivation with stunning mountain scenery. This is the location of Residencial Cañada de la Leña, our main new-build villa project.',
-      de: 'Cañada de la Leña — lokal als "Los Martínez" bekannt — ist ein Weiler zwischen den Gebirgszügen Barinas, Espada und Quibas, an der Grenze zur Provinz Alicante. Auf 510 Metern Höhe genießt es ein mildes Klima und über 300 Sonnentage pro Jahr. Die Umgebung verbindet Mandel-, Oliven- und Weinbau mit beeindruckender Berglandschaft. Hier befindet sich Residencial Cañada de la Leña, unser Hauptprojekt für neue Villen.',
-      nl: 'Cañada de la Leña — lokaal bekend als "Los Martínez" — is een gehucht tussen de bergketens Barinas, Espada en Quibas, op de grens met de provincie Alicante. Op 510 meter hoogte geniet het van een mild klimaat en meer dan 300 zonnige dagen per jaar. De omgeving combineert amandel-, olijf- en wijnbouw met prachtige berglandschappen. Dit is de locatie van Residencial Cañada de la Leña, ons belangrijkste nieuwbouwproject.',
+      es: 'Cañada de la Leña —conocida localmente como "Los Martínez"— es una pedanía situada entre las sierras de Barinas, Espada y Quibas, en el límite con la provincia de Alicante. A <strong>510 metros de altitud</strong>, disfruta de un <strong>clima suave y más de 300 días de sol al año</strong>. El entorno combina cultivos de almendros, olivos y viñedos con un paisaje de sierra de gran belleza. Es el emplazamiento del Residencial Cañada de la Leña, nuestro proyecto principal de chalets de nueva construcción.',
+      en: 'Cañada de la Leña — known locally as "Los Martínez" — is a hamlet situated between the mountain ranges of Barinas, Espada and Quibas, on the border with the province of Alicante. At <strong>510 metres altitude</strong>, it enjoys a <strong>mild climate and over 300 days of sunshine per year</strong>. The surroundings combine almond, olive and vineyard cultivation with stunning mountain scenery. This is the location of Residencial Cañada de la Leña, our main new-build villa project.',
+      de: 'Cañada de la Leña — lokal als "Los Martínez" bekannt — ist ein Weiler zwischen den Gebirgszügen Barinas, Espada und Quibas, an der Grenze zur Provinz Alicante. Auf <strong>510 Metern Höhe</strong> genießt es ein <strong>mildes Klima und über 300 Sonnentage pro Jahr</strong>. Die Umgebung verbindet Mandel-, Oliven- und Weinbau mit beeindruckender Berglandschaft. Hier befindet sich Residencial Cañada de la Leña, unser Hauptprojekt für neue Villen.',
+      nl: 'Cañada de la Leña — lokaal bekend als "Los Martínez" — is een gehucht tussen de bergketens Barinas, Espada en Quibas, op de grens met de provincie Alicante. Op <strong>510 meter hoogte</strong> geniet het van een <strong>mild klimaat en meer dan 300 zonnige dagen per jaar</strong>. De omgeving combineert amandel-, olijf- en wijnbouw met prachtige berglandschappen. Dit is de locatie van Residencial Cañada de la Leña, ons belangrijkste nieuwbouwproject.',
     },
-    amenities: { es: ['🏠 Residencial Nueva Construcción', '⛰️ Vistas a la sierra', '🌞 +300 días de sol', '🛣️ Carretera A-9 directa', '🍷 Zona vinícola', '🌳 Almendros y olivos'], en: ['🏠 New-Build Development', '⛰️ Mountain views', '🌞 +300 sunny days', '🛣️ Direct A-9 road', '🍷 Wine growing area', '🌳 Almond and olive groves'], de: ['🏠 Neubausiedlung', '⛰️ Bergblick', '🌞 +300 Sonnentage', '🛣️ Direkte A-9 Straße', '🍷 Weinanbaugebiet', '🌳 Mandel- und Olivenhaine'], nl: ['🏠 Nieuwbouwproject', '⛰️ Bergzicht', '🌞 +300 zonnige dagen', '🛣️ Directe A-9 weg', '🍷 Wijnbouwgebied', '🌳 Amandel- en olijfgaarden'] },
+    amenities: { es: ['Residencial Nueva Construcción', 'Vistas a la sierra', '+300 días de sol al año', 'Carretera A-9 directa', 'Zona vinícola', 'Almendros y olivos'], en: ['New-Build Development', 'Mountain views', '+300 sunny days per year', 'Direct A-9 road', 'Wine growing area', 'Almond and olive groves'], de: ['Neubausiedlung', 'Bergblick', '+300 Sonnentage pro Jahr', 'Direkte A-9 Straße', 'Weinanbaugebiet', 'Mandel- und Olivenhaine'], nl: ['Nieuwbouwproject', 'Bergzicht', '+300 zonnige dagen per jaar', 'Directe A-9 weg', 'Wijnbouwgebied', 'Amandel- en olijfgaarden'] },
     photos: ['https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png','https://res.cloudinary.com/diuttehdc/image/upload/v1780746976/production-kyero-property-images.s3-f52d3338-f64b-4111-b3e3-aefaac6bdab1_bryqoa.jpg','https://res.cloudinary.com/diuttehdc/image/upload/v1780757365/Captura_de_pantalla_2026-06-06_164838_on5t4p.png']
   },
   {
@@ -972,12 +977,12 @@ const ZONAS_DATA = [
     sub: { es: 'Término de Abanilla', en: 'Municipality of Abanilla', de: 'Gemeinde Abanilla', nl: 'Gemeente Abanilla' },
     tag: { es: 'Término de Abanilla · ~550 habitantes', en: 'Municipality of Abanilla · ~550 inhabitants', de: 'Gemeinde Abanilla · ~550 Einwohner', nl: 'Gemeente Abanilla · ~550 inwoners' },
     desc: {
-      es: 'Macisvenda es una de las pedanías más grandes de Abanilla, situada a 8 km del centro urbano y a solo 5 km de la provincia de Alicante. Conocida como la "Palestina Murciana" por su paisaje de palmeras datileras, ramblas y terreno árido. El río Chícamo nace en sus alrededores, creando un entorno de gran valor natural. El pueblo combina partes llanas y zonas en pendiente, con casas en pequeñas elevaciones del terreno.',
-      en: 'Macisvenda is one of the largest hamlets in Abanilla, located 8 km from the town centre and just 5 km from the province of Alicante. Known as the "Murcian Palestine" for its landscape of date palms, ravines and arid terrain. The Chícamo river rises nearby, creating an area of great natural value. The village combines flat areas and hillside zones, with houses built on small rises.',
-      de: 'Macisvenda ist einer der größten Weiler in Abanilla, 8 km vom Stadtzentrum und nur 5 km von der Provinz Alicante entfernt. Bekannt als das "Murcianische Palästina" wegen seiner Landschaft aus Dattelpalmen, Schluchten und kargem Terrain. Der Fluss Chícamo entspringt in der Nähe und schafft ein Gebiet von großem Naturwert. Das Dorf verbindet flache Bereiche mit Hanglagen.',
-      nl: 'Macisvenda is een van de grootste gehuchten in Abanilla, op 8 km van het stadscentrum en slechts 5 km van de provincie Alicante. Bekend als het "Murciaaanse Palestina" vanwege zijn landschap van dadelpalmen, ravijnen en droog terrein. De rivier Chícamo ontspringt in de buurt en creëert een gebied van grote natuurwaarde.',
+      es: 'Macisvenda es una de las pedanías más grandes de Abanilla, situada a 8 km del centro urbano y a solo 5 km de la provincia de Alicante. Conocida como la "Palestina Murciana" por su paisaje de palmeras datileras, ramblas y terreno árido. <strong>Clima seco y cálido, con inviernos muy suaves.</strong> El río Chícamo nace en sus alrededores, creando un entorno de gran valor natural. El pueblo cuenta con bar, iglesia parroquial y campo de deportes.',
+      en: 'Macisvenda is one of the largest hamlets in Abanilla, located 8 km from the town centre and just 5 km from the province of Alicante. Known as the "Murcian Palestine" for its landscape of date palms, ravines and arid terrain. <strong>Dry, warm climate with very mild winters.</strong> The Chícamo river rises nearby. The village has a bar, parish church and sports centre.',
+      de: 'Macisvenda ist einer der größten Weiler in Abanilla, 8 km vom Stadtzentrum und nur 5 km von der Provinz Alicante entfernt. Bekannt als das "Murcianische Palästina". <strong>Trockenes, warmes Klima mit sehr milden Wintern.</strong> Der Fluss Chícamo entspringt in der Nähe. Das Dorf verfügt über eine Bar, eine Pfarrkirche und ein Sportzentrum.',
+      nl: 'Macisvenda is een van de grootste gehuchten in Abanilla, op 8 km van het stadscentrum en slechts 5 km van de provincie Alicante. Bekend als het "Murciaaanse Palestina". <strong>Droog, warm klimaat met zeer zachte winters.</strong> De rivier Chícamo ontspringt in de buurt. Het dorp heeft een bar, parochiekerk en sportcentrum.',
     },
-    amenities: { es: ['🌴 Palmeras datileras', '💧 Río Chícamo', '⛪ Iglesia San Juan Bautista', '🍷 Producción vinícola', '🏃 Pabellón deportivo', '🚗 A 45 min de Alicante'], en: ['🌴 Date palms', '💧 Chícamo river', '⛪ San Juan Bautista church', '🍷 Wine production', '🏃 Sports centre', '🚗 45 min from Alicante'], de: ['🌴 Dattelpalmen', '💧 Fluss Chícamo', '⛪ Kirche San Juan Bautista', '🍷 Weinproduktion', '🏃 Sportzentrum', '🚗 45 Min. von Alicante'], nl: ['🌴 Dadelpalmen', '💧 Rivier Chícamo', '⛪ Kerk San Juan Bautista', '🍷 Wijnproductie', '🏃 Sportcentrum', '🚗 45 min van Alicante'] },
+    amenities: { es: ['Palmeras datileras', 'Río Chícamo', 'Iglesia San Juan Bautista', 'Producción vinícola', 'Pabellón deportivo', 'A 45 min de Alicante'], en: ['Date palms', 'Chícamo river', 'San Juan Bautista church', 'Wine production', 'Sports centre', '45 min from Alicante'], de: ['Dattelpalmen', 'Fluss Chícamo', 'Kirche San Juan Bautista', 'Weinproduktion', 'Sportzentrum', '45 Min. von Alicante'], nl: ['Dadelpalmen', 'Rivier Chícamo', 'Kerk San Juan Bautista', 'Wijnproductie', 'Sportcentrum', '45 min van Alicante'] },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rio_Chicamo_Abanilla.jpg/800px-Rio_Chicamo_Abanilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg']
   },
   {
@@ -987,12 +992,12 @@ const ZONAS_DATA = [
     sub: { es: 'Término de Jumilla', en: 'Municipality of Jumilla', de: 'Gemeinde Jumilla', nl: 'Gemeente Jumilla' },
     tag: { es: 'Término de Jumilla · ~86 habitantes', en: 'Municipality of Jumilla · ~86 inhabitants', de: 'Gemeinde Jumilla · ~86 Einwohner', nl: 'Gemeente Jumilla · ~86 inwoners' },
     desc: {
-      es: 'Cañada del Trigo es una tranquila aldea situada en el extremo oriental del Parque Regional El Carche, a 569 metros de altitud. Su entorno de pinos, viñedos y monte mediterráneo ofrece una calidad de vida excepcional. A 4,5 km de Cañada de la Leña, comparte el mismo constructor de confianza. El paisaje del Carche, con sus rutas de senderismo y la calma absoluta, la convierte en una opción ideal para quienes buscan privacidad total.',
-      en: 'Cañada del Trigo is a peaceful hamlet on the eastern edge of the El Carche Regional Park, at 569 metres altitude. Its surroundings of pine forests, vineyards and Mediterranean scrubland offer an exceptional quality of life. Just 4.5 km from Cañada de la Leña, it shares the same trusted builder. The El Carche landscape, with its hiking trails and absolute tranquillity, makes it ideal for those seeking complete privacy.',
-      de: 'Cañada del Trigo ist ein ruhiges Dorf am östlichen Rand des Regionalparks El Carche auf 569 Metern Höhe. Kiefernwälder, Weinberge und mediterrane Macchia bieten eine außergewöhnliche Lebensqualität. Nur 4,5 km von Cañada de la Leña entfernt, teilt es denselben vertrauenswürdigen Bauträger. Die Landschaft des El Carche mit Wanderwegen und absoluter Ruhe macht es ideal für totale Privatsphäre.',
-      nl: 'Cañada del Trigo is een rustig gehucht aan de oostelijke rand van het Regionaal Park El Carche, op 569 meter hoogte. Dennenbossen, wijngaarden en mediterrane struikgewas bieden een uitzonderlijke levenskwaliteit. Op slechts 4,5 km van Cañada de la Leña, met dezelfde betrouwbare aannemer. Het landschap van El Carche met wandelroutes en absolute rust maakt het ideaal voor wie totale privacy zoekt.',
+      es: 'Cañada del Trigo es una tranquila aldea en el extremo oriental del Parque Regional El Carche, a <strong>569 metros de altitud</strong>. Su entorno de pinos, viñedos y monte mediterráneo ofrece una <strong>calidad de vida excepcional y una tranquilidad difícil de encontrar en Europa</strong>. A 4,5 km de Cañada de la Leña, comparte el mismo constructor de confianza.',
+      en: 'Cañada del Trigo is a peaceful hamlet on the eastern edge of the El Carche Regional Park, at <strong>569 metres altitude</strong>. Its pine forests, vineyards and Mediterranean scrubland offer an <strong>exceptional quality of life and a tranquillity hard to find anywhere in Europe</strong>. Just 4.5 km from Cañada de la Leña, it shares the same trusted builder.',
+      de: 'Cañada del Trigo ist ein ruhiges Dorf am östlichen Rand des Regionalparks El Carche auf <strong>569 Metern Höhe</strong>. Kiefernwälder, Weinberge und mediterrane Macchia bieten eine <strong>außergewöhnliche Lebensqualität und Stille, die in Europa kaum zu finden ist</strong>. Nur 4,5 km von Cañada de la Leña entfernt, mit demselben vertrauenswürdigen Bauträger.',
+      nl: 'Cañada del Trigo is een rustig gehucht aan de oostelijke rand van het Regionaal Park El Carche, op <strong>569 meter hoogte</strong>. Dennenbossen, wijngaarden en mediterrane struikgewas bieden een <strong>uitzonderlijke levenskwaliteit en rust die in Europa nauwelijks te vinden is</strong>. Op slechts 4,5 km van Cañada de la Leña, met dezelfde betrouwbare aannemer.',
     },
-    amenities: { es: ['🌲 Parque Regional El Carche', '🍇 Viñedos de Jumilla', '🥾 Senderismo GR-7', '🏔️ 569 m de altitud', '🤫 Máxima privacidad', '🚗 A 50 min de Alicante'], en: ['🌲 El Carche Regional Park', '🍇 Jumilla vineyards', '🥾 GR-7 hiking trail', '🏔️ 569 m altitude', '🤫 Maximum privacy', '🚗 50 min from Alicante'], de: ['🌲 Regionalpark El Carche', '🍇 Jumilla-Weinberge', '🥾 Wanderweg GR-7', '🏔️ 569 m Höhe', '🤫 Maximale Privatsphäre', '🚗 50 Min. von Alicante'], nl: ['🌲 Regionaal Park El Carche', '🍇 Jumilla-wijngaarden', '🥾 GR-7 wandelpad', '🏔️ 569 m hoogte', '🤫 Maximale privacy', '🚗 50 min van Alicante'] },
+    amenities: { es: ['Parque Regional El Carche', 'Viñedos de Jumilla', 'Senderismo GR-7', '569 m de altitud', 'Máxima privacidad', 'A 50 min de Alicante'], en: ['El Carche Regional Park', 'Jumilla vineyards', 'GR-7 hiking trail', '569 m altitude', 'Maximum privacy', '50 min from Alicante'], de: ['Regionalpark El Carche', 'Jumilla-Weinberge', 'Wanderweg GR-7', '569 m Höhe', 'Maximale Privatsphäre', '50 Min. von Alicante'], nl: ['Regionaal Park El Carche', 'Jumilla-wijngaarden', 'GR-7 wandelpad', '569 m hoogte', 'Maximale privacy', '50 min van Alicante'] },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
   },
   {
@@ -1002,12 +1007,12 @@ const ZONAS_DATA = [
     sub: { es: 'Término de Jumilla', en: 'Municipality of Jumilla', de: 'Gemeinde Jumilla', nl: 'Gemeente Jumilla' },
     tag: { es: 'Término de Jumilla · ~71 habitantes', en: 'Municipality of Jumilla · ~71 inhabitants', de: 'Gemeinde Jumilla · ~71 Einwohner', nl: 'Gemeente Jumilla · ~71 inwoners' },
     desc: {
-      es: 'Torre del Rico es una pequeña aldea a 591 metros de altitud, en el flanco oriental de la Sierra El Carche. Con apenas 71 habitantes, ofrece la soledad y la naturaleza más auténtica de la comarca. El sendero GR-7 pasa por el pueblo, conectándolo con las rutas de largo recorrido del Mediterráneo. Un entorno ideal para quien quiere desconectar completamente.',
-      en: 'Torre del Rico is a small hamlet at 591 metres altitude on the eastern flank of the El Carche mountain range. With barely 71 inhabitants, it offers the most authentic solitude and nature in the area. The GR-7 long-distance trail passes through the village, connecting it to the Mediterranean routes. An ideal setting for those who want to disconnect completely.',
-      de: 'Torre del Rico ist ein kleines Dorf auf 591 Metern Höhe am östlichen Hang des El Carche-Gebirges. Mit kaum 71 Einwohnern bietet es die authentischste Einsamkeit und Natur der Gegend. Der Fernwanderweg GR-7 führt durch das Dorf und verbindet es mit den Mittelmeerrouten. Ideal für alle, die vollständig abschalten möchten.',
-      nl: 'Torre del Rico is een klein gehucht op 591 meter hoogte aan de oostelijke flank van het El Carche-gebergte. Met nauwelijks 71 inwoners biedt het de meest authentieke eenzaamheid en natuur van de streek. Het langeafstandspad GR-7 loopt door het dorp en verbindt het met de Mediterrane routes. Ideaal voor wie volledig wil loskoppelen.',
+      es: 'Torre del Rico es una pequeña aldea a <strong>591 metros de altitud</strong>, en el flanco oriental de la Sierra El Carche. Con apenas 71 habitantes, ofrece <strong>la soledad y la naturaleza más auténtica de la comarca</strong>. El sendero GR-7 pasa por el pueblo. <strong>Coste de vida muy bajo, privacidad total y aire puro</strong> durante todo el año.',
+      en: 'Torre del Rico is a small hamlet at <strong>591 metres altitude</strong> on the eastern flank of the El Carche mountain range. With barely 71 inhabitants, it offers <strong>the most authentic solitude and nature in the area</strong>. The GR-7 trail passes through the village. <strong>Very low cost of living, total privacy and clean air</strong> all year round.',
+      de: 'Torre del Rico ist ein kleines Dorf auf <strong>591 Metern Höhe</strong> am östlichen Hang des El Carche-Gebirges. Mit kaum 71 Einwohnern bietet es <strong>die authentischste Einsamkeit und Natur der Gegend</strong>. Der Fernwanderweg GR-7 führt durch das Dorf. <strong>Sehr niedrige Lebenshaltungskosten, totale Privatsphäre und saubere Luft</strong> das ganze Jahr.',
+      nl: 'Torre del Rico is een klein gehucht op <strong>591 meter hoogte</strong> aan de oostelijke flank van het El Carche-gebergte. Met nauwelijks 71 inwoners biedt het <strong>de meest authentieke eenzaamheid en natuur van de streek</strong>. Het GR-7 pad loopt door het dorp. <strong>Zeer lage kosten van levensonderhoud, totale privacy en schone lucht</strong> het hele jaar.',
     },
-    amenities: { es: ['🏕️ Sendero GR-7', '🌲 Sierra El Carche', '🍷 DO Jumilla', '🦅 Fauna silvestre', '🏔️ 591 m altitud', '🚗 A 55 min de Alicante'], en: ['🏕️ GR-7 trail', '🌲 El Carche mountains', '🍷 DO Jumilla wines', '🦅 Wildlife', '🏔️ 591 m altitude', '🚗 55 min from Alicante'], de: ['🏕️ Wanderweg GR-7', '🌲 El Carche Berge', '🍷 DO Jumilla Weine', '🦅 Wildtiere', '🏔️ 591 m Höhe', '🚗 55 Min. von Alicante'], nl: ['🏕️ GR-7 pad', '🌲 El Carche bergen', '🍷 DO Jumilla wijnen', '🦅 Wilde dieren', '🏔️ 591 m hoogte', '🚗 55 min van Alicante'] },
+    amenities: { es: ['Sendero GR-7', 'Sierra El Carche', 'DO Jumilla', 'Fauna silvestre', '591 m altitud', 'A 55 min de Alicante'], en: ['GR-7 trail', 'El Carche mountains', 'DO Jumilla wines', 'Wildlife', '591 m altitude', '55 min from Alicante'], de: ['Wanderweg GR-7', 'El Carche Berge', 'DO Jumilla Weine', 'Wildtiere', '591 m Höhe', '55 Min. von Alicante'], nl: ['GR-7 pad', 'El Carche bergen', 'DO Jumilla wijnen', 'Wilde dieren', '591 m hoogte', '55 min van Alicante'] },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
   },
   {
@@ -1017,12 +1022,12 @@ const ZONAS_DATA = [
     sub: { es: 'Provincia de Alicante', en: 'Province of Alicante', de: 'Provinz Alicante', nl: 'Provincie Alicante' },
     tag: { es: 'Alicante · ~2.800 habitantes', en: 'Alicante · ~2,800 inhabitants', de: 'Alicante · ~2.800 Einwohner', nl: 'Alicante · ~2.800 inwoners' },
     desc: {
-      es: 'Hondón de las Nieves es un municipio del interior de Alicante situado en el Vinalopó Medio, a 493 metros de altitud. Su paisaje está dominado por viñedos, almendros y la imponente Sierra de Crevillent. El pueblo ofrece servicios completos — supermercado, farmacia, restaurantes y colegio — lo que lo convierte en una base ideal para vivir con comodidad en el entorno rural. A menos de 40 km de las playas de Alicante y a pocos minutos de las zonas de interés de la comarca.',
-      en: 'Hondón de las Nieves is an inland municipality in Alicante, located in the Vinalopó Medio area at 493 metres altitude. Its landscape is dominated by vineyards, almond trees and the impressive Sierra de Crevillent. The town offers full services — supermarket, pharmacy, restaurants and school — making it an ideal base for comfortable rural living. Less than 40 km from the beaches of Alicante and minutes from the main areas of interest in the region.',
-      de: 'Hondón de las Nieves ist eine Gemeinde im Landesinneren von Alicante, im Vinalopó Medio auf 493 Metern Höhe. Die Landschaft wird von Weinbergen, Mandelbäumen und der imposanten Sierra de Crevillent geprägt. Der Ort bietet vollständige Infrastruktur — Supermarkt, Apotheke, Restaurants und Schule — und ist damit eine ideale Basis für komfortables Landleben. Weniger als 40 km von den Stränden Alicantes entfernt.',
-      nl: 'Hondón de las Nieves is een gemeente in het binnenland van Alicante, gelegen in het Vinalopó Medio op 493 meter hoogte. Het landschap wordt gedomineerd door wijngaarden, amandelbomen en de imposante Sierra de Crevillent. Het dorp biedt volledige voorzieningen — supermarkt, apotheek, restaurants en school — waardoor het een ideale basis is voor comfortabel buitenleven. Minder dan 40 km van de stranden van Alicante.',
+      es: 'Hondón de las Nieves es un municipio del interior de Alicante en el Vinalopó Medio, a <strong>493 metros de altitud</strong>. El pueblo ofrece <strong>servicios completos — supermercado, farmacia, restaurantes y colegio</strong> — lo que lo convierte en una base ideal para vivir con comodidad en el entorno rural. <strong>A menos de 40 km de las playas de Alicante</strong> y con <strong>un clima Mediterranean excepcional durante todo el año</strong>.',
+      en: 'Hondón de las Nieves is an inland municipality in Alicante, in the Vinalopó Medio at <strong>493 metres altitude</strong>. The town offers <strong>full services — supermarket, pharmacy, restaurants and school</strong> — making it an ideal base for comfortable rural living. <strong>Less than 40 km from the beaches of Alicante</strong> and with <strong>an exceptional Mediterranean climate all year round</strong>.',
+      de: 'Hondón de las Nieves ist eine Gemeinde im Landesinneren von Alicante, im Vinalopó Medio auf <strong>493 Metern Höhe</strong>. Der Ort bietet <strong>vollständige Infrastruktur — Supermarkt, Apotheke, Restaurants und Schule</strong> — und ist damit eine ideale Basis für komfortables Landleben. <strong>Weniger als 40 km von den Stränden Alicantes</strong> und mit <strong>einem außergewöhnlichen mediterranen Klima das ganze Jahr</strong>.',
+      nl: 'Hondón de las Nieves is een gemeente in het binnenland van Alicante, in het Vinalopó Medio op <strong>493 meter hoogte</strong>. Het dorp biedt <strong>volledige voorzieningen — supermarkt, apotheek, restaurants en school</strong> — waardoor het een ideale basis is voor comfortabel buitenleven. <strong>Minder dan 40 km van de stranden van Alicante</strong> en met <strong>een uitzonderlijk mediterraan klimaat het hele jaar</strong>.',
     },
-    amenities: { es: ['🛒 Supermercado y servicios', '🍷 Viñedos del Vinalopó', '🏖️ A 40 km de las playas', '⛪ Casco urbano consolidado', '🏔️ Sierra de Crevillent', '🚗 A 35 min de Alicante'], en: ['🛒 Supermarket & services', '🍷 Vinalopó vineyards', '🏖️ 40 km from the beaches', '⛪ Established town centre', '🏔️ Sierra de Crevillent', '🚗 35 min from Alicante'], de: ['🛒 Supermarkt & Dienstleistungen', '🍷 Vinalopó-Weinberge', '🏖️ 40 km von den Stränden', '⛪ Gewachsenes Ortszentrum', '🏔️ Sierra de Crevillent', '🚗 35 Min. von Alicante'], nl: ['🛒 Supermarkt & diensten', '🍷 Vinalopó-wijngaarden', '🏖️ 40 km van de stranden', '⛪ Gevestigd stadscentrum', '🏔️ Sierra de Crevillent', '🚗 35 min van Alicante'] },
+    amenities: { es: ['Supermercado y servicios', 'Viñedos del Vinalopó', 'A 40 km de las playas', 'Casco urbano consolidado', 'Sierra de Crevillent', 'A 35 min de Alicante'], en: ['Supermarket & services', 'Vinalopó vineyards', '40 km from the beaches', 'Established town centre', 'Sierra de Crevillent', '35 min from Alicante'], de: ['Supermarkt & Dienstleistungen', 'Vinalopó-Weinberge', '40 km von den Stränden', 'Gewachsenes Ortszentrum', 'Sierra de Crevillent', '35 Min. von Alicante'], nl: ['Supermarkt & diensten', 'Vinalopó-wijngaarden', '40 km van de stranden', 'Gevestigd stadscentrum', 'Sierra de Crevillent', '35 min van Alicante'] },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg']
   },
 ];
