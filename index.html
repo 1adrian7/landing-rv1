@@ -349,7 +349,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
 </div>
 
 <nav id="nav">
-  <div class="nav-logo">RC · Cañada de la Leña</div>
+  <div class="nav-logo">Rural <em style="font-style:italic;font-weight:400;color:var(--terracota);">Vista</em></div>
   <div class="nav-links">
     <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" data-i18n="nav_project" data-section="about">The Project</a>
     <a onclick="document.getElementById('specs').scrollIntoView({behavior:'smooth'})" data-i18n="nav_features" data-section="specs">Features</a>
@@ -656,7 +656,7 @@ const T = {
     nav_project:'The Project', nav_features:'Features', nav_location:'Location', nav_enquire:'Enquire Now',
     hero_tag:'New Development · Murcia, Spain',
     hero_title:'Your <em>Spanish Villa</em><br/>Awaits',
-    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Murcia. <strong>Over 300 days of sunshine per year.</strong>',
+    hero_sub:'Brand new detached villas with private pool, double garage and mountain views — in the heart of rural Murcia. <strong>Property prices significantly below the Spanish coast.</strong>',
     hero_cta1:'Request Information', hero_cta2:'Discover the Project', scroll:'Scroll',
     stat1:'m² plot per villa', stat2:'m² built area', stat3:'bedrooms', stat4:'from Alicante Airport (45 min) / Murcia Airport (40 min)',
     about_tag:'The Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
@@ -698,7 +698,7 @@ const T = {
     nav_project:'El Proyecto', nav_features:'Características', nav_location:'Ubicación', nav_enquire:'Contactar',
     hero_tag:'Nueva Promoción · Murcia, España',
     hero_title:'Tu <em>Villa en España</em><br/>te espera',
-    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Murcia. <strong>Más de 300 días de sol al año.</strong>',
+    hero_sub:'Chalets nuevos con piscina privada, garaje doble y vistas a la montaña — en el corazón rural de Murcia. <strong>Precios notablemente inferiores a los de la costa española.</strong>',
     hero_cta1:'Solicitar Información', hero_cta2:'Conocer el Proyecto', scroll:'Bajar',
     stat1:'m² de parcela por villa', stat2:'m² construidos', stat3:'dormitorios', stat4:'aeropuertos de Alicante/Murcia',
     about_tag:'El Proyecto', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
@@ -740,7 +740,7 @@ const T = {
     nav_project:'Das Projekt', nav_features:'Ausstattung', nav_location:'Lage', nav_enquire:'Anfragen',
     hero_tag:'Neubau · Murcia, Spanien',
     hero_title:'Ihre <em>spanische Villa</em><br/>wartet auf Sie',
-    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Murcia. <strong>Über 300 Sonnentage pro Jahr.</strong>',
+    hero_sub:'Neue freistehende Villen mit privatem Pool, Doppelgarage und Bergblick — im Herzen des ländlichen Murcia. <strong>Immobilienpreise deutlich unter dem Niveau der spanischen Küste.</strong>',
     hero_cta1:'Informationen anfordern', hero_cta2:'Projekt entdecken', scroll:'Scrollen',
     stat1:'m² Grundstück pro Villa', stat2:'m² Wohnfläche', stat3:'Schlafzimmer', stat4:'von den Flughäfen Alicante/Murcia',
     about_tag:'Das Projekt', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
@@ -782,7 +782,7 @@ const T = {
     nav_project:'Het Project', nav_features:'Kenmerken', nav_location:'Locatie', nav_enquire:'Informatie aanvragen',
     hero_tag:'Nieuwbouw · Murcia, Spanje',
     hero_title:'Uw <em>Spaanse Villa</em><br/>wacht op u',
-    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Murcia. <strong>Meer dan 300 zonnige dagen per jaar.</strong>',
+    hero_sub:'Gloednieuwe vrijstaande villa\'s met privézwembad, dubbele garage en bergzicht — in het hart van ruraal Murcia. <strong>Vastgoedprijzen significant lager dan aan de Spaanse kust.</strong>',
     hero_cta1:'Informatie aanvragen', hero_cta2:'Ontdek het project', scroll:'Scrollen',
     stat1:'m² perceel per villa', stat2:'m² woonoppervlak', stat3:'slaapkamers', stat4:'van luchthavens Alicante/Murcia',
     about_tag:'Het Project', about_title:'Residencial<br/><em>Cañada de la Leña</em>',
@@ -953,6 +953,24 @@ const ZONAS_DATA = [
       nl: 'El Cantón is een klein gehucht in het noordoosten van Abanilla, aan de voet van de Sierra del Cantón (927 m). Omgeven door amandelbomen, olijfgaarden en wijngaarden is de natuurlijke omgeving een van de mooiste van de gemeente. Wandelroutes naar de top en het dal van La Boquera beginnen hier. De sfeer is rustig en de locals bewaren de wijnbouwtraditie.',
     },
     amenities: { es: ['Bodegas locales', 'Rutas de senderismo', 'Sierra del Cantón (927 m)', 'Entorno natural', 'Acceso por RM-A11'], en: ['Local wineries', 'Hiking routes', 'Sierra del Cantón (927 m)', 'Natural surroundings', 'Access via RM-A11'], de: ['Lokale Weingüter', 'Wanderwege', 'Sierra del Cantón (927 m)', 'Naturumgebung', 'Zufahrt über RM-A11'], nl: ['Lokale wijngaarden', 'Wandelroutes', 'Sierra del Cantón (927 m)', 'Natuurlijke omgeving', 'Toegang via RM-A11'] },
+    amenityIcons: ['<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>','<path d="M3 17l4-8 4 4 3-6 5 10H3z"/>','<path d="M8 3l4 8 4-8M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8"/>','<circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/>','<path d="M3 12h18M3 6l9 6 9-6"/>'],
+    history: {
+      es: 'El Cantón es una aldea de origen medieval que creció al amparo de la Sierra del Cantón, punto estratégico entre Murcia y Alicante. Su nombre refleja su posición en el límite entre territorios. Los primeros pobladores llegaron desde el Vinalopó, trayendo consigo la lengua valenciana que aún se conserva. La economía local siempre giró en torno al cultivo del almendro, la vid y el olivo en terrazas labradas en la ladera de la sierra.',
+      en: 'El Cantón is a medieval hamlet that grew up in the shelter of the Sierra del Cantón, a strategic point between Murcia and Alicante. Its name reflects its position on the border between territories. The first settlers arrived from the Vinalopó valley, bringing with them the Valencian language still spoken today. The local economy has always centred on almond, vine and olive cultivation on terraces carved into the hillside.',
+      de: 'El Cantón ist ein mittelalterliches Dorf, das im Schutz der Sierra del Cantón entstand, einem strategischen Punkt zwischen Murcia und Alicante. Sein Name spiegelt seine Lage an der Grenze zwischen Territorien wider. Die ersten Siedler kamen aus dem Vinalopó-Tal und brachten die valencianische Sprache mit, die noch heute gesprochen wird.',
+      nl: 'El Cantón is een middeleeuws gehucht dat ontstond in de luwte van de Sierra del Cantón, een strategisch punt tussen Murcia en Alicante. Zijn naam weerspiegelt zijn positie op de grens tussen gebieden. De eerste bewoners kwamen uit het Vinalopó-dal en brachten de Valenciaanse taal mee die nog altijd gesproken wordt.',
+    },
+    lifestylePhotos: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg',
+    ],
+    lifestyleLabels: {
+      es: ['Almendros en flor', 'Viñedos y vino local', 'Senderismo y montaña'],
+      en: ['Almond blossom', 'Vineyards & local wine', 'Hiking & mountain air'],
+      de: ['Mandelblüte', 'Weinberge & Lokalwein', 'Wandern & Bergluft'],
+      nl: ['Amandelbloesem', 'Wijngaarden & lokale wijn', 'Wandelen & berglucht'],
+    },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg']
   },
   {
@@ -968,6 +986,24 @@ const ZONAS_DATA = [
       nl: 'Cañada de la Leña — lokaal bekend als "Los Martínez" — is een gehucht tussen de bergketens Barinas, Espada en Quibas, op de grens met de provincie Alicante. Op <strong>510 meter hoogte</strong> geniet het van een <strong>mild klimaat en meer dan 300 zonnige dagen per jaar</strong>. De omgeving combineert amandel-, olijf- en wijnbouw met prachtige berglandschappen. Dit is de locatie van Residencial Cañada de la Leña, ons belangrijkste nieuwbouwproject.',
     },
     amenities: { es: ['Residencial Nueva Construcción', 'Vistas a la sierra', '+300 días de sol al año', 'Carretera A-9 directa', 'Zona vinícola', 'Almendros y olivos'], en: ['New-Build Development', 'Mountain views', '+300 sunny days per year', 'Direct A-9 road', 'Wine growing area', 'Almond and olive groves'], de: ['Neubausiedlung', 'Bergblick', '+300 Sonnentage pro Jahr', 'Direkte A-9 Straße', 'Weinanbaugebiet', 'Mandel- und Olivenhaine'], nl: ['Nieuwbouwproject', 'Bergzicht', '+300 zonnige dagen per jaar', 'Directe A-9 weg', 'Wijnbouwgebied', 'Amandel- en olijfgaarden'] },
+    amenityIcons: ['<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>','<path d="M3 17l4-8 4 4 3-6 5 10H3z"/>','<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/>','<path d="M3 12h18M3 6l9 6 9-6"/>','<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>','<path d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>'],
+    history: {
+      es: 'Cañada de la Leña, conocida familiarmente como "Los Martínez", debe su nombre a una antigua cañada ganadera que cruzaba este valle entre las sierras de Barinas y Quibas. Durante siglos fue un punto de paso entre Murcia y el interior de Alicante. Hoy es una pedanía tranquila donde el tiempo parece haberse detenido, rodeada de un paisaje agrario de almendros y olivos que no ha cambiado en generaciones.',
+      en: 'Cañada de la Leña, locally known as "Los Martínez", takes its name from an ancient cattle trail that crossed this valley between the Barinas and Quibas ranges. For centuries it was a crossing point between Murcia and the interior of Alicante. Today it is a peaceful hamlet where time seems to have stood still, surrounded by an agricultural landscape of almond and olive groves unchanged for generations.',
+      de: 'Cañada de la Leña, lokal als "Los Martínez" bekannt, verdankt seinen Namen einem alten Viehpfad, der dieses Tal zwischen den Bergen Barinas und Quibas durchquerte. Jahrhundertelang war es ein Übergangspunkt zwischen Murcia und dem Inneren von Alicante. Heute ist es ein ruhiges Dorf, umgeben von einer Agrarlandschaft aus Mandel- und Olivenhainen.',
+      nl: 'Cañada de la Leña, lokaal bekend als "Los Martínez", ontleent zijn naam aan een oud veeteeltpad dat dit dal doorkruiste tussen de bergen Barinas en Quibas. Eeuwenlang was het een doorgang tussen Murcia en het binnenland van Alicante. Vandaag is het een rustig gehucht omgeven door een agrarisch landschap van amandel- en olijfgaarden.',
+    },
+    lifestylePhotos: [
+      'https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
+    ],
+    lifestyleLabels: {
+      es: ['Villa nueva construcción', 'Paisaje de almendros', 'Vino de la zona'],
+      en: ['New-build villa', 'Almond landscape', 'Local wine'],
+      de: ['Neubau-Villa', 'Mandellandschaft', 'Lokaler Wein'],
+      nl: ['Nieuwbouw villa', 'Amandellandschap', 'Lokale wijn'],
+    },
     photos: ['https://res.cloudinary.com/diuttehdc/image/upload/v1780520790/nueva-construccion-chalet-el-canton_24736_xl_g3ska0.png','https://res.cloudinary.com/diuttehdc/image/upload/v1780746976/production-kyero-property-images.s3-f52d3338-f64b-4111-b3e3-aefaac6bdab1_bryqoa.jpg','https://res.cloudinary.com/diuttehdc/image/upload/v1780757365/Captura_de_pantalla_2026-06-06_164838_on5t4p.png']
   },
   {
@@ -983,6 +1019,24 @@ const ZONAS_DATA = [
       nl: 'Macisvenda is een van de grootste gehuchten in Abanilla, op 8 km van het stadscentrum en slechts 5 km van de provincie Alicante. Bekend als het "Murciaaanse Palestina". <strong>Droog, warm klimaat met zeer zachte winters.</strong> De rivier Chícamo ontspringt in de buurt. Het dorp heeft een bar, parochiekerk en sportcentrum.',
     },
     amenities: { es: ['Palmeras datileras', 'Río Chícamo', 'Iglesia San Juan Bautista', 'Producción vinícola', 'Pabellón deportivo', 'A 45 min de Alicante'], en: ['Date palms', 'Chícamo river', 'San Juan Bautista church', 'Wine production', 'Sports centre', '45 min from Alicante'], de: ['Dattelpalmen', 'Fluss Chícamo', 'Kirche San Juan Bautista', 'Weinproduktion', 'Sportzentrum', '45 Min. von Alicante'], nl: ['Dadelpalmen', 'Rivier Chícamo', 'Kerk San Juan Bautista', 'Wijnproductie', 'Sportcentrum', '45 min van Alicante'] },
+    amenityIcons: ['<path d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>','<path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/>','<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>','<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>','<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>','<path d="M3 12h18M3 6l9 6 9-6"/>'],
+    history: {
+      es: 'Macisvenda es una de las localidades de origen árabe más reconocibles de la comarca, como delatan tanto su topónimo como su arquitectura popular. Enclavada en un paisaje semiárido que recuerda al norte de África, fue durante siglos un enclave agrícola dedicado al cultivo del esparto, la vid y el almendro. El río Chícamo, que nace en sus cercanías, ha sido el eje de vida de la comunidad desde tiempos inmemoriales.',
+      en: 'Macisvenda is one of the most distinctly Arabic-origin settlements in the region, as evidenced by both its place name and its traditional architecture. Set in a semi-arid landscape reminiscent of North Africa, it was for centuries an agricultural enclave devoted to esparto grass, vine and almond cultivation. The Chícamo river, which rises nearby, has been the lifeblood of the community since time immemorial.',
+      de: 'Macisvenda ist eine der Siedlungen arabischen Ursprungs in der Region, wie sowohl der Ortsname als auch die traditionelle Architektur bezeugen. In einer halbtrockenen Landschaft gelegen, die an Nordafrika erinnert, war es jahrhundertelang ein landwirtschaftliches Zentrum für Esparto, Weinbau und Mandelanbau.',
+      nl: 'Macisvenda is een van de meest herkenbaar Arabische nederzettingen in de regio, zoals zowel de plaatsnaam als de traditionele architectuur bewijzen. Gelegen in een semi-aride landschap dat aan Noord-Afrika doet denken, was het eeuwenlang een agrarisch centrum voor esparto, wijnbouw en amandelteelt.',
+    },
+    lifestylePhotos: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rio_Chicamo_Abanilla.jpg/800px-Rio_Chicamo_Abanilla.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
+    ],
+    lifestyleLabels: {
+      es: ['Río Chícamo', 'Almendros en flor', 'Vino local DO Alicante'],
+      en: ['Chícamo river', 'Almond blossom', 'Local DO Alicante wine'],
+      de: ['Fluss Chícamo', 'Mandelblüte', 'Lokaler DO Alicante Wein'],
+      nl: ['Rivier Chícamo', 'Amandelbloesem', 'Lokale DO Alicante wijn'],
+    },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rio_Chicamo_Abanilla.jpg/800px-Rio_Chicamo_Abanilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg']
   },
   {
@@ -998,6 +1052,24 @@ const ZONAS_DATA = [
       nl: 'Cañada del Trigo is een rustig gehucht aan de oostelijke rand van het Regionaal Park El Carche, op <strong>569 meter hoogte</strong>. Dennenbossen, wijngaarden en mediterrane struikgewas bieden een <strong>uitzonderlijke levenskwaliteit en rust die in Europa nauwelijks te vinden is</strong>. Op slechts 4,5 km van Cañada de la Leña, met dezelfde betrouwbare aannemer.',
     },
     amenities: { es: ['Parque Regional El Carche', 'Viñedos de Jumilla', 'Senderismo GR-7', '569 m de altitud', 'Máxima privacidad', 'A 50 min de Alicante'], en: ['El Carche Regional Park', 'Jumilla vineyards', 'GR-7 hiking trail', '569 m altitude', 'Maximum privacy', '50 min from Alicante'], de: ['Regionalpark El Carche', 'Jumilla-Weinberge', 'Wanderweg GR-7', '569 m Höhe', 'Maximale Privatsphäre', '50 Min. von Alicante'], nl: ['Regionaal Park El Carche', 'Jumilla-wijngaarden', 'GR-7 wandelpad', '569 m hoogte', 'Maximale privacy', '50 min van Alicante'] },
+    amenityIcons: ['<path d="M3 17l4-8 4 4 3-6 5 10H3z"/>','<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>','<path d="M3 17l4-8 4 4 3-6 5 10H3z"/>','<path d="M8 3l4 8 4-8M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8"/>','<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>','<path d="M3 12h18M3 6l9 6 9-6"/>'],
+    history: {
+      es: 'Cañada del Trigo debe su nombre a los antiguos cultivos cerealísticos que ocupaban este valle del Parque Regional El Carche. Perteneciente al término de Jumilla desde la Reconquista, fue durante siglos un enclave agrícola alejado de los núcleos urbanos. Hoy su aislamiento es precisamente su mayor atractivo: un entorno natural protegido donde la fauna silvestre convive con pequeñas explotaciones vitícolas que producen parte de la reconocida DO Jumilla.',
+      en: 'Cañada del Trigo takes its name from the ancient cereal crops that once occupied this valley within the El Carche Regional Park. Belonging to the municipality of Jumilla since the Reconquista, it was for centuries an agricultural enclave far from urban centres. Today its isolation is precisely its greatest appeal: a protected natural environment where wildlife coexists with small vineyards producing part of the renowned DO Jumilla.',
+      de: 'Cañada del Trigo verdankt seinen Namen den alten Getreidekulturen, die dieses Tal im Regionalpark El Carche einst bedeckten. Seit der Reconquista zur Gemeinde Jumilla gehörend, war es jahrhundertelang ein ländliches Gehöft fernab der Städte. Heute ist seine Abgeschiedenheit sein größter Reiz.',
+      nl: 'Cañada del Trigo ontleent zijn naam aan de oude graangewassen die dit dal in het Regionaal Park El Carche eens bedekten. Sinds de Reconquista behorend tot de gemeente Jumilla, was het eeuwenlang een landelijk gehucht ver van stedelijke centra. Vandaag is zijn afgelegen ligging juist zijn grootste troef.',
+    },
+    lifestylePhotos: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
+    ],
+    lifestyleLabels: {
+      es: ['Parque El Carche', 'DO Jumilla · vino de prestigio', 'Naturaleza sin límites'],
+      en: ['El Carche Park', 'DO Jumilla · award-winning wine', 'Unspoilt nature'],
+      de: ['El Carche Park', 'DO Jumilla · Spitzenwein', 'Unberührte Natur'],
+      nl: ['El Carche Park', 'DO Jumilla · topwijn', 'Ongerepte natuur'],
+    },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
   },
   {
@@ -1013,6 +1085,24 @@ const ZONAS_DATA = [
       nl: 'Torre del Rico is een klein gehucht op <strong>591 meter hoogte</strong> aan de oostelijke flank van het El Carche-gebergte. Met nauwelijks 71 inwoners biedt het <strong>de meest authentieke eenzaamheid en natuur van de streek</strong>. Het GR-7 pad loopt door het dorp. <strong>Zeer lage kosten van levensonderhoud, totale privacy en schone lucht</strong> het hele jaar.',
     },
     amenities: { es: ['Sendero GR-7', 'Sierra El Carche', 'DO Jumilla', 'Fauna silvestre', '591 m altitud', 'A 55 min de Alicante'], en: ['GR-7 trail', 'El Carche mountains', 'DO Jumilla wines', 'Wildlife', '591 m altitude', '55 min from Alicante'], de: ['Wanderweg GR-7', 'El Carche Berge', 'DO Jumilla Weine', 'Wildtiere', '591 m Höhe', '55 Min. von Alicante'], nl: ['GR-7 pad', 'El Carche bergen', 'DO Jumilla wijnen', 'Wilde dieren', '591 m hoogte', '55 min van Alicante'] },
+    amenityIcons: ['<path d="M3 17l4-8 4 4 3-6 5 10H3z"/>','<path d="M8 3l4 8 4-8M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8"/>','<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>','<path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/>','<path d="M8 3l4 8 4-8M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8"/>','<path d="M3 12h18M3 6l9 6 9-6"/>'],
+    history: {
+      es: 'Torre del Rico toma su nombre de una antigua torre de vigilancia medieval que controlaba el paso entre los reinos de Murcia y Aragón. Con apenas 71 vecinos, es uno de los municipios más pequeños y mejor conservados de la comarca. Su tejido urbano ha cambiado muy poco desde el siglo XVIII, y la mayoría de sus habitantes mantienen formas de vida ligadas al campo, la ganadería y la recolección de productos del monte mediterráneo.',
+      en: 'Torre del Rico takes its name from an ancient medieval watchtower that controlled the pass between the kingdoms of Murcia and Aragon. With barely 71 residents, it is one of the smallest and best-preserved villages in the area. Its urban fabric has changed little since the 18th century, and most of its inhabitants maintain ways of life tied to farming, livestock and gathering from the Mediterranean scrubland.',
+      de: 'Torre del Rico verdankt seinen Namen einem alten mittelalterlichen Wachturm, der den Pass zwischen den Königreichen Murcia und Aragon kontrollierte. Mit kaum 71 Einwohnern ist es eines der kleinsten und am besten erhaltenen Dörfer der Gegend. Sein Stadtbild hat sich seit dem 18. Jahrhundert kaum verändert.',
+      nl: 'Torre del Rico ontleent zijn naam aan een oude middeleeuwse wachttoren die de bergpas tussen de koninkrijken Murcia en Aragon bewaakte. Met nauwelijks 71 inwoners is het een van de kleinste en best bewaarde dorpen van de streek. Het stedelijk weefsel is nauwelijks veranderd sinds de 18e eeuw.',
+    },
+    lifestylePhotos: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg',
+    ],
+    lifestyleLabels: {
+      es: ['Sierra El Carche', 'Vino DO Jumilla', 'Silencio y naturaleza'],
+      en: ['El Carche mountains', 'DO Jumilla wine', 'Silence & nature'],
+      de: ['El Carche Berge', 'DO Jumilla Wein', 'Stille & Natur'],
+      nl: ['El Carche bergen', 'DO Jumilla wijn', 'Stilte & natuur'],
+    },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
   },
   {
@@ -1028,6 +1118,24 @@ const ZONAS_DATA = [
       nl: 'Hondón de las Nieves is een gemeente in het binnenland van Alicante, in het Vinalopó Medio op <strong>493 meter hoogte</strong>. Het dorp biedt <strong>volledige voorzieningen — supermarkt, apotheek, restaurants en school</strong> — waardoor het een ideale basis is voor comfortabel buitenleven. <strong>Minder dan 40 km van de stranden van Alicante</strong> en met <strong>een uitzonderlijk mediterraan klimaat het hele jaar</strong>.',
     },
     amenities: { es: ['Supermercado y servicios', 'Viñedos del Vinalopó', 'A 40 km de las playas', 'Casco urbano consolidado', 'Sierra de Crevillent', 'A 35 min de Alicante'], en: ['Supermarket & services', 'Vinalopó vineyards', '40 km from the beaches', 'Established town centre', 'Sierra de Crevillent', '35 min from Alicante'], de: ['Supermarkt & Dienstleistungen', 'Vinalopó-Weinberge', '40 km von den Stränden', 'Gewachsenes Ortszentrum', 'Sierra de Crevillent', '35 Min. von Alicante'], nl: ['Supermarkt & diensten', 'Vinalopó-wijngaarden', '40 km van de stranden', 'Gevestigd stadscentrum', 'Sierra de Crevillent', '35 min van Alicante'] },
+    amenityIcons: ['<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/>','<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>','<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>','<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>','<path d="M8 3l4 8 4-8M4 14c0 4.4 3.6 8 8 8s8-3.6 8-8"/>','<path d="M3 12h18M3 6l9 6 9-6"/>'],
+    history: {
+      es: 'Hondón de las Nieves es un municipio alicantino cuyo nombre evoca las nieves que antaño cubrían sus cumbres en invierno. Asentado en el fondo de un valle rodeado por las estribaciones de la Sierra de Crevillent, fue durante la Edad Media un importante enclave de la vía pecuaria que unía el interior con la costa. Hoy es un pueblo vivo con servicios completos, conocido por sus vinos DO Alicante y su comunidad de residentes internacionales que han encontrado aquí una calidad de vida difícil de superar.',
+      en: 'Hondón de las Nieves is an Alicante municipality whose name evokes the snows that once covered its peaks in winter. Settled in the floor of a valley surrounded by the foothills of the Sierra de Crevillent, it was during the Middle Ages an important stop on the livestock route linking the interior with the coast. Today it is a thriving village with full services, known for its DO Alicante wines and its community of international residents who have found here an unbeatable quality of life.',
+      de: 'Hondón de las Nieves ist eine alikanische Gemeinde, deren Name an den Schnee erinnert, der einst im Winter ihre Gipfel bedeckte. Im Boden eines Tals inmitten der Ausläufer der Sierra de Crevillent gelegen, war es im Mittelalter eine wichtige Station auf dem Viehpfad, der das Landesinnere mit der Küste verband. Heute ist es ein lebhaftes Dorf mit vollständiger Infrastruktur und einer internationalen Gemeinschaft.',
+      nl: 'Hondón de las Nieves is een Alicantse gemeente waarvan de naam herinnert aan de sneeuw die vroeger in de winter haar toppen bedekte. Gelegen in het dal omgeven door de uitlopers van de Sierra de Crevillent, was het in de Middeleeuwen een belangrijke halte op de veeteeltroute. Vandaag is het een levendig dorp met volledige voorzieningen en een internationale gemeenschap.',
+    },
+    lifestylePhotos: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg',
+    ],
+    lifestyleLabels: {
+      es: ['Clima mediterráneo', 'Vino DO Alicante', 'A 40 km de la playa'],
+      en: ['Mediterranean climate', 'DO Alicante wine', '40 km from the beach'],
+      de: ['Mittelmeerklima', 'DO Alicante Wein', '40 km vom Strand'],
+      nl: ['Mediterraan klimaat', 'DO Alicante wijn', '40 km van het strand'],
+    },
     photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sierra_del_Canton_%28Abanilla%29.jpg/800px-Sierra_del_Canton_%28Abanilla%29.jpg']
   },
 ];
@@ -1101,12 +1209,42 @@ function openZonaPanel(key) {
   const lang = document.documentElement.lang || 'en';
   const l = ['en','es','de','nl'].includes(lang) ? lang : 'en';
 
+  // Photos grid
   const photoHtml = z.photos.map((url, i) =>
     `<img src="${url}" alt="${z.name}" class="${i===0?'photo-wide':''}" onerror="this.style.display='none'">`
   ).join('');
 
+  // Amenities with SVG icons
   const amenities = z.amenities[l] || z.amenities.en;
-  const amenHtml = amenities.map(a => `<span class="zona-amenity">${a}</span>`).join('');
+  const icons = z.amenityIcons || [];
+  const amenHtml = amenities.map((a, i) => `
+    <span class="zona-amenity">
+      ${icons[i] ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:13px;height:13px;flex-shrink:0;opacity:0.7;">${icons[i]}</svg>` : ''}
+      ${a}
+    </span>`).join('');
+
+  // History section
+  const history = z.history ? (z.history[l] || z.history.en) : null;
+  const historyHtml = history ? `
+    <div style="border-top:1px solid var(--border);padding-top:1.2rem;margin-bottom:1.2rem;">
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--terracota);font-weight:700;margin-bottom:0.6rem;">${l==='es'?'Historia y geografía':l==='de'?'Geschichte & Lage':l==='nl'?'Geschiedenis & ligging':'History & Location'}</div>
+      <p style="font-size:0.85rem;line-height:1.8;color:var(--earth-mid);font-weight:300;">${history}</p>
+    </div>` : '';
+
+  // Lifestyle image cards
+  const lifestyleImgs = z.lifestylePhotos || [];
+  const lifestyleLabels = z.lifestyleLabels ? (z.lifestyleLabels[l] || z.lifestyleLabels.en) : [];
+  const lifestyleHtml = lifestyleImgs.length ? `
+    <div style="border-top:1px solid var(--border);padding-top:1.2rem;margin-bottom:1.5rem;">
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--terracota);font-weight:700;margin-bottom:0.8rem;">${l==='es'?'Estilo de vida':l==='de'?'Lebensqualität':l==='nl'?'Levensstijl':'Lifestyle'}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        ${lifestyleImgs.map((url, i) => `
+          <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;">
+            <img src="${url}" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.display='none'"/>
+            ${lifestyleLabels[i] ? `<div style="position:absolute;bottom:0;left:0;right:0;background:rgba(30,18,10,0.65);color:white;font-size:0.6rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:4px 6px;">${lifestyleLabels[i]}</div>` : ''}
+          </div>`).join('')}
+      </div>
+    </div>` : '';
 
   const ctaLabel = l==='es' ? `Quiero más info sobre ${z.name} →` :
                    l==='de' ? `Mehr über ${z.name} erfahren →` :
@@ -1119,6 +1257,8 @@ function openZonaPanel(key) {
     <p class="zona-panel-sub">${z.sub[l] || z.sub.en}</p>
     <div class="zona-panel-photos">${photoHtml}</div>
     <p class="zona-panel-desc">${z.desc[l] || z.desc.en}</p>
+    ${historyHtml}
+    ${lifestyleHtml}
     <div class="zona-panel-amenities">${amenHtml}</div>
     <button class="zona-panel-cta" onclick="selectFromPanel('${key}')">${ctaLabel}</button>
   `;
