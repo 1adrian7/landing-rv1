@@ -184,7 +184,7 @@ section{padding:7rem 3rem;}
 .contact .section-tag{color:var(--sun);}
 .contact .section-title{color:var(--sand);}
 .contact-sub{color:rgba(242,234,211,0.65);font-size:0.92rem;line-height:1.75;margin-bottom:2.5rem;font-weight:300;}
-.contact-form{display:flex;flex-direction:column;gap:0.9rem;text-align:left;}
+.contact-form{display:flex;flex-direction:column;gap:1.8rem;text-align:left;}
 .contact-form input,
 .contact-form select,
 .contact-form textarea{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:white;padding:0.9rem 1.1rem;font-family:var(--font-sans);font-size:0.9rem;outline:none;transition:border 0.3s;width:100%;border-radius:var(--radius-sm);}
@@ -607,8 +607,8 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
           </select>
         </div>
         <textarea name="message" data-i18n-placeholder="form_msg" placeholder="Any questions? (optional)"></textarea>
-        <select id="form-zona" name="area_of_interest" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:white;padding:0.9rem 1.1rem;font-family:var(--font-sans);font-size:0.9rem;outline:none;width:100%;border-radius:var(--radius-sm);transition:border 0.3s;">
-          <option value="" data-i18n="form_zona_placeholder">Area of interest (optional)</option>
+        <select id="form-zona" name="area_of_interest" required style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:white;padding:0.9rem 1.1rem;font-family:var(--font-sans);font-size:0.9rem;outline:none;width:100%;border-radius:var(--radius-sm);transition:border 0.3s;">
+          <option value="" data-i18n="form_zona_placeholder">Area of interest *</option>
           <option value="Cañada de la Leña (Término de Abanilla)">Cañada de la Leña</option>
           <option value="El Cantón (Término de Abanilla)">El Cantón</option>
           <option value="Macisvenda (Término de Abanilla)">Macisvenda</option>
@@ -641,7 +641,7 @@ footer{background:#1A0F08;color:rgba(242,234,211,0.4);padding:2rem 3rem;display:
 </div>
 
 <footer>
-  <div class="footer-logo">RC · Residencial Cañada de la Leña</div>
+  <div class="footer-logo">Rural <em style="font-style:italic;font-weight:400;color:var(--terracota);">Vista</em></div>
   <div>Cañada de la Leña, Murcia, Spain</div>
   <div>© 2026 Rural Vista Properties</div>
 </footer>
@@ -694,7 +694,7 @@ const T = {
     zonas_map_title:'Select an area to find out more',
     zonas_cta_text:'Click on a zone above to pre-select it, then send us your details and we will get back to you with what is available in that area.',
     zonas_cta_btn:'Ask About This Area →',
-    form_zona_placeholder:'Area of interest (optional)',
+    form_zona_placeholder:'Area of interest *',
     contact_tag:'Get In Touch', contact_title:'Interested?<br/><em>Let\'s talk</em>',
     contact_sub:"Leave your details and we'll get back to you within 24 hours with full pricing, availability and everything you need to know.",
     contact_or:'or contact us directly', form_name:'Your name', form_email:'Email address',
@@ -736,7 +736,7 @@ const T = {
     zonas_map_title:'Selecciona una zona para saber más',
     zonas_cta_text:'Haz clic en una zona para preseleccionarla, déjanos tus datos y te contactamos con lo que hay disponible en esa área.',
     zonas_cta_btn:'Preguntar por esta zona →',
-    form_zona_placeholder:'Zona de interés (opcional)',
+    form_zona_placeholder:'Zona de interés *',
     contact_tag:'Contacto', contact_title:'¿Interesado?<br/><em>Hablamos</em>',
     contact_sub:'Déjanos tus datos y te contactamos en menos de 24 horas con toda la información sobre precios y disponibilidad.',
     contact_or:'o contáctanos directamente', form_name:'Tu nombre', form_email:'Correo electrónico',
@@ -778,7 +778,7 @@ const T = {
     zonas_map_title:'Wählen Sie eine Region für mehr Informationen',
     zonas_cta_text:'Klicken Sie auf eine Zone, um sie vorzuauswählen, hinterlassen Sie uns Ihre Daten und wir melden uns mit dem, was in dieser Region verfügbar ist.',
     zonas_cta_btn:'Nach dieser Region fragen →',
-    form_zona_placeholder:'Interessegebiet (optional)',
+    form_zona_placeholder:'Interessegebiet *',
     contact_tag:'Kontakt', contact_title:'Interessiert?<br/><em>Sprechen wir</em>',
     contact_sub:'Hinterlassen Sie Ihre Daten und wir melden uns innerhalb von 24 Stunden mit allen Informationen zu Preisen und Verfügbarkeit.',
     contact_or:'oder kontaktieren Sie uns direkt', form_name:'Ihr Name', form_email:'E-Mail-Adresse',
@@ -820,7 +820,7 @@ const T = {
     zonas_map_title:'Selecteer een gebied voor meer informatie',
     zonas_cta_text:'Klik op een zone om deze voor te selecteren, laat uw gegevens achter en wij nemen contact op met wat er in dat gebied beschikbaar is.',
     zonas_cta_btn:'Informeer naar dit gebied →',
-    form_zona_placeholder:'Interessegebied (optioneel)',
+    form_zona_placeholder:'Interessegebied *',
     contact_tag:'Contact', contact_title:'Geïnteresseerd?<br/><em>Laten we praten</em>',
     contact_sub:'Laat uw gegevens achter en we nemen binnen 24 uur contact met u op met alle informatie over prijzen en beschikbaarheid.',
     contact_or:'of neem direct contact op', form_name:'Uw naam', form_email:'E-mailadres',
