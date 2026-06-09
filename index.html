@@ -864,19 +864,42 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── HERO SLIDESHOW ─────────────────────────────────────────────
+// ── HERO VIDEO + SLIDESHOW ─────────────────────────────────────
 const heroSlides = document.querySelectorAll('.hero-slide');
+const heroVideo = document.getElementById('hero-video');
 let currentSlide = 0;
+let slideInterval = null;
 
 function goToSlide(n) {
   heroSlides[currentSlide].classList.remove('active');
+  // Reset zoom by forcing reflow
+  void heroSlides[n].offsetWidth;
   currentSlide = n;
   heroSlides[currentSlide].classList.add('active');
 }
 
-setInterval(() => {
-  goToSlide((currentSlide + 1) % heroSlides.length);
-}, 5000);
+function startSlideshow() {
+  if (slideInterval) return; // already started
+  // Fade out video
+  if (heroVideo) {
+    heroVideo.style.opacity = '0';
+    setTimeout(() => { heroVideo.style.display = 'none'; }, 1800);
+  }
+  // Show first image
+  goToSlide(0);
+  // Then cycle
+  slideInterval = setInterval(() => {
+    goToSlide((currentSlide + 1) % heroSlides.length);
+  }, 5000);
+}
+
+if (heroVideo) {
+  heroVideo.addEventListener('ended', startSlideshow);
+  // Fallback: start slideshow after 12s regardless
+  setTimeout(() => { if (!slideInterval) startSlideshow(); }, 12000);
+} else {
+  startSlideshow();
+}
 
 // ── CAROUSEL ──────────────────────────────────────────────────
 const track = document.getElementById('carouselTrack');
