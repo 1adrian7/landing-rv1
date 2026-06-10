@@ -937,7 +937,7 @@ function goToSlide(n) {
 }
 
 function scheduleNext() {
-  const delay = (currentSlide === 0 || currentSlide === 2) ? 3000 : 5000;
+  const delay = currentSlide === 2 ? 3000 : 5000;
   setTimeout(() => {
     goToSlide((currentSlide + 1) % heroSlides.length);
     scheduleNext();
