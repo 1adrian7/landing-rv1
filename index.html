@@ -1139,7 +1139,7 @@ const ZONAS_DATA = [
   {
     key: 'Torre del Rico (Término de Jumilla)',
     name: 'Torre del Rico',
-    lat: 38.3645, lng: -1.1125,
+    lat: 38.3645, lng: -1.1125, noWide: true,
     sub: { es: 'Término de Jumilla', en: 'Municipality of Jumilla', de: 'Gemeinde Jumilla', nl: 'Gemeente Jumilla' },
     tag: { es: 'Término de Jumilla · ~71 habitantes', en: 'Municipality of Jumilla · ~71 inhabitants', de: 'Gemeinde Jumilla · ~71 Einwohner', nl: 'Gemeente Jumilla · ~71 inwoners' },
     desc: {
@@ -1167,7 +1167,7 @@ const ZONAS_DATA = [
       de: ['El Carche Berge', 'DO Jumilla Wein', 'Stille & Natur'],
       nl: ['El Carche bergen', 'DO Jumilla wijn', 'Stilte & natuur'],
     },
-    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/El_Carche_%28Jumilla%2C_Murcia%29.jpg/800px-El_Carche_%28Jumilla%2C_Murcia%29.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vi%C3%B1edos_en_Jumilla.jpg/640px-Vi%C3%B1edos_en_Jumilla.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Almendros_en_flor_Murcia.jpg/640px-Almendros_en_flor_Murcia.jpg']
+    photos: ['https://res.cloudinary.com/diuttehdc/image/upload/v1781183641/103352471.400x300_k3tgci.png','https://res.cloudinary.com/diuttehdc/image/upload/v1781183772/20-02-1280x640_trnbbh.jpg']
   },
   {
     key: 'Hondón de las Nieves (Alicante)',
@@ -1275,7 +1275,7 @@ function openZonaPanel(key) {
 
   // Photos grid
   const photoHtml = z.photos.map((url, i) =>
-    `<img src="${url}" alt="${z.name}" class="${i===0?'photo-wide':''}" onerror="this.style.display='none'">`
+    `<img src="${url}" alt="${z.name}" class="${(!z.noWide && i===0)?'photo-wide':''}" onerror="this.style.display='none'">`
   ).join('');
 
   // Amenities with SVG icons
@@ -1319,9 +1319,9 @@ function openZonaPanel(key) {
     <div class="zona-panel-tag">${z.tag[l] || z.tag.en}</div>
     <h2 class="zona-panel-title">${z.name}</h2>
     <p class="zona-panel-sub">${z.sub[l] || z.sub.en}</p>
-    <div class="zona-panel-photos">${photoHtml}</div>
     <p class="zona-panel-desc">${z.desc[l] || z.desc.en}</p>
     ${historyHtml}
+    <div class="zona-panel-photos">${photoHtml}</div>
     ${lifestyleHtml}
     <div class="zona-panel-amenities">${amenHtml}</div>
     <button class="zona-panel-cta" onclick="selectFromPanel('${key}')">${ctaLabel}</button>
